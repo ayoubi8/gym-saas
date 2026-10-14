@@ -12,13 +12,21 @@ No changes (read-only verification of existing contracts).
 
 ## Backend tasks
 - Demo-gym seed (1 gym, plans, ~30 members across statuses, payments, 1 import batch).
-- Backup/restore note: state EXACTLY what the chosen Supabase plan provides (Free =
-  daily backups, 7-day retention, no PITR; Pro adds PITR) + tested restore steps.
-  If plan/region still open (R3), decide here and record in README locked decisions.
-- Optional cleanup: remove raw `stitch_algerian_gym_management_system/` + zip (R4).
+- Backup/restore note: state EXACTLY what the ACTIVE plan provides (build = Free:
+  daily backups, 7-day retention, no PITR; first pilot gym requires Pro upgrade for
+  PITR — R3). Upgrade to Pro BEFORE onboarding the first real pilot gym + tested
+  restore steps recorded in PROGRESS.
+- Legal gate (R3, BLOCKS pilot onboarding): verify Algerian data-protection law
+  18-07 transfer rules with a lawyer/ANPDP; record the outcome in PROGRESS. No real
+  member data before this is signed off.
+- Cleanup (R4): delete local `stitch_algerian_gym_management_system/` + zip from disk
+  (already gitignored); keep `design/` as the source.
 
 ## Frontend wiring
 - Pilot fixes only. Perf: pages < 3s on 3G post-first-load; search < 1s @ 5k members.
+- Pilot rule (R5): owners must NOT share their password — if a gym asks for desk-staff
+  access, refuse for MVP (cite PRD §11 Q3) and log it post-MVP; never build a
+  receptionist role in the pilot.
 
 ## Tests
 - Full suite green; RLS isolation re-verified; pilot metrics in PROGRESS (activation

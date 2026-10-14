@@ -42,14 +42,17 @@ Each item: finding → proposed fix → owner decision needed (or "adopt unless 
 - Proposed: default to EU region (lowest latency to DZ, GDPR-grade DPA), Free/Pro per
   budget; Phase 10 note will state the ACTUAL plan's backup offer (daily backups +
   PITR only on paid tiers). Record region+plan in README locked decisions in Phase 1A.
-- Decision: owner picks region + plan before pilot.
+- Decision: DECIDED 2026-10-14 — EU (Frankfurt or Paris); Free during build, Pro
+  before first pilot gym. Legal gate added to Phase 10: verify law 18-07 transfer
+  rules with a lawyer/ANPDP before onboarding pilot gyms.
 
 ## R4. `stitch_algerian_gym_management_system/` raw folder + zip duplicate `design/`
 
 - Finding: ~2× storage of the same exports is committed (raw folder + filed copies).
 - Proposed: keep through Phase 5 (reference safety), delete raw folder + zip in
   Phase 10 and keep only `design/` (+ note in PROGRESS). No scope impact.
-- Decision: adopt unless objected.
+- Decision: APPROVED 2026-10-14 — raw folder + zip gitignored (local reference only),
+  `design/` is the committed source; delete local duplicates in Phase 10.
 
 ## R5. No receptionist role can block pilot gyms (PRD §11.3)
 
@@ -57,7 +60,9 @@ Each item: finding → proposed fix → owner decision needed (or "adopt unless 
   only and sharing the owner password is a security regression.
 - Proposed: hold the line for MVP (cite PRD §3/§12); log requests as post-MVP with a
   `staff` role sketch (gym-scoped, no admin, no settings). Do NOT build in pilot.
-- Decision: owner confirms the refusal script.
+- Decision: APPROVED 2026-10-14 — refuse for MVP citing PRD §11 Q3, log post-MVP.
+  Schema guards: `role` stays an extensible enum, `created_by`/actor on all writes.
+  Pilot rule: owners must NOT share their password (Phase 10 checklist).
 
 ## R6. WhatsApp deep-link is manual-share, not delivery proof (FR-A5)
 
@@ -65,7 +70,9 @@ Each item: finding → proposed fix → owner decision needed (or "adopt unless 
   (owner tapped) at best. True delivery status needs the deferred gateway.
 - Proposed: log manual sends as `sent` with `channel` + `created_by` = owner, and
   document that `delivered/failed` apply only to gateway sends (post-MVP). No schema change.
-- Decision: adopt unless objected.
+- Decision: APPROVED WITH CHANGE 2026-10-14 — manual sends logged with `kind='manual'`
+  and shown as "Opened in WhatsApp" (not "sent"); `delivered`/`failed` reserved for
+  the gateway; cron `pending` rows shown as "to send" until the owner acts.
 
 ## R7. pgTAP vs plain SQL tests for Phase 1A
 
@@ -74,4 +81,6 @@ Each item: finding → proposed fix → owner decision needed (or "adopt unless 
 - Proposed: plain SQL assertion scripts (`supabase/tests/*.sql` with DO blocks raising
   on failure, run via `psql`) + vitest for TS mirrors — zero extension dependency,
   runs identically local and hosted.
-- Decision: adopt unless objected.
+- Decision: APPROVED WITH REQUIREMENTS 2026-10-14 — plain SQL + vitest; RLS tests
+  must switch role + JWT claims inside the test; one `npm run test:db` command fails
+  on any error; gym-A-vs-gym-B isolation remains the Phase 1A gate.

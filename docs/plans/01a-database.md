@@ -50,10 +50,16 @@ Migration `0002_core_schema.sql` (extends `0001_init.sql` untouched):
 None (types file only — no components, no hooks).
 
 ## Tests
-- `supabase/tests/*.sql` assertion scripts (plain-SQL DO blocks, REVIEW-NOTES R7):
-  per-table gym-A-can't-read-gym-B (SELECT/INSERT/UPDATE attempted cross-gym = 0 rows);
-  suspended gym fails closed; payments UPDATE/DELETE denied; audit rows appear for
-  pause/extend/plan-change; `reminders_due()` exclusions; idempotent replay (same id twice = 1 row).
+- `supabase/tests/*.sql` assertion scripts (plain-SQL DO blocks, R7): every RLS test
+  switches role + JWT claims INSIDE the test (`SET ROLE authenticated`,
+  `set_config('request.jwt.claims', …)`) to simulate owner-A, owner-B, admin, and
+  suspended-gym sessions.
+- One runner: `npm run test:db` (from repo root or `supabase/`) executes all SQL
+  scripts in order and FAILS on any error (non-zero exit, first failure printed).
+- Cases: per-table gym-A-can't-read-gym-B (SELECT/INSERT/UPDATE cross-gym = 0 rows) —
+  THIS IS THE PHASE GATE; suspended gym fails closed; payments UPDATE/DELETE denied;
+  audit rows for pause/extend/plan-change; `reminders_due()` exclusions; idempotent
+  replay (same id twice = 1 row).
 - vitest parity fixtures prepared (TS mirrors land in 1B; SQL expected-values frozen here).
 
 ## Done when

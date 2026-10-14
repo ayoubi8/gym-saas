@@ -16,3 +16,8 @@ supabase/.branches/
 supabase/.temp/
 # design exports are committed (png + code.html), but ignore stitch drafts
 design/*/draft*
+# raw Stitch source (R4): local reference only, filed copies live in design/
+stitch_algerian_gym_management_system/
+stitch_algerian_gym_management_system.zip
+# owner originals kept out of the repo
+PRD   Gym Management SaaS (Algeria)   MVP Fundamentals.md

@@ -11,7 +11,7 @@
 
 ## Enums
 
-- role: admin | owner
+- role: admin | owner (extensible enum — post-MVP `staff` may be added via ALTER TYPE ... ADD VALUE; R5)
 - gym_status: active | suspended
 - lang: ar | fr
 - plan_type: monthly | quarterly | semiannual | annual | per_session | class_pack
@@ -27,14 +27,14 @@
 
 ## Tables
 
-1. gyms: id, name, city, default_language lang, timezone text default 'Africa/Algiers', status gym_status default 'active', suspended_at, created_at, updated_at.
+1. gyms: id, name, city, default_language lang, timezone text default 'Africa/Algiers', status gym_status default 'active', suspended_at, created_by (admin actor), created_at, updated_at.
 2. profiles: id (= auth.users.id), gym_id null (null only for admin), role, full_name, phone (normalized, nullable), email (nullable), language lang, last_seen_at, created_at, updated_at.
    CHECK ((role='admin' AND gym_id IS NULL) OR (role='owner' AND gym_id IS NOT NULL)); CHECK (phone IS NOT NULL OR email IS NOT NULL).
 3. gym_settings (1 row per gym, PK gym_id): reminders_enabled bool default true, reminder_days_before int default 3 (1..30), reminder_on_expiry_day bool default false, enabled_channels channel[] default '{whatsapp}', onboarding_completed bool default false.
 4. reminder_templates: id, gym_id, language lang, kind reminder_kind (before_expiry|expiry_day), body text (variables {memberName} {endDate} {gymName}), UNIQUE (gym_id, language, kind).
 5. members: id, gym_id, full_name, phone (normalized), language lang null (per-member override, FR-A3), created_by, created_at, updated_at, deleted_at.
    UNIQUE (gym_id, phone) WHERE deleted_at IS NULL. GIN trigram index on full_name; btree (gym_id, phone).
-6. plans: id, gym_id, name, type plan_type, duration_months int null (1|3|6|12 for time plans), session_count int null (per_session = 1; class_pack = N), validity_days int null (end-date window for session-based plans; defaults: per_session 1, class_pack 60 — adjustable per plan), price_dzd int, active bool default true, created_at, updated_at.
+6. plans: id, gym_id, name, type plan_type, duration_months int null (1|3|6|12 for time plans), session_count int null (per_session = 1; class_pack = N), validity_days int null (end-date window for session-based plans; defaults: per_session 1, class_pack 60 — adjustable per plan), price_dzd int, active bool default true, created_by, created_at, updated_at.
    CHECK consistency per type.
 7. subscriptions: id, gym_id, member_id, plan_id, plan_name_snapshot, plan_type_snapshot, price_dzd (copied from plan at assignment — FR-S8), start_date, end_date (includes extensions and resumed pause days), sessions_total null, sessions_remaining null (>=0), renewed_from_id null, cancelled_at null, created_by, created_at, updated_at.
    Index (member_id, end_date desc), (gym_id, end_date).
@@ -48,6 +48,7 @@
     RULE: `authenticated` has INSERT + SELECT only. Edit/delete only through audited RPCs (edit_payment / delete_payment require a reason, write audit_log with old/new). Offline queue may only CREATE payments; edits/deletes require online.
 12. reminders (message log): id, gym_id, member_id, subscription_id null, kind reminder_kind, channel, language, body_rendered, status reminder_status, scheduled_for date, sent_at null, error null, created_by null (null = system), created_at.
     UNIQUE (subscription_id, kind, scheduled_for) WHERE kind <> 'manual' (cron idempotency).
+    Status semantics (R6): cron rows are `pending` → UI shows "to send" until the owner acts; owner deep-link taps are logged with kind='manual' (+ channel, created_by = owner) and shown as "Opened in WhatsApp" — never "sent". `delivered`/`failed` are reserved for the future gateway.
 13. audit_log: id bigint identity, gym_id null, actor_id, action text, entity_type, entity_id, old_value jsonb, new_value jsonb, reason text, created_at. INSERT-only (no update/delete for any role). Written by triggers and RPCs (actor = auth.uid()).
 14. import_batches: id, gym_id, filename, storage_path, status import_status, mapping jsonb, duplicate_policy, total_rows, valid_rows, error_rows, duplicate_rows, imported_count, skipped_count, failed_count, failed_rows_path null, created_by, created_at.
 15. import_rows: id, batch_id, gym_id, row_no, raw jsonb, normalized jsonb, status import_row_status, reason text.
@@ -111,3 +112,9 @@
 8. Added Auth mapping section (synthetic-email phone login, no confirmations, admin resets) — FR-R2 had no implementable design.
 9. Typed `sync_log.device_id` as text — was undefined.
 10. No scope additions: every change maps to an existing MVP FR; PRD §3/§12 exclusions untouched.
+
+## Changes made by Spark, round 2 (owner decisions R3–R7, 2026-10-14)
+
+11. `role` enum marked extensible (post-MVP `staff` via ADD VALUE) — R5 guard.
+12. Added `created_by` to `gyms` and `plans` — they were the only writable tables without actor attribution (R5: every write carries created_by/actor).
+13. Added reminders status semantics: cron `pending` = "to send", manual taps = kind 'manual' shown as "Opened in WhatsApp", `delivered`/`failed` gateway-reserved — R6.

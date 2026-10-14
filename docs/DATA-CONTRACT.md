@@ -104,8 +104,8 @@ Global error codes (all screens): `RLS_DENIED → errors.rlsDenied`,
 
 ## 13 — Reminders `/reminders` (design/13-reminders-expiring/)
 
-- Reads: `reminders_due(gym, today)` (respects settings, excludes frozen/renewed) + `reminders` log (desc, per member).
-- Writes: `log_manual_reminder { member_id, subscription_id?, channel, language, body_rendered }` (kind=`manual`); cron-created `pending` rows are server-side.
+- Reads: `reminders_due(gym, today)` (respects settings, excludes frozen/renewed) + `reminders` log (desc, per member). Cron `pending` rows display as "to send".
+- Writes: `log_manual_reminder { member_id, subscription_id?, channel, language, body_rendered }` (kind=`manual`, created_by = owner); UI shows these as "Opened in WhatsApp" — never "sent". `delivered`/`failed` reserved for gateway.
 - Errors: `REMINDERS_DISABLED → reminders.disabled`, `ALREADY_SENT → reminders.alreadySent` (unique index hit).
 - Invalidates: `['reminders'], ['member', id]`.
 

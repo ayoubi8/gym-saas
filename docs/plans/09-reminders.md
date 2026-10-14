@@ -24,6 +24,9 @@ settings/templates writes; `ALREADY_SENT` from the idempotency UNIQUE index.
   `reminders_enabled`, calls `reminders_due()`, inserts `pending` rows
   (`ON CONFLICT DO NOTHING`), then `sendReminder()` seam = log-only today
   (marks rows, records `body_rendered`); manual deep-link send is client-side.
+- UI wording (R6): cron `pending` rows show "to send"; owner taps log
+  kind='manual' rows shown as "Opened in WhatsApp" — the word "sent" MUST NOT
+  appear for manual sends; `delivered`/`failed` reserved for the gateway.
 - Seed default AR+FR templates per gym at creation (Phase 2 function must insert them).
 
 ## Frontend wiring
