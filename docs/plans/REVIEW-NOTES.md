@@ -28,7 +28,11 @@ Each item: finding → proposed fix → owner decision needed (or "adopt unless 
 - Vercel note (frontend hosting, decided 2026-10-14): `apps/web` deploys to Vercel
   (Vite static build; `npm run build` output `dist/`). Only `VITE_SUPABASE_URL` +
   `VITE_SUPABASE_ANON_KEY` as Vercel env vars — never the service-role key.
-- Decision: OPEN — owner provides domain (ideally the Vercel custom domain).
+- Decision: CLOSED 2026-10-14 — risk accepted by owner. Rationale: account
+  lifecycle is handled by activate/suspend (gym status), password resets are
+  admin-side only, and Supabase auth emails stay DISABLED globally — so no security
+  mail can ever be routed to the synthetic domain. Any reserved subdomain may be
+  used; revisit only if email-based flows are ever introduced (post-MVP).
 
 ## R3. Region + data residency undecided (PRD §11.5)
 
