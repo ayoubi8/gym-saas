@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo,+Plus+Jakarta+Sans,+system-ui,+sans-serif:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-fixed": "#c9e6ff", "surface-variant": "#d3e4fe", "on-surface-variant": "#584237", "on-tertiary": "#ffffff", "tertiary-fixed-dim": "#89ceff", "primary": "#9d4300", "secondary-container": "#dae2fd", "secondary": "#565e74", "on-tertiary-fixed": "#001e2f", "on-error-container": "#93000a", "error-container": "#ffdad6", "inverse-primary": "#ffb690", "on-primary-fixed-variant": "#783200", "surface-container-highest": "#d3e4fe", "inverse-surface": "#213145", "on-secondary-fixed": "#131b2e", "tertiary": "#006591", "on-secondary-container": "#5c647a", "surface-container-high": "#dce9ff", "on-secondary-fixed-variant": "#3f465c", "surface-tint": "#9d4300", "outline": "#8c7164", "primary-container": "#f97316", "on-error": "#ffffff", "inverse-on-surface": "#eaf1ff", "background": "#f8f9ff", "secondary-fixed": "#dae2fd", "on-primary-fixed": "#341100", "on-tertiary-fixed-variant": "#004c6e", "surface": "#f8f9ff", "on-primary": "#ffffff", "surface-dim": "#cbdbf5", "surface-container-lowest": "#ffffff", "primary-fixed": "#ffdbca", "surface-container-low": "#eff4ff", "secondary-fixed-dim": "#bec6e0", "outline-variant": "#e0c0b1", "surface-container": "#e5eeff", "primary-fixed-dim": "#ffb690", "on-background": "#0b1c30", "surface-bright": "#f8f9ff", "error": "#ba1a1a", "on-secondary": "#ffffff", "on-surface": "#0b1c30", "tertiary-container": "#09a4e8", "on-primary-container": "#582200", "on-tertiary-container": "#003650" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "gutter": "1rem", "space-sm": "0.5rem", "margin-desktop": "2rem", "margin": "1rem", "space-md": "1rem", "gutter-desktop": "1.5rem", "space-xl": "2rem", "space-xs": "0.25rem" }, "fontFamily": { "label-strong": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "display-mobile": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "body-regular": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "caption": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "caption-small": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "heading-3": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "heading-2": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "display": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "heading-1": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "body-medium": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""] }, "fontSize": { "label-strong": ["14px", { "lineHeight": "18px", "fontWeight": "600" }], "display-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }], "body-regular": ["15px", { "lineHeight": "20px", "fontWeight": "400" }], "caption": ["13px", { "lineHeight": "16px", "fontWeight": "500" }], "caption-small": ["11px", { "lineHeight": "14px", "fontWeight": "500" }], "heading-3": ["17px", { "lineHeight": "22px", "fontWeight": "600" }], "heading-2": ["20px", { "lineHeight": "24px", "fontWeight": "600" }], "display": ["32px", { "lineHeight": "36px", "fontWeight": "700" }], "heading-1": ["24px", { "lineHeight": "28px", "fontWeight": "700" }], "body-medium": ["15px", { "lineHeight": "20px", "fontWeight": "500" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-regular text-body-regular text-on-surface relative min-h-screen overflow-x-hidden"><div class="fixed inset-0 bg-[#0F172A]/40 z-30 pointer-events-auto backdrop-blur-[2px] transition-opacity duration-200"></div><div class="fixed inset-x-0 bottom-0 z-40 max-h-[813px] flex flex-col bg-surface-container-lowest rounded-t-[24px] shadow-[0_-4px_24px_rgba(15,23,42,0.18)] pb-safe"><div class="w-full flex justify-center pt-3 pb-1 cursor-grab touch-none"><div class="w-9 h-1 rounded-full bg-outline-variant/60"></div></div><div class="px-gutter py-2 flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-primary-container/20 text-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-[20px]">badge</span></div><div><h2 class="font-heading-3 text-heading-3 text-on-surface">Member Action Sheet</h2><span class="font-caption-small text-caption-small text-secondary">GymDZ Gestionnaire</span></div></div><button aria-label="Fermer" class="w-11 h-11 min-w-[44px] min-h-[44px] rounded-full flex items-center justify-center text-secondary hover:bg-surface-container transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">close</span></button></div><main class="flex-1 overflow-y-auto px-gutter pb-6 pt-2 bg-surface-container-lowest"><div class="flex flex-col w-full pb-2">
+<!-- Member Context Mini Strip -->
+<div class="flex items-center justify-between p-space-sm bg-surface-container rounded-xl mb-space-md">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-11 h-11 rounded-full overflow-hidden shrink-0 bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Athletic Algerian male gym member smiling warmly with short hair wearing training gear in a modern clean gym locker background, natural indoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoGz1iUSoM9EggjHuN9Xi5acpqgH0YlMH3r-9sz4F7gPq94r3Rc0T5QkAkD8AnBrSmg7hqGptdUEs1_DLMDmPGMqn1RxSpDo6CS8R3deRPFZsq4meiZQytLz2JA6WS6V4CUmxAnYj-jyZd7Y4H7tJaKs7yO0By_v1QlemQTyU4C4HTrLwb1UTwFH4Izayi80k-uVmql4WY3SW0fr3oDDgJmWOKZd4mfk_7HF5G6h4gFrWnjRNMsh4WKQ"/>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<span class="font-heading-3 text-heading-3 text-on-surface truncate">Karim Benali</span>
+<span class="font-caption-small text-caption-small px-1.5 py-0.5 rounded-full bg-surface-container-highest text-secondary shrink-0">#DZ-8942</span>
+</div>
+<div class="flex items-center gap-1 text-secondary truncate">
+<span class="font-caption text-caption text-secondary truncate">Muscu + CrossFit VIP</span>
+<span class="text-outline-variant">•</span>
+<span class="font-caption text-caption font-semibold text-primary">Exp. 31 Oct</span>
+</div>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container/60 text-on-secondary-container">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="font-caption-small text-caption-small font-semibold">Actif</span>
+</div>
+</div>
+<!-- Real-time Status Alert Banner (Cyan/Tertiary Accent) -->
+<div class="bg-tertiary-fixed/30 rounded-xl p-space-sm mb-space-md flex flex-col gap-2">
+<div class="flex items-start gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-tertiary-container/30 text-tertiary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">ac_unit</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h4 class="font-label-strong text-label-strong text-on-tertiary-fixed">État d'accès du tourniquet</h4>
+<span class="font-caption-small text-caption-small text-tertiary font-bold" dir="rtl">حالة الدخول</span>
+</div>
+<p class="font-caption text-caption text-on-tertiary-fixed-variant leading-snug mt-0.5">
+          Abonnement actif. Le gel bloque temporairement le badge RFID et décale la fin de souscription.
+        </p>
+</div>
+</div>
+</div>
+<!-- Segmented Control Tabs (Switch between Freeze and Extend) -->
+<div class="grid grid-cols-2 p-1 bg-surface-container rounded-xl gap-1 mb-space-md">
+<button class="h-11 rounded-lg font-label-strong text-label-strong flex items-center justify-center gap-1.5 transition-all duration-200 bg-surface-container-lowest text-primary shadow-sm" id="tab-btn-freeze" onclick="switchActionTab('freeze')" type="button">
+<span class="material-symbols-outlined text-[18px]">pause_circle</span>
+<span>Geler (Pause)</span>
+<span class="font-caption-small text-caption-small opacity-75" dir="rtl">تجميد</span>
+</button>
+<button class="h-11 rounded-lg font-label-strong text-label-strong flex items-center justify-center gap-1.5 transition-all duration-200 text-secondary hover:text-on-surface" id="tab-btn-extend" onclick="switchActionTab('extend')" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Prolonger</span>
+<span class="font-caption-small text-caption-small opacity-75" dir="rtl">تمديد</span>
+</button>
+</div>
+<!-- TAB 1: FREEZE SUBSCRIPTION PANE -->
+<div class="flex flex-col gap-space-md" id="freeze-panel">
+<!-- Start Date Picker Field -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-strong text-label-strong text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-primary">event</span>
+<span>Date de début du gel</span>
+</label>
+<span class="font-caption-small text-caption-small text-secondary" dir="rtl">تاريخ بداية التجميد</span>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-secondary text-[20px] pointer-events-none">calendar_today</span>
+<input class="w-full h-12 pl-11 pr-4 bg-surface-container-low text-on-surface font-body-medium text-body-medium rounded-lg cursor-pointer focus:outline-none" readonly="" type="text" value="Aujourd'hui, 24 Oct 2024"/>
+<span class="material-symbols-outlined absolute right-3.5 text-secondary text-[20px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Duration Presets -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-strong text-label-strong text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-primary">timelapse</span>
+<span>Durée estimée de suspension</span>
+</label>
+<span class="font-caption-small text-caption-small text-secondary">Jours de repos</span>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="freeze-dur-chip h-12 rounded-lg bg-surface-container font-label-strong text-label-strong text-on-surface flex flex-col items-center justify-center transition-colors" onclick="selectFreezeDays(7, this)" type="button">
+<span>7 Jours</span>
+<span class="font-caption-small text-caption-small text-secondary">1 sem.</span>
+</button>
+<button class="freeze-dur-chip h-12 rounded-lg bg-primary text-on-primary font-label-strong text-label-strong flex flex-col items-center justify-center transition-colors shadow-sm" onclick="selectFreezeDays(14, this)" type="button">
+<span>14 Jours</span>
+<span class="font-caption-small text-caption-small text-on-primary/80">2 sem.</span>
+</button>
+<button class="freeze-dur-chip h-12 rounded-lg bg-surface-container font-label-strong text-label-strong text-on-surface flex flex-col items-center justify-center transition-colors" onclick="selectFreezeDays(21, this)" type="button">
+<span>21 Jours</span>
+<span class="font-caption-small text-caption-small text-secondary">3 sem.</span>
+</button>
+<button class="freeze-dur-chip h-12 rounded-lg bg-surface-container font-label-strong text-label-strong text-on-surface flex flex-col items-center justify-center transition-colors" onclick="selectFreezeDays(30, this)" type="button">
+<span>30 Jours</span>
+<span class="font-caption-small text-caption-small text-secondary">1 mois</span>
+</button>
+</div>
+</div>
+<!-- Reason Selectable Pills -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-strong text-label-strong text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-primary">category</span>
+<span>Motif de la demande</span>
+</label>
+<span class="font-caption-small text-caption-small text-secondary" dir="rtl">سبب التجميد</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="freeze-reason-chip min-h-[44px] px-3.5 py-2 rounded-full bg-primary-container text-on-primary-container font-body-medium text-body-medium flex items-center gap-1.5" onclick="selectChip(this, 'freeze-reason')" type="button">
+<span class="material-symbols-outlined text-[18px]">flight_takeoff</span>
+<span>Voyage / Travail</span>
+</button>
+<button class="freeze-reason-chip min-h-[44px] px-3.5 py-2 rounded-full bg-surface-container text-secondary font-body-medium text-body-medium flex items-center gap-1.5" onclick="selectChip(this, 'freeze-reason')" type="button">
+<span class="material-symbols-outlined text-[18px]">medical_services</span>
+<span>Blessure / Maladie</span>
+</button>
+<button class="freeze-reason-chip min-h-[44px] px-3.5 py-2 rounded-full bg-surface-container text-secondary font-body-medium text-body-medium flex items-center gap-1.5" onclick="selectChip(this, 'freeze-reason')" type="button">
+<span class="material-symbols-outlined text-[18px]">mosque</span>
+<span>Ramadan / Mouharram</span>
+</button>
+<button class="freeze-reason-chip min-h-[44px] px-3.5 py-2 rounded-full bg-surface-container text-secondary font-body-medium text-body-medium flex items-center gap-1.5" onclick="selectChip(this, 'freeze-reason')" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+<span>Autre motif</span>
+</button>
+</div>
+</div>
+<!-- Internal Note Field -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-strong text-label-strong text-on-surface">Remarque interne (optionnel)</label>
+<span class="font-caption-small text-caption-small text-secondary">Visible au desk</span>
+</div>
+<div class="relative">
+<input class="w-full h-12 px-3.5 bg-surface-container-low text-on-surface placeholder:text-outline font-body-regular text-body-regular rounded-lg focus:outline-none focus:bg-surface-container" placeholder="Ex: Vol Alger-Oran, certificat médical remis..." type="text"/>
+</div>
+</div>
+<!-- Live Calculation Impact Card -->
+<div class="p-space-sm bg-surface-container-low rounded-xl flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px]">calculate</span>
+<span class="font-label-strong text-label-strong">Aperçu de la régularisation</span>
+</div>
+<span class="font-caption-small text-caption-small font-semibold px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed" id="freeze-shift-badge">+14 jours garantis</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex flex-col">
+<span class="font-caption-small text-caption-small text-secondary">Échéance actuelle</span>
+<span class="font-body-medium text-body-medium text-on-surface line-through opacity-70">31 Oct 2024</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">arrow_forward</span>
+<div class="flex flex-col items-end">
+<span class="font-caption-small text-caption-small text-primary font-semibold">Nouvelle estimation</span>
+<span class="font-heading-3 text-heading-3 text-primary" id="freeze-new-date">14 Nov 2024</span>
+</div>
+</div>
+<p class="font-caption-small text-caption-small text-secondary pt-1 border-t-0">
+        * Le compteur s'ajustera automatiquement si le membre effectue un check-in anticipé.
+      </p>
+</div>
+</div>
+<!-- TAB 2: EXTEND SUBSCRIPTION PANE (Hidden by default, toggled via JS) -->
+<div class="hidden flex flex-col gap-space-md" id="extend-panel">
+<!-- Quick Stepper Counter for Days -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-strong text-label-strong text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-primary">more_time</span>
+<span>Nombre de jours à ajouter</span>
+</label>
+<span class="font-caption-small text-caption-small text-secondary" dir="rtl">إضافة أيام</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low p-2 rounded-xl">
+<button class="w-12 h-12 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center font-heading-2 text-heading-2 active:scale-95 transition-transform shadow-sm" onclick="modifyDaysStep(-1)" type="button">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<div class="flex flex-col items-center">
+<div class="flex items-baseline gap-1">
+<span class="font-display text-display text-primary leading-none" id="step-days-val">7</span>
+<span class="font-heading-3 text-heading-3 text-on-surface">Jours</span>
+</div>
+<span class="font-caption-small text-caption-small text-secondary">Prolongation gratuite ou bonus</span>
+</div>
+<button class="w-12 h-12 rounded-lg bg-surface-container-lowest text-on-surface flex items-center justify-center font-heading-2 text-heading-2 active:scale-95 transition-transform shadow-sm" onclick="modifyDaysStep(1)" type="button">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<!-- Quick presets -->
+<div class="grid grid-cols-4 gap-2 mt-1">
+<button class="h-10 rounded-lg bg-surface-container font-label-strong text-label-strong text-secondary hover:text-on-surface" onclick="setDaysExact(3)" type="button">+3 jrs</button>
+<button class="h-10 rounded-lg bg-primary-fixed text-on-primary-fixed font-label-strong text-label-strong" onclick="setDaysExact(7)" type="button">+7 jrs</button>
+<button class="h-10 rounded-lg bg-surface-container font-label-strong text-label-strong text-secondary hover:text-on-surface" onclick="setDaysExact(15)" type="button">+15 jrs</button>
+<button class="h-10 rounded-lg bg-surface-container font-label-strong text-label-strong text-secondary hover:text-on-surface" onclick="setDaysExact(30)" type="button">+30 jrs</button>
+</div>
+</div>
+<!-- Reason Selectable Pills for Extension -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-strong text-label-strong text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-primary">volunteer_activism</span>
+<span>Motif de l'extension offerte</span>
+</label>
+<span class="font-caption-small text-caption-small text-secondary" dir="rtl">سبب التمديد</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<button class="extend-reason-chip min-h-[44px] px-3.5 py-2 rounded-full bg-primary-container text-on-primary-container font-body-medium text-body-medium flex items-center gap-1.5" onclick="selectChip(this, 'extend-reason')" type="button">
+<span class="material-symbols-outlined text-[18px]">handshake</span>
+<span>Geste commercial (Clim/Travaux)</span>
+</button>
+<button class="extend-reason-chip min-h-[44px] px-3.5 py-2 rounded-full bg-surface-container text-secondary font-body-medium text-body-medium flex items-center gap-1.5" onclick="selectChip(this, 'extend-reason')" type="button">
+<span class="material-symbols-outlined text-[18px]">loyalty</span>
+<span>Bonus parrainage / Fidélité</span>
+</button>
+<button class="extend-reason-chip min-h-[44px] px-3.5 py-2 rounded-full bg-surface-container text-secondary font-body-medium text-body-medium flex items-center gap-1.5" onclick="selectChip(this, 'extend-reason')" type="button">
+<span class="material-symbols-outlined text-[18px]">support_agent</span>
+<span>Régularisation administrative</span>
+</button>
+</div>
+</div>
+<!-- Live Calculation Impact Card Extension -->
+<div class="p-space-sm bg-surface-container-low rounded-xl flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-strong text-label-strong">Impact sur l'abonnement</span>
+</div>
+<span class="font-caption-small text-caption-small font-semibold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800" id="extend-status-chip">Immédiat</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex flex-col">
+<span class="font-caption-small text-caption-small text-secondary">Échéance actuelle</span>
+<span class="font-body-medium text-body-medium text-on-surface">31 Oct 2024</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">arrow_forward</span>
+<div class="flex flex-col items-end">
+<span class="font-caption-small text-caption-small text-primary font-semibold">Nouvelle expiration</span>
+<span class="font-heading-3 text-heading-3 text-primary" id="extend-new-date">07 Nov 2024</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Mobile Action Footer Container -->
+<div class="pt-space-md mt-2 flex flex-col gap-2">
+<button class="w-full h-12 rounded-xl bg-primary-container text-on-primary-container font-label-strong text-label-strong flex items-center justify-center gap-2 shadow-sm active:scale-[0.99] transition-all" id="main-submit-btn" type="button">
+<span class="material-symbols-outlined text-[20px]" id="submit-icon">pause_circle</span>
+<span id="submit-label">Confirmer le gel de l'abonnement</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="w-full h-11 rounded-lg text-secondary font-label-strong text-label-strong hover:text-on-surface hover:bg-surface-container-low transition-colors flex items-center justify-center" onclick="history.back()" type="button">
+      Annuler et retourner au profil
+    </button>
+</div>
+</div>
+<script>
+  let currentActiveTab = 'freeze';
+  let currentFreezeDays = 14;
+  let currentExtendDays = 7;
+
+  function switchActionTab(tab) {
+    currentActiveTab = tab;
+    const freezePanel = document.getElementById('freeze-panel');
+    const extendPanel = document.getElementById('extend-panel');
+    const tabFreeze = document.getElementById('tab-btn-freeze');
+    const tabExtend = document.getElementById('tab-btn-extend');
+    const submitBtnLabel = document.getElementById('submit-label');
+    const submitIcon = document.getElementById('submit-icon');
+
+    if (tab === 'freeze') {
+      freezePanel.classList.remove('hidden');
+      extendPanel.classList.add('hidden');
+      tabFreeze.className = 'h-11 rounded-lg font-label-strong text-label-strong flex items-center justify-center gap-1.5 transition-all duration-200 bg-surface-container-lowest text-primary shadow-sm';
+      tabExtend.className = 'h-11 rounded-lg font-label-strong text-label-strong flex items-center justify-center gap-1.5 transition-all duration-200 text-secondary hover:text-on-surface';
+      submitBtnLabel.innerText = "Confirmer le gel de l'abonnement";
+      submitIcon.innerText = "pause_circle";
+    } else {
+      freezePanel.classList.add('hidden');
+      extendPanel.classList.remove('hidden');
+      tabExtend.className = 'h-11 rounded-lg font-label-strong text-label-strong flex items-center justify-center gap-1.5 transition-all duration-200 bg-surface-container-lowest text-primary shadow-sm';
+      tabFreeze.className = 'h-11 rounded-lg font-label-strong text-label-strong flex items-center justify-center gap-1.5 transition-all duration-200 text-secondary hover:text-on-surface';
+      submitBtnLabel.innerText = "Valider l'extension (" + currentExtendDays + " jours)";
+      submitIcon.innerText = "add_circle";
+    }
+  }
+
+  function selectFreezeDays(days, el) {
+    currentFreezeDays = days;
+    document.querySelectorAll('.freeze-dur-chip').forEach(btn => {
+      btn.className = 'freeze-dur-chip h-12 rounded-lg bg-surface-container font-label-strong text-label-strong text-on-surface flex flex-col items-center justify-center transition-colors';
+      const sub = btn.querySelector('span:last-child');
+      if (sub) sub.className = 'font-caption-small text-caption-small text-secondary';
+    });
+
+    el.className = 'freeze-dur-chip h-12 rounded-lg bg-primary text-on-primary font-label-strong text-label-strong flex flex-col items-center justify-center transition-colors shadow-sm';
+    const activeSub = el.querySelector('span:last-child');
+    if (activeSub) activeSub.className = 'font-caption-small text-caption-small text-on-primary/80';
+
+    document.getElementById('freeze-shift-badge').innerText = '+' + days + ' jours garantis';
+    
+    // Dynamic calculate display date preview
+    const targetDate = new Date(2024, 9, 31); // 31 Oct 2024
+    targetDate.setDate(targetDate.getDate() + days);
+    const monthsFr = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc'];
+    const formatted = targetDate.getDate() + ' ' + monthsFr[targetDate.getMonth()] + ' ' + targetDate.getFullYear();
+    document.getElementById('freeze-new-date').innerText = formatted;
+  }
+
+  function modifyDaysStep(delta) {
+    currentExtendDays = Math.max(1, Math.min(90, currentExtendDays + delta));
+    updateExtendDisplay();
+  }
+
+  function setDaysExact(days) {
+    currentExtendDays = days;
+    updateExtendDisplay();
+  }
+
+  function updateExtendDisplay() {
+    document.getElementById('step-days-val').innerText = currentExtendDays;
+    const targetDate = new Date(2024, 9, 31);
+    targetDate.setDate(targetDate.getDate() + currentExtendDays);
+    const monthsFr = ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sep', 'Oct', 'Nov', 'Déc'];
+    const formatted = ('0' + targetDate.getDate()).slice(-2) + ' ' + monthsFr[targetDate.getMonth()] + ' ' + targetDate.getFullYear();
+    document.getElementById('extend-new-date').innerText = formatted;
+
+    if (currentActiveTab === 'extend') {
+      document.getElementById('submit-label').innerText = "Valider l'extension (" + currentExtendDays + " jours)";
+    }
+  }
+
+  function selectChip(element, groupClass) {
+    document.querySelectorAll('.' + groupClass).forEach(chip => {
+      chip.className = groupClass + ' min-h-[44px] px-3.5 py-2 rounded-full bg-surface-container text-secondary font-body-medium text-body-medium flex items-center gap-1.5 transition-colors';
+    });
+    element.className = groupClass + ' min-h-[44px] px-3.5 py-2 rounded-full bg-primary-container text-on-primary-container font-body-medium text-body-medium flex items-center gap-1.5 transition-colors shadow-sm';
+  }
+</script></main></div></body></html>

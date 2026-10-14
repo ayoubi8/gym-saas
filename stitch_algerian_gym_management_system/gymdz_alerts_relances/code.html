@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo,+Plus+Jakarta+Sans,+system-ui,+sans-serif:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"tertiary":"#006591","tertiary-fixed-dim":"#89ceff","secondary-fixed-dim":"#bec6e0","surface-container-lowest":"#ffffff","surface-dim":"#cbdbf5","surface-container":"#e5eeff","on-primary-container":"#582200","on-error":"#ffffff","secondary-container":"#dae2fd","primary-container":"#f97316","inverse-primary":"#ffb690","surface-container-highest":"#d3e4fe","on-tertiary":"#ffffff","secondary-fixed":"#dae2fd","secondary":"#565e74","on-surface-variant":"#584237","on-background":"#0b1c30","surface-variant":"#d3e4fe","surface-bright":"#f8f9ff","outline-variant":"#e0c0b1","primary":"#9d4300","on-primary-fixed-variant":"#783200","error-container":"#ffdad6","on-error-container":"#93000a","on-secondary-container":"#5c647a","on-primary-fixed":"#341100","surface":"#f8f9ff","outline":"#8c7164","background":"#f8f9ff","surface-container-high":"#dce9ff","tertiary-container":"#09a4e8","on-primary":"#ffffff","on-tertiary-fixed":"#001e2f","inverse-on-surface":"#eaf1ff","on-tertiary-fixed-variant":"#004c6e","surface-tint":"#9d4300","error":"#ba1a1a","tertiary-fixed":"#c9e6ff","on-secondary-fixed-variant":"#3f465c","on-secondary-fixed":"#131b2e","primary-fixed":"#ffdbca","on-secondary":"#ffffff","primary-fixed-dim":"#ffb690","on-surface":"#0b1c30","inverse-surface":"#213145","on-tertiary-container":"#003650","surface-container-low":"#eff4ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter-desktop":"1.5rem","space-sm":"0.5rem","gutter":"1rem","space-xl":"2rem","space-xs":"0.25rem","space-md":"1rem","margin-desktop":"2rem","margin":"1rem","space-lg":"1.5rem"},"fontFamily":{"heading-1":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"label-strong":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"display-mobile":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"display":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"heading-2":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"body-medium":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"caption-small":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"caption":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"body-regular":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"heading-3":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"body":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"headline":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""]},"fontSize":{"heading-1":["24px",{"lineHeight":"28px","fontWeight":"700"}],"label-strong":["14px",{"lineHeight":"18px","fontWeight":"600"}],"display-mobile":["26px",{"lineHeight":"32px","fontWeight":"700"}],"display":["32px",{"lineHeight":"36px","fontWeight":"700"}],"heading-2":["20px",{"lineHeight":"24px","fontWeight":"600"}],"body-medium":["15px",{"lineHeight":"20px","fontWeight":"500"}],"caption-small":["11px",{"lineHeight":"14px","fontWeight":"500"}],"caption":["13px",{"lineHeight":"16px","fontWeight":"500"}],"body-regular":["15px",{"lineHeight":"20px","fontWeight":"400"}],"heading-3":["17px",{"lineHeight":"22px","fontWeight":"600"}]}}}};</script></head><body class="bg-background font-body-regular text-on-surface antialiased"><aside class="fixed start-0 top-0 h-screen w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm bg-surface-container-lowest"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary font-heading-1 text-heading-1 shadow-sm">DZ</div><div class="flex flex-col"><span class="font-heading-3 text-heading-3 leading-tight text-on-surface tracking-tight">GymDZ</span><span class="font-caption-small text-caption-small text-primary font-bold uppercase tracking-wider">Algeria Owner Hub</span></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs rounded-full bg-surface-container-low flex items-center justify-between"><span class="font-caption text-caption text-secondary flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary"></span>Club Hydra, Alger</span><span class="material-symbols-outlined text-secondary text-[16px]">expand_more</span></div></div><nav class="flex flex-col gap-space-xs px-space-md py-space-sm" data-active-classes="bg-primary-container text-on-primary font-label-strong rounded-xl"><a class="flex items-center gap-space-md px-space-md h-12 rounded-xl text-on-surface-variant font-body-medium text-body-medium hover:bg-surface-container hover:text-on-surface transition-colors" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Overview</span></a><a class="flex items-center gap-space-md px-space-md h-12 rounded-xl text-on-surface-variant font-body-medium text-body-medium hover:bg-surface-container hover:text-on-surface transition-colors" data-path="members" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Members</span></a><a class="flex items-center gap-space-md px-space-md h-12 rounded-xl text-on-surface-variant font-body-medium text-body-medium hover:bg-surface-container hover:text-on-surface transition-colors" data-path="payments" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span>Payments / Caisse</span></a><a class="flex items-center gap-space-md px-space-md h-12 rounded-xl text-on-surface-variant font-body-medium text-body-medium hover:bg-surface-container hover:text-on-surface transition-colors" data-path="subscriptions" href="#"><span class="material-symbols-outlined text-[20px]">card_membership</span><span>Subscriptions</span></a><a aria-current="page" class="flex items-center justify-between px-space-md h-12 transition-colors bg-primary-container text-on-primary font-label-strong rounded-xl" data-path="alerts" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">notifications_active</span><span>Alerts</span></div><span class="px-2 py-0.5 rounded-full bg-error text-on-error font-caption-small text-caption-small font-bold">5</span></a><a class="flex items-center gap-space-md px-space-md h-12 rounded-xl text-on-surface-variant font-body-medium text-body-medium hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div><div class="p-space-md m-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-caption text-caption text-secondary">Mode Hors-ligne</span><span class="material-symbols-outlined text-tertiary text-[18px]">cloud_done</span></div><p class="font-caption-small text-caption-small text-on-surface-variant">Synchronisation PWA active. 0 actions en attente.</p></div></aside><div class="ps-64 flex flex-col min-h-screen"><header class="fixed top-0 inset-inline-end-0 start-64 h-16 bg-surface-container-lowest/95 backdrop-blur-md z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex-1 max-w-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute inset-inline-start-3 text-secondary text-[20px]">search</span><input class="w-full h-10 ps-10 pe-4 bg-surface-container-low rounded-xl text-body-regular font-body-regular text-on-surface placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" placeholder="Rechercher adhérent, barcode, tél (05/06/07)..." type="search"/></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-caption text-caption"><span class="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse"></span><span class="font-label-strong text-label-strong">En ligne</span></div><div class="flex items-center bg-surface-container-low rounded-lg p-0.5"><button class="px-2.5 py-1 rounded bg-surface-container-lowest font-caption text-caption font-bold text-primary shadow-sm" type="button">FR</button><button class="px-2.5 py-1 rounded text-secondary font-caption text-caption hover:text-on-surface transition-colors" type="button">العربية</button></div><button aria-label="Notifications" class="relative p-2 rounded-xl text-secondary hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 inset-inline-end-1.5 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-sm ps-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden xl:flex flex-col"><span class="font-label-strong text-label-strong leading-tight text-on-surface">Karim Benali</span><span class="font-caption-small text-caption-small text-secondary">Manager Général</span></div></div></div></div></header><main class="relative pt-16 w-full px-gutter-desktop flex-1 bg-background"><div class="flex flex-col w-full pb-16">
+<!-- Top Navigation & Action Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-lg">
+<div>
+<div class="flex items-center gap-space-xs text-secondary font-caption text-caption mb-1">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[15px]">home</span>
+<span>Accueil</span>
+</a>
+<span class="material-symbols-outlined text-[13px]">chevron_right</span>
+<span class="text-on-surface font-label-strong text-label-strong">Alertes & Relances</span>
+<span class="text-secondary/70 mx-1">/</span>
+<span class="font-label-strong text-label-strong text-primary" dir="rtl">التنبيهات والمتابعة</span>
+</div>
+<h1 class="font-heading-1 text-heading-1 text-on-surface tracking-tight flex items-center gap-space-sm">
+        Centre de Relances & Alertes
+        <span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-caption-small text-caption-small font-bold">22 Cas Urgents</span>
+</h1>
+</div>
+<!-- Group Action CTA -->
+<div class="flex items-center gap-space-sm self-start md:self-auto">
+<button class="h-12 px-space-md rounded-xl bg-surface-container-lowest text-on-surface font-label-strong text-label-strong shadow-sm hover:bg-surface-container transition-all flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[20px] text-secondary">history</span>
+<span>Journal d'envois</span>
+</button>
+<button class="h-12 px-space-lg rounded-xl bg-[#16A34A] hover:bg-[#15803D] active:bg-[#166534] text-white font-label-strong text-label-strong shadow-md shadow-[#16A34A]/25 transition-all flex items-center gap-space-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">send_and_archive</span>
+<span>Envoyer des relances groupées (WhatsApp)</span>
+<span class="px-2 py-0.5 rounded-full bg-white/20 text-white font-caption-small text-caption-small">3 J-0</span>
+</button>
+</div>
+</div>
+<!-- Automation Status Banner -->
+<div class="mb-space-lg p-space-md md:p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-space-md relative overflow-hidden">
+<div class="absolute inset-y-0 start-0 w-1.5 bg-[#16A34A]"></div>
+<div class="flex items-start sm:items-center gap-space-md ps-2">
+<div class="w-12 h-12 rounded-xl bg-[#DCFCE7] flex items-center justify-center text-[#15803D] shrink-0">
+<span class="material-symbols-outlined text-[26px]">smart_toy</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="font-heading-3 text-heading-3 text-on-surface">Rappels automatiques : ACTIVÉ</span>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#DCFCE7] text-[#15803D] font-caption text-caption font-bold">
+<span class="w-2 h-2 rounded-full bg-[#16A34A] animate-pulse"></span>
+            En service (Bot DZ-01)
+          </span>
+<span class="font-caption text-caption text-secondary hidden sm:inline" dir="rtl">التذكير الآلي مفعل بنجاح</span>
+</div>
+<p class="font-body-regular text-body-regular text-secondary mt-0.5">
+          Envoi automatique par WhatsApp <strong class="text-on-surface">J-3</strong> et <strong class="text-on-surface">J-0</strong> à 10:00 (Fuseau Alger). <span class="text-[#16A34A] font-bold">18 rappels</span> distribués avec succès aujourd'hui.
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-space-md shrink-0 ps-2 lg:ps-0">
+<a class="inline-flex items-center gap-1 font-label-strong text-label-strong text-primary hover:text-on-primary-container transition-colors group" href="#">
+<span>Configurer les paramètres d'envoi</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<div class="h-8 w-px bg-surface-container hidden sm:block"></div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#16A34A]"></div>
+</label>
+</div>
+</div>
+<!-- Main Split Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Alerts Management (60% ~ 7 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Primary Tab Navigation -->
+<div class="bg-surface-container-lowest rounded-xl p-1.5 shadow-sm flex items-center justify-between gap-1">
+<button class="flex-1 py-2.5 px-space-md rounded-lg bg-primary-container text-white font-label-strong text-label-strong shadow-sm flex items-center justify-center gap-space-sm transition-all" id="tab-expirations" type="button">
+<span class="material-symbols-outlined text-[20px]">event_busy</span>
+<span>Expirations imminentes</span>
+<span class="px-2 py-0.5 rounded-full bg-white/25 text-white font-caption-small text-caption-small">14</span>
+</button>
+<button class="flex-1 py-2.5 px-space-md rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-label-strong text-label-strong flex items-center justify-center gap-space-sm transition-all" id="tab-impayes" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">receipt_long</span>
+<span>Impayés & Dettes</span>
+<span class="px-2 py-0.5 rounded-full bg-[#FEF3C7] text-[#B45309] font-caption-small text-caption-small font-bold">8 • 92 000 DA</span>
+</button>
+</div>
+<!-- Quick Filter Bar and Search -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-sm">
+<!-- Filter Pills -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0">
+<button class="px-3 py-1.5 rounded-lg text-secondary hover:bg-surface-container font-caption text-caption font-semibold whitespace-nowrap transition-colors" type="button">
+            Tous (14)
+          </button>
+<button class="px-3 py-1.5 rounded-lg bg-primary/10 text-primary font-caption text-caption font-bold whitespace-nowrap transition-colors flex items-center gap-1" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span>Aujourd'hui (3)</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg text-secondary hover:bg-surface-container font-caption text-caption font-semibold whitespace-nowrap transition-colors" type="button">
+            3 jours (5)
+          </button>
+<button class="px-3 py-1.5 rounded-lg text-secondary hover:bg-surface-container font-caption text-caption font-semibold whitespace-nowrap transition-colors" type="button">
+            7 jours (6)
+          </button>
+</div>
+<!-- Inline Search -->
+<div class="relative min-w-[210px]">
+<span class="material-symbols-outlined absolute inset-inline-start-2.5 top-1/2 -translate-y-1/2 text-secondary text-[18px]">search</span>
+<input class="w-full h-9 ps-8 pe-3 bg-surface-container-low rounded-lg text-caption font-body-regular text-on-surface placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-primary-container" placeholder="Filtrer nom, code, tél..." type="text"/>
+</div>
+</div>
+<!-- Member Alert Cards List -->
+<div class="flex flex-col gap-space-sm">
+<!-- CARD 1: Selected (Karim Benali) -->
+<div class="member-card cursor-pointer p-space-md rounded-xl bg-surface-container-lowest shadow-md transition-all relative overflow-hidden group hover:shadow-lg" data-member="karim">
+<div class="absolute inset-y-0 start-0 w-1.5 bg-primary-container"></div>
+<div class="flex flex-col gap-space-sm ps-2">
+<!-- Header Row -->
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed text-primary font-heading-3 text-heading-3 flex items-center justify-center">
+                  KB
+                </div>
+<div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-heading-3 text-heading-3 text-on-surface">Karim Benali</span>
+<span class="text-secondary font-caption text-caption" dir="rtl">(كريم بن علي)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-caption-small text-caption-small font-bold">#DZ-8942</span>
+</div>
+<div class="flex items-center gap-space-sm text-secondary font-caption text-caption mt-0.5">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">call</span>
+                      0555 12 34 56
+                    </span>
+<span>•</span>
+<span class="text-on-surface-variant font-medium">Musculation + CrossFit VIP</span>
+</div>
+</div>
+</div>
+<!-- Days Tag -->
+<div class="flex flex-col items-end">
+<span class="px-2.5 py-1 rounded-full bg-error text-white font-caption text-caption font-bold flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                  J-0 Aujourd'hui
+                </span>
+<span class="text-error font-caption-small text-caption-small mt-1 font-bold">0 jour restant</span>
+</div>
+</div>
+<!-- Expiration Info & Actions Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-2 bg-surface-container-low/60 -mx-space-md -mb-space-md p-space-md rounded-b-xl">
+<div class="flex items-center gap-2 text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-error">event</span>
+<span>Expire : <strong class="text-on-surface">Aujourd'hui (24 Oct 2024)</strong></span>
+<span class="text-secondary/50">|</span>
+<span class="text-secondary font-caption-small">Tourniquet bloqué dès 23:59</span>
+</div>
+<div class="flex items-center gap-space-xs self-end sm:self-auto">
+<button class="h-9 px-3 rounded-lg bg-[#DCFCE7] hover:bg-[#BBF7D0] text-[#15803D] font-label-strong text-label-strong transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>Envoyer rappel</span>
+</button>
+<button class="h-9 px-3 rounded-lg bg-primary-container hover:bg-[#EA580C] text-white font-label-strong text-label-strong transition-colors flex items-center gap-1.5 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">autorenew</span>
+<span>Renouveler</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 2: Walid Hamidi -->
+<div class="member-card cursor-pointer p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all relative overflow-hidden" data-member="walid">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container text-secondary font-heading-3 text-heading-3 flex items-center justify-center">
+                  WH
+                </div>
+<div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-heading-3 text-heading-3 text-on-surface">Walid Hamidi</span>
+<span class="text-secondary font-caption text-caption" dir="rtl">(وليد حميدي)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-caption-small text-caption-small font-bold">#DZ-8302</span>
+</div>
+<div class="flex items-center gap-space-sm text-secondary font-caption text-caption mt-0.5">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">call</span>
+                      0661 44 88 12
+                    </span>
+<span>•</span>
+<span class="text-on-surface-variant font-medium">Carnet 10 séances Boxe</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-caption text-caption font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                  J-1 Demain
+                </span>
+<span class="text-secondary font-caption-small text-caption-small mt-1">2 séances restantes</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-2 bg-surface-container-low/40 -mx-space-md -mb-space-md p-space-md rounded-b-xl">
+<div class="flex items-center gap-2 text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-secondary">event</span>
+<span>Expire : <strong class="text-on-surface">Demain (25 Oct 2024)</strong></span>
+</div>
+<div class="flex items-center gap-space-xs self-end sm:self-auto">
+<button class="h-9 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-strong text-label-strong transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-[#16A34A]">chat</span>
+<span>Envoyer rappel</span>
+</button>
+<button class="h-9 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-strong text-label-strong transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">autorenew</span>
+<span>Renouveler</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 3: Amina Cherif -->
+<div class="member-card cursor-pointer p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all relative overflow-hidden" data-member="amina">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-secondary-container text-secondary font-heading-3 text-heading-3 flex items-center justify-center">
+                  AC
+                </div>
+<div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-heading-3 text-heading-3 text-on-surface">Amina Cherif</span>
+<span class="text-secondary font-caption text-caption" dir="rtl">(أمينة شريف)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-caption-small text-caption-small font-bold">#DZ-9104</span>
+</div>
+<div class="flex items-center gap-space-sm text-secondary font-caption text-caption mt-0.5">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">call</span>
+                      0770 99 22 11
+                    </span>
+<span>•</span>
+<span class="text-on-surface-variant font-medium">Pack Fitness & Yoga (3 mois)</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="px-2.5 py-1 rounded-full bg-[#FEF3C7] text-[#B45309] font-caption text-caption font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span>
+                  J-2 dans 2 jours
+                </span>
+<span class="text-secondary font-caption-small text-caption-small mt-1">26 Oct 2024</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-2 bg-surface-container-low/40 -mx-space-md -mb-space-md p-space-md rounded-b-xl">
+<div class="flex items-center gap-2 text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-[#D97706]">notification_important</span>
+<span>Rappel auto programmé demain 10:00</span>
+</div>
+<div class="flex items-center gap-space-xs self-end sm:self-auto">
+<button class="h-9 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-strong text-label-strong transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-[#16A34A]">chat</span>
+<span>Envoyer rappel</span>
+</button>
+<button class="h-9 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-strong text-label-strong transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">autorenew</span>
+<span>Renouveler</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 4: Sofiane Mebarki -->
+<div class="member-card cursor-pointer p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all relative overflow-hidden" data-member="sofiane">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container text-secondary font-heading-3 text-heading-3 flex items-center justify-center">
+                  SM
+                </div>
+<div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-heading-3 text-heading-3 text-on-surface">Sofiane Mebarki</span>
+<span class="text-secondary font-caption text-caption" dir="rtl">(سفيان مباركي)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-caption-small text-caption-small font-bold">#DZ-7721</span>
+</div>
+<div class="flex items-center gap-space-sm text-secondary font-caption text-caption mt-0.5">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">call</span>
+                      0550 33 44 55
+                    </span>
+<span>•</span>
+<span class="text-on-surface-variant font-medium">Abonnement Trimestriel Muscu</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="px-2.5 py-1 rounded-full bg-[#FEF3C7] text-[#B45309] font-caption text-caption font-bold flex items-center gap-1">
+                  J-3 dans 3 jours
+                </span>
+<span class="text-secondary font-caption-small text-caption-small mt-1">27 Oct 2024</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-2 bg-surface-container-low/40 -mx-space-md -mb-space-md p-space-md rounded-b-xl">
+<div class="flex items-center gap-2 text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-[#16A34A]">done_all</span>
+<span>Dernier rappel envoyé hier 14:20 (Lu ✓✓)</span>
+</div>
+<div class="flex items-center gap-space-xs self-end sm:self-auto">
+<button class="h-9 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-strong text-label-strong transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">forward</span>
+<span>Relancer à nouveau</span>
+</button>
+<button class="h-9 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-strong text-label-strong transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">autorenew</span>
+<span>Renouveler</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- CARD 5: Yacine Brahimi -->
+<div class="member-card cursor-pointer p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all relative overflow-hidden" data-member="yacine">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-surface-container text-secondary font-heading-3 text-heading-3 flex items-center justify-center">
+                  YB
+                </div>
+<div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-heading-3 text-heading-3 text-on-surface">Yacine Brahimi</span>
+<span class="text-secondary font-caption text-caption" dir="rtl">(ياسين براهيمي)</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-secondary font-caption-small text-caption-small font-bold">#DZ-6540</span>
+</div>
+<div class="flex items-center gap-space-sm text-secondary font-caption text-caption mt-0.5">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[14px]">call</span>
+                      0558 77 11 00
+                    </span>
+<span>•</span>
+<span class="text-on-surface-variant font-medium">Forfait Annuel VIP Intégral</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-caption text-caption font-bold">
+                  J-7 dans 7 jours
+                </span>
+<span class="text-secondary font-caption-small text-caption-small mt-1">31 Oct 2024</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-2 bg-surface-container-low/40 -mx-space-md -mb-space-md p-space-md rounded-b-xl">
+<div class="flex items-center gap-2 text-secondary font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span>
+<span>Premier rappel automatique prévu le 28 Oct</span>
+</div>
+<div class="flex items-center gap-space-xs self-end sm:self-auto">
+<button class="h-9 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-strong text-label-strong transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-[#16A34A]">chat</span>
+<span>Envoyer rappel</span>
+</button>
+<button class="h-9 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-strong text-label-strong transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">autorenew</span>
+<span>Renouveler</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Inactive Tab Preview Banner (Unpaid / Impayés info card) -->
+<div class="p-space-md rounded-xl bg-[#FFFBEB] shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-[#FEF3C7] text-[#D97706] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">account_balance_wallet</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-heading-3 text-heading-3 text-[#92400E]">Aperçu Caisse : Impayés en attente</span>
+<span class="px-2 py-0.5 rounded-full bg-[#FEF3C7] text-[#92400E] font-caption-small text-caption-small font-bold">8 dossiers</span>
+</div>
+<p class="font-body-regular text-body-regular text-[#B45309] mt-0.5">
+              Exemple : Lotfi Mansouri • Reste : <strong class="text-[#92400E]">15 000 DA</strong> (Dernier versement il y a 12 jours).
+            </p>
+</div>
+</div>
+<button class="h-10 px-space-md rounded-lg bg-primary-container hover:bg-[#EA580C] text-white font-label-strong text-label-strong shadow-sm whitespace-nowrap transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span>Enregistrer un paiement</span>
+</button>
+</div>
+</div>
+<!-- RIGHT COLUMN: WhatsApp Message Preview & Relance Console (40% ~ 5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md sticky top-20">
+<!-- Console Container -->
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-md flex flex-col gap-space-md relative overflow-hidden">
+<!-- Console Top Header -->
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#16A34A] animate-pulse"></span>
+<span class="font-heading-3 text-heading-3 text-on-surface">Console d'envoi WhatsApp</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-[#DCFCE7] text-[#15803D] font-caption-small text-caption-small font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+            API Cloud DZ
+          </span>
+</div>
+<!-- Recipient Indicator Chip -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-primary text-white font-label-strong text-label-strong flex items-center justify-center shrink-0">
+              KB
+            </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-strong text-label-strong text-on-surface truncate">Karim Benali (كريم بن علي)</span>
+<span class="font-caption-small text-caption-small text-secondary font-mono">+213 555 12 34 56</span>
+</div>
+</div>
+<span class="px-2 py-1 rounded-md bg-error text-white font-caption-small text-caption-small font-bold shrink-0">
+            J-0 Expiré
+          </span>
+</div>
+<!-- Template Selector Dropdown -->
+<div class="flex flex-col gap-1.5">
+<label class="font-caption text-caption font-bold text-secondary flex items-center justify-between">
+<span>Modèle de message</span>
+<button class="text-primary hover:underline text-[12px] flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-[14px]">edit</span>
+              Éditer ce modèle
+            </button>
+</label>
+<div class="relative">
+<select class="w-full h-11 px-3 pe-8 bg-surface-container-low rounded-xl text-body-medium font-body-medium text-on-surface appearance-none focus:outline-none focus:ring-2 focus:ring-primary-container cursor-pointer">
+<option selected="" value="exp_urgent">Modèle : Expiration Forfait (Bilingue FR/AR - Urgent)</option>
+<option value="exp_j3">Modèle : Rappel courtois (J-3)</option>
+<option value="impaye_baridi">Modèle : Relance Impayé avec RIP BaridiMob</option>
+<option value="promo_vip">Modèle : Offre réabonnement FIDELITE (-10%)</option>
+</select>
+<span class="material-symbols-outlined absolute inset-inline-end-2.5 top-1/2 -translate-y-1/2 pointer-events-none text-secondary">expand_more</span>
+</div>
+</div>
+<!-- Phone WhatsApp Frame Mockup -->
+<div class="rounded-xl overflow-hidden shadow-inner bg-[#EFEAE2] flex flex-col">
+<!-- Mockup Top Bar -->
+<div class="bg-[#075E54] text-white px-3 py-2.5 flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-white/80">arrow_back</span>
+<div class="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center text-[12px] font-bold">
+                KB
+              </div>
+<div class="flex flex-col">
+<span class="font-label-strong text-label-strong text-white leading-tight">Karim Benali</span>
+<span class="text-[11px] text-white/80 leading-tight">en ligne</span>
+</div>
+</div>
+<div class="flex items-center gap-3 text-white/90">
+<span class="material-symbols-outlined text-[18px]">videocam</span>
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</div>
+</div>
+<!-- Message Canvas with WhatsApp Chat Bubble -->
+<div class="p-3.5 flex flex-col gap-2 min-h-[260px] bg-[radial-gradient(#d1d7db_1px,transparent_1px)] [background-size:16px_16px]">
+<div class="self-center px-2 py-0.5 rounded-md bg-white/70 shadow-xs text-[11px] text-secondary font-medium">
+              AUJOURD'HUI
+            </div>
+<!-- Outgoing Bubble -->
+<div class="self-end max-w-[94%] bg-[#E7FFDB] rounded-lg rounded-tr-none p-3 shadow-xs text-on-surface text-[13px] leading-relaxed relative flex flex-col gap-2">
+<p>
+                Salam <strong>Karim</strong> ! 🏋️‍♂️<br/>
+                Votre abonnement <strong>Musculation + CrossFit VIP</strong> chez <strong>GymDZ Club Hydra</strong> expire <strong>aujourd'hui (24 Oct 2024)</strong>.
+              </p>
+<p>
+                Pour continuer vos entraînements sans coupure des tourniquets d'accès, vous pouvez régulariser à l'accueil ou directement par <strong>BaridiMob</strong> (RIB : 007 99999 0023412344 55).
+              </p>
+<div class="p-2 rounded bg-white/60 text-[12px] font-medium border-s-2 border-[#16A34A]" dir="rtl">
+                تذكير: اشتراكك ينتهي اليوم! يرجى التجديد عبر شباك الاستقبال أو بريدي موب لمواصلة تمارينك الرياضية.
+              </div>
+<p class="font-medium">
+                À très vite sur le plateau ! 💪
+              </p>
+<!-- Timestamp & Double ticks -->
+<div class="flex items-center justify-end gap-1 text-[10px] text-secondary/80 self-end -mt-1">
+<span>10:02</span>
+<span class="material-symbols-outlined text-[14px] text-[#53BDEB]">done_all</span>
+</div>
+</div>
+</div>
+<!-- Mockup Bottom Bar -->
+<div class="p-2 bg-[#F0F2F5] flex items-center gap-2 text-secondary">
+<span class="material-symbols-outlined text-[20px]">mood</span>
+<div class="flex-1 h-8 bg-white rounded-full px-3 text-[12px] flex items-center text-secondary/60">
+              Message WhatsApp...
+            </div>
+<span class="material-symbols-outlined text-[20px]">mic</span>
+</div>
+</div>
+<!-- Customization Toggles -->
+<div class="flex flex-col gap-2 pt-1">
+<label class="flex items-center gap-space-sm p-2 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary-container focus:ring-primary-container" type="checkbox"/>
+<span class="font-caption text-caption text-on-surface">Inclure le lien / RIP de paiement <strong>BaridiMob</strong></span>
+</label>
+<label class="flex items-center gap-space-sm p-2 rounded-lg hover:bg-surface-container-low cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary-container focus:ring-primary-container" type="checkbox"/>
+<span class="font-caption text-caption text-on-surface">Joindre le tarif de réabonnement VIP (18 000 DA / Trimestre)</span>
+</label>
+</div>
+<!-- Relance Action Buttons -->
+<div class="flex flex-col gap-space-xs pt-2">
+<button class="w-full h-12 rounded-xl bg-[#16A34A] hover:bg-[#15803D] active:bg-[#166534] text-white font-label-strong text-label-strong shadow-md shadow-[#16A34A]/30 flex items-center justify-center gap-space-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[22px]">send</span>
+<span>Envoyer via WhatsApp Web / App</span>
+</button>
+<button class="w-full h-10 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-strong text-label-strong flex items-center justify-center gap-space-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">sms</span>
+<span>Envoyer par SMS (Djezzy / Mobilis / Ooredoo)</span>
+</button>
+</div>
+<!-- Audit History Note -->
+<div class="p-space-sm rounded-lg bg-surface-container-low text-secondary font-caption-small text-caption-small flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-[#16A34A]">verified</span>
+<span>Historique : 1 rappel auto envoyé le 21 Oct à 10:00 (délivré ✓✓)</span>
+</div>
+</div>
+<!-- Quick Tips Card for Reception Staff -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-start gap-space-md">
+<div class="w-8 h-8 rounded-lg bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">lightbulb</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-strong text-label-strong text-on-surface">Conseil Réception GymDZ</span>
+<p class="font-caption text-caption text-secondary mt-0.5">
+            Pour les renouvellements encaissés en espèces à l'accueil, n'oubliez pas de valider la quittance dans <strong>'Payments / Caisse'</strong> pour débloquer le badge d'accès immédiatement.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive selection behavior for member cards
+  document.querySelectorAll('.member-card').forEach(card => {
+    card.addEventListener('click', function() {
+      document.querySelectorAll('.member-card').forEach(c => {
+        c.classList.remove('shadow-md');
+        const bar = c.querySelector('.bg-primary-container');
+        if (bar && !c.classList.contains('active-fixed')) {
+          bar.remove();
+        }
+      });
+      this.classList.add('shadow-md');
+    });
+  });
+</script></main></div></body></html>

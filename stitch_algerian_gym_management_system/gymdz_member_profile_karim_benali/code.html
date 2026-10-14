@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo,+Plus+Jakarta+Sans,+system-ui,+sans-serif:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"surface-container-lowest":"#ffffff","on-tertiary-container":"#003650","on-primary-container":"#582200","on-secondary-container":"#5c647a","tertiary":"#006591","tertiary-fixed":"#c9e6ff","on-error-container":"#93000a","tertiary-fixed-dim":"#89ceff","inverse-surface":"#213145","on-surface-variant":"#584237","surface-dim":"#cbdbf5","on-background":"#0b1c30","primary-container":"#f97316","surface-container-low":"#eff4ff","primary":"#9d4300","error-container":"#ffdad6","primary-fixed":"#ffdbca","secondary-container":"#dae2fd","inverse-primary":"#ffb690","on-secondary-fixed-variant":"#3f465c","on-secondary-fixed":"#131b2e","error":"#ba1a1a","surface-variant":"#d3e4fe","primary-fixed-dim":"#ffb690","surface-container":"#e5eeff","on-tertiary-fixed-variant":"#004c6e","on-tertiary":"#ffffff","secondary":"#565e74","on-primary-fixed-variant":"#783200","on-tertiary-fixed":"#001e2f","surface-container-highest":"#d3e4fe","on-primary":"#ffffff","inverse-on-surface":"#eaf1ff","surface-tint":"#9d4300","outline-variant":"#e0c0b1","background":"#f8f9ff","on-primary-fixed":"#341100","tertiary-container":"#09a4e8","secondary-fixed":"#dae2fd","on-surface":"#0b1c30","outline":"#8c7164","on-secondary":"#ffffff","on-error":"#ffffff","secondary-fixed-dim":"#bec6e0","surface":"#f8f9ff","surface-bright":"#f8f9ff","surface-container-high":"#dce9ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-desktop":"2rem","space-xs":"0.25rem","gutter":"1rem","gutter-desktop":"1.5rem","space-xl":"2rem","margin":"1rem","space-md":"1rem","space-sm":"0.5rem","space-lg":"1.5rem"},"fontFamily":{"display":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"heading-1":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"body-regular":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"body-medium":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"caption":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"caption-small":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"heading-2":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"label-strong":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"heading-3":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""],"display-mobile":["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""]},"fontSize":{"display":["32px",{"lineHeight":"36px","fontWeight":"700"}],"heading-1":["24px",{"lineHeight":"28px","fontWeight":"700"}],"body-regular":["15px",{"lineHeight":"20px","fontWeight":"400"}],"body-medium":["15px",{"lineHeight":"20px","fontWeight":"500"}],"caption":["13px",{"lineHeight":"16px","fontWeight":"500"}],"caption-small":["11px",{"lineHeight":"14px","fontWeight":"500"}],"heading-2":["20px",{"lineHeight":"24px","fontWeight":"600"}],"label-strong":["14px",{"lineHeight":"18px","fontWeight":"600"}],"heading-3":["17px",{"lineHeight":"22px","fontWeight":"600"}],"display-mobile":["26px",{"lineHeight":"32px","fontWeight":"700"}]}}}};</script></head><body class="bg-background font-body-regular text-body-regular text-on-surface antialiased min-h-screen"><aside class="fixed inset-y-0 start-0 z-50 w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[24px]">fitness_center</span></div><div class="flex flex-col"><span class="font-heading-2 text-heading-2 text-on-surface tracking-tight leading-none">GymDZ</span><span class="font-caption-small text-caption-small text-on-surface-variant">Fitness & Club OS</span></div></div><div class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed text-caption-small font-label-strong">DZ</div></div><nav class="px-space-md py-space-md flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary font-body-medium shadow-sm"><a class="flex items-center gap-space-md px-space-md py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="overview" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-body-medium text-body-medium">Overview</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-3 rounded-lg transition-all bg-primary-container text-on-primary font-body-medium shadow-sm" data-path="members" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-body-medium text-body-medium">Members</span></a><a class="flex items-center gap-space-md px-space-md py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="payments-caisse" href="#"><span class="material-symbols-outlined text-[20px]">point_of_sale</span><span class="font-body-medium text-body-medium">Payments / Caisse</span></a><a class="flex items-center gap-space-md px-space-md py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="subscriptions" href="#"><span class="material-symbols-outlined text-[20px]">card_membership</span><span class="font-body-medium text-body-medium">Subscriptions</span></a><a class="flex items-center gap-space-md px-space-md py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="alerts" href="#"><span class="material-symbols-outlined text-[20px]">notifications_active</span><span class="font-body-medium text-body-medium">Alerts</span></a><a class="flex items-center gap-space-md px-space-md py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span class="font-body-medium text-body-medium">Settings</span></a></nav></div><div class="p-space-md"><div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-2.5 h-2.5 rounded-full bg-tertiary-container animate-pulse"></div><div class="flex flex-col"><span class="font-caption text-caption text-on-surface font-semibold">Alger Centre</span><span class="font-caption-small text-caption-small text-on-surface-variant">Club Principal</span></div></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">storefront</span></div></div></aside><div class="ps-64"><header class="fixed top-0 inset-inline-end-0 start-64 h-16 z-40 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-space-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex-1 max-w-lg"><div class="relative flex items-center w-full"><span class="material-symbols-outlined absolute start-3 text-on-surface-variant text-[20px] pointer-events-none">search</span><input class="w-full h-10 ps-10 pe-space-md bg-surface-container-low rounded-lg font-body-regular text-body-regular text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" placeholder="Rechercher par code-barres, tél, nom..." type="search"/></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span><span class="font-caption text-caption font-medium">Online / Synced</span></div><button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="font-caption text-caption font-semibold">FR</span><span class="text-on-surface-variant font-caption text-caption">/</span><span class="font-caption text-caption font-semibold text-on-surface-variant">عربي</span></button><button aria-label="Notifications" class="relative w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 end-2 w-2 h-2 rounded-full bg-primary-container"></span></button><div class="flex items-center gap-space-sm ps-2"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-start"><span class="font-label-strong text-label-strong text-on-surface leading-tight">Karim B.</span><span class="font-caption-small text-caption-small text-on-surface-variant">Admin</span></div></div></div></header><main class="relative pt-16 w-full min-h-screen bg-background"><div class="flex flex-col w-full">
+<div class="px-space-md sm:px-space-gutter-desktop py-space-lg space-y-space-lg max-w-7xl mx-auto w-full">
+<!-- Top Breadcrumb & Metadata Navigation Bar -->
+<nav aria-label="Fil d'Ariane" class="flex flex-wrap items-center justify-between gap-y-2">
+<ol class="flex items-center gap-space-xs text-on-surface-variant font-caption text-caption">
+<li>
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">group</span>
+<span>Membres</span>
+</a>
+</li>
+<li class="flex items-center text-on-surface-variant/40">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</li>
+<li class="font-body-medium text-body-medium text-on-surface flex items-center gap-1.5">
+<span>Karim Benali</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-secondary-fixed text-caption-small font-label-strong tracking-wide">#DZ-8942</span>
+</li>
+</ol>
+<div class="flex items-center gap-2">
+<span class="text-caption-small font-body-medium text-on-surface-variant bg-surface-container-lowest px-2.5 py-1 rounded-full shadow-sm">Dernier passage: Aujourd'hui à 17:42</span>
+<button class="p-1.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all shadow-sm" title="Imprimer fiche adhérent" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+</button>
+</div>
+</nav>
+<!-- Hero / Profile Main Header Card -->
+<div class="relative bg-surface-container-lowest rounded-xl shadow-sm p-space-md sm:p-space-lg overflow-hidden">
+<!-- Ambient subtle background glow -->
+<div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-primary-container/10 blur-3xl pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg relative z-10">
+<!-- Identity Group -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-space-md">
+<div class="relative flex-shrink-0">
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-primary to-primary-container p-1 shadow-md">
+<div class="w-full h-full rounded-full bg-surface-container-lowest flex items-center justify-center">
+<span class="font-display text-display text-primary font-bold">KB</span>
+</div>
+</div>
+<div class="absolute bottom-0 end-0 w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary flex items-center justify-center shadow-sm" title="Badge RFID Actif">
+<span class="material-symbols-outlined text-[14px]">nfc</span>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-heading-1 text-heading-1 text-on-surface tracking-tight">Karim Benali</h1>
+<span class="font-body-medium text-body-medium text-on-surface-variant font-medium text-base font-arabic" dir="rtl">(كريم بن علي)</span>
+<!-- Status Pill with pulsing green -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-label-strong text-caption">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
+</span>
+<span>Actif</span>
+</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-on-surface-variant font-caption text-caption">
+<span class="flex items-center gap-1 text-on-surface font-label-strong">
+<span class="material-symbols-outlined text-[16px] text-primary">badge</span>
+                #DZ-8942
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">location_on</span>
+                Alger (Hydra)
+              </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                Adhérent depuis Mars 2023
+              </span>
+</div>
+<!-- Barcode info bar -->
+<div class="pt-1 flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-caption-small text-caption-small font-label-strong px-2 py-0.5 rounded bg-surface-container-low text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">barcode_scanner</span>
+                Code-barres: 61314589201
+              </span>
+<button class="text-caption-small font-label-strong text-primary hover:underline flex items-center gap-0.5" type="button">
+<span class="material-symbols-outlined text-[12px]">qr_code</span>
+                Voir QR Pass
+              </button>
+</div>
+</div>
+</div>
+<!-- Contact & Direct Interaction Buttons -->
+<div class="flex flex-col sm:flex-row lg:flex-col items-start lg:items-end gap-space-sm w-full lg:w-auto">
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-2 rounded-xl w-full sm:w-auto justify-between sm:justify-start">
+<span class="material-symbols-outlined text-[18px] text-primary">call</span>
+<span class="font-label-strong text-label-strong text-on-surface tracking-wider">0555 12 34 56</span>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary transition-colors ms-2" onclick="navigator.clipboard.writeText('0555123456')" title="Copier le numéro" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto">
+<a class="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-strong text-caption" href="tel:0555123456">
+<span class="material-symbols-outlined text-[16px]">phone_in_talk</span>
+<span>Appeler</span>
+</a>
+<a class="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition-colors font-label-strong text-caption shadow-sm" href="https://wa.me/213555123456" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+<span>WhatsApp</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Action Buttons Row -->
+<div class="mt-space-lg pt-space-md border-t border-surface-container flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex flex-wrap items-center gap-2 w-full sm:w-auto">
+<!-- Renew Button -->
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary-container text-on-primary font-label-strong text-label-strong hover:bg-primary transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">autorenew</span>
+<span>Renouveler</span>
+</button>
+<!-- Freeze Button -->
+<button class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-lg bg-secondary-container text-on-secondary-fixed font-label-strong text-caption hover:bg-secondary-fixed-dim transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">ac_unit</span>
+<span>Geler l'abonnement</span>
+</button>
+<!-- Extend Button -->
+<button class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-label-strong text-caption hover:bg-surface-container-high transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">more_time</span>
+<span>Prolonger</span>
+</button>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-auto">
+<button class="inline-flex items-center gap-1.5 px-3 py-2.5 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all font-label-strong text-caption shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Modifier profil</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MAIN TWO COLUMN WORKSPACE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN: Subscription & Balance (5 cols) -->
+<div class="lg:col-span-5 space-y-space-lg">
+<!-- 1. Current Subscription Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md sm:p-space-lg space-y-space-md relative overflow-hidden">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-caption-small font-label-strong">Pass Illimité</span>
+<span class="text-caption-small font-label-strong text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">Actif</span>
+</div>
+<h2 class="font-heading-2 text-heading-2 text-on-surface pt-1">Musculation + CrossFit VIP</h2>
+<p class="font-caption text-caption text-on-surface-variant">Formule Annuelle Multisalles</p>
+</div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary-container flex-shrink-0">
+<span class="material-symbols-outlined text-[28px]">sports_gymnastics</span>
+</div>
+</div>
+<!-- Validity Timeline & Expiring Alert -->
+<div class="space-y-2 pt-1">
+<div class="flex justify-between items-center text-caption font-body-medium">
+<span class="text-on-surface-variant">Début: <strong class="text-on-surface">01 Nov 2023</strong></span>
+<span class="text-on-surface-variant">Fin: <strong class="text-on-surface">31 Oct 2024</strong></span>
+</div>
+<!-- Progress Track -->
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 98%;"></div>
+</div>
+<!-- Urgent Countdown Notice -->
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-amber-50 text-amber-900">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-amber-600 animate-pulse">schedule</span>
+<span class="font-label-strong text-caption">Expire bientôt</span>
+</div>
+<span class="font-label-strong text-caption text-amber-700">7 jours restants (358/365j)</span>
+</div>
+</div>
+<!-- Coaching Pack Widget -->
+<div class="p-3 rounded-lg bg-surface-container-low space-y-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary">sports_score</span>
+<span class="font-label-strong text-caption text-on-surface">Pack Coaching Privé</span>
+</div>
+<span class="font-label-strong text-caption text-primary">8 / 12 séances</span>
+</div>
+<!-- Session Visual Dots -->
+<div class="flex items-center gap-1.5 flex-wrap pt-1">
+<!-- Completed 8 -->
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container" title="Séance 1 (Faite)"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container" title="Séance 2 (Faite)"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container" title="Séance 3 (Faite)"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container" title="Séance 4 (Faite)"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container" title="Séance 5 (Faite)"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container" title="Séance 6 (Faite)"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container" title="Séance 7 (Faite)"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container" title="Séance 8 (Faite)"></span>
+<!-- Remaining 4 -->
+<span class="w-3.5 h-3.5 rounded-full bg-surface-container-highest" title="Séance 9 (Restante)"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-surface-container-highest" title="Séance 10 (Restante)"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-surface-container-highest" title="Séance 11 (Restante)"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-surface-container-highest" title="Séance 12 (Restante)"></span>
+</div>
+</div>
+<!-- Badges / Access Points -->
+<div class="flex flex-col gap-1.5 text-caption-small text-on-surface-variant pt-1 border-t border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>Accès 7j/7 • Créneau 06h00 - 23h00</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary">store</span>
+<span>Salle principale El Mordjane (Hydra) + Club Alger Centre</span>
+</div>
+</div>
+</div>
+<!-- 2. Balance & Financial State Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md sm:p-space-lg space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+</div>
+<h2 class="font-heading-2 text-heading-2 text-on-surface">Solde & Caisse</h2>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-amber-100 text-amber-900 font-label-strong text-caption-small flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+              Solde Débiteur
+            </span>
+</div>
+<!-- Financial Breakdown Matrix -->
+<div class="grid grid-cols-3 gap-2 p-3 bg-surface-container-low rounded-xl text-center">
+<div class="space-y-0.5">
+<span class="font-caption-small text-caption-small text-on-surface-variant block">Prix Total</span>
+<span class="font-heading-3 text-heading-3 text-on-surface block">45 000 <span class="text-caption-small">DA</span></span>
+</div>
+<div class="space-y-0.5">
+<span class="font-caption-small text-caption-small text-emerald-700 block">Déjà Payé</span>
+<span class="font-heading-3 text-heading-3 text-emerald-700 block">30 000 <span class="text-caption-small">DA</span></span>
+</div>
+<div class="space-y-0.5">
+<span class="font-caption-small text-caption-small text-amber-800 font-semibold block">Reste Dû</span>
+<span class="font-heading-3 text-heading-3 text-amber-700 font-bold block">15 000 <span class="text-caption-small">DA</span></span>
+</div>
+</div>
+<!-- Notice banner -->
+<div class="p-3 rounded-lg bg-surface-container flex items-start gap-2.5">
+<span class="material-symbols-outlined text-amber-700 text-[20px] flex-shrink-0 mt-0.5">pending_actions</span>
+<div class="space-y-0.5 text-caption">
+<p class="font-label-strong text-on-surface">Paiement échelonné</p>
+<p class="text-on-surface-variant text-caption-small">2ème tranche (15 000 DA) en attente d'encaissement.</p>
+</div>
+</div>
+<!-- Action Button: Enregistrer un paiement -->
+<button class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-primary-container text-on-primary font-label-strong text-body-medium hover:bg-primary transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+<span>Enregistrer un paiement</span>
+</button>
+<div class="pt-1 flex items-center justify-center gap-3 text-caption-small text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_atm</span>
+              Espèces
+            </span>
+<span>•</span>
+<span class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[14px]">smartphone</span>
+              BaridiMob
+            </span>
+<span>•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">receipt_long</span>
+              Virement CCP
+            </span>
+</div>
+</div>
+<!-- Mini Quick Insight: Attendance Rhythm Visual SVG -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-strong text-caption text-on-surface">Fréquence des 30 derniers jours</span>
+<span class="text-caption-small font-label-strong text-tertiary">19 séances</span>
+</div>
+<!-- Sparkline attendance bars -->
+<div class="h-12 w-full flex items-end gap-1.5 pt-2">
+<div class="flex-1 bg-surface-container h-[40%] rounded-t-sm" title="Semaine 1"></div>
+<div class="flex-1 bg-primary-container h-[90%] rounded-t-sm" title="Semaine 2"></div>
+<div class="flex-1 bg-primary-container h-[75%] rounded-t-sm" title="Semaine 3"></div>
+<div class="flex-1 bg-surface-container h-[30%] rounded-t-sm" title="Semaine 4"></div>
+<div class="flex-1 bg-primary-container h-[100%] rounded-t-sm" title="Cette semaine"></div>
+<div class="flex-1 bg-tertiary-container h-[60%] rounded-t-sm" title="Projection"></div>
+</div>
+<div class="flex justify-between text-caption-small text-on-surface-variant pt-1">
+<span>Début du mois</span>
+<span>Pic de présence: 18h - 20h</span>
+<span>Aujourd'hui</span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Tabs, Rich Financial Ledger & History (7 cols) -->
+<div class="lg:col-span-7 space-y-space-md">
+<!-- Tabbed Container -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<!-- Tab Navigation Bar -->
+<div class="flex items-center border-b border-surface-container px-space-md overflow-x-auto scrollbar-none gap-2">
+<button class="flex items-center gap-2 py-4 px-3 border-b-2 border-primary-container text-primary font-label-strong text-body-medium whitespace-nowrap" type="button">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Paiements</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-caption-small font-bold">3</span>
+</button>
+<button class="flex items-center gap-2 py-4 px-3 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface font-body-medium text-body-medium whitespace-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>Historique Abonnements</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-secondary-fixed text-caption-small">4</span>
+</button>
+<button class="flex items-center gap-2 py-4 px-3 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface font-body-medium text-body-medium whitespace-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">mark_chat_unread</span>
+<span>Messages envoyés</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-secondary-fixed text-caption-small">5</span>
+</button>
+<button class="flex items-center gap-2 py-4 px-3 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface font-body-medium text-body-medium whitespace-nowrap transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">manage_history</span>
+<span>Journal d'activité</span>
+</button>
+</div>
+<!-- TAB 1: Paiements Content (Rich Ledger) -->
+<div class="p-space-md sm:p-space-lg space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h3 class="font-heading-3 text-heading-3 text-on-surface">Historique des transactions</h3>
+<p class="font-caption text-caption text-on-surface-variant">Reçus fiscaux et encaissements enregistrés</p>
+</div>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-strong text-caption transition-colors self-start sm:self-auto" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Exporter (.PDF / .CSV)</span>
+</button>
+</div>
+<!-- Transaction Items -->
+<div class="space-y-3">
+<!-- Transaction 1 (BaridiMob) -->
+<div class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">phone_android</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-label-strong text-label-strong text-on-surface">15 000 DA</span>
+<span class="px-2 py-0.2 rounded bg-emerald-100 text-emerald-800 text-caption-small font-semibold">Validé</span>
+</div>
+<p class="text-caption text-on-surface-variant">BaridiMob • Réf: <span class="font-mono text-on-surface font-medium">BM-994821</span></p>
+<p class="text-caption-small text-on-surface-variant">15 Oct 2024 à 14:22 • Encaissé par: <strong>Redha (Gérant)</strong></p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-strong text-caption-small hover:bg-surface-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[14px] text-primary">download</span>
+<span>Reçu PDF</span>
+</button>
+</div>
+</div>
+<!-- Transaction 2 (Cash / Caisse) -->
+<div class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container text-on-surface flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-label-strong text-label-strong text-on-surface">15 000 DA</span>
+<span class="px-2 py-0.2 rounded bg-emerald-100 text-emerald-800 text-caption-small font-semibold">Validé</span>
+</div>
+<p class="text-caption text-on-surface-variant">Espèces (Caisse Guichet) • Reçu #CS-2023-1102</p>
+<p class="text-caption-small text-on-surface-variant">01 Nov 2023 à 10:15 • Encaissé par: <strong>Redha (Gérant)</strong></p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-strong text-caption-small hover:bg-surface-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[14px] text-primary">download</span>
+<span>Reçu PDF</span>
+</button>
+</div>
+</div>
+<!-- Transaction 3 (Virement CCP) -->
+<div class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-label-strong text-label-strong text-on-surface">40 000 DA</span>
+<span class="px-2 py-0.2 rounded bg-surface-container text-secondary text-caption-small font-semibold">Archivé (Année 2022)</span>
+</div>
+<p class="text-caption text-on-surface-variant">Virement CCP / Mandat Postale</p>
+<p class="text-caption-small text-on-surface-variant">01 Nov 2022 à 11:40 • Encaissé par: <strong>Amine (Admin)</strong></p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<button class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg bg-surface-container-lowest text-on-surface font-label-strong text-caption-small hover:bg-surface-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[14px]">visibility</span>
+<span>Consulter</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECONDARY PREVIEW TILES (History, Communication & Access Log) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Subscriptions History Summary -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-heading-3 text-heading-3 text-on-surface">Parcours Abonnements</span>
+<span class="text-caption-small font-label-strong text-primary hover:underline cursor-pointer">Tout voir</span>
+</div>
+<div class="space-y-2.5 text-caption">
+<!-- Item 1 -->
+<div class="flex items-center justify-between pb-2 border-b border-surface-container">
+<div>
+<p class="font-label-strong text-on-surface">Musculation VIP (Annuel)</p>
+<p class="text-caption-small text-on-surface-variant">01 Nov 2023 - 31 Oct 2024</p>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-label-strong text-caption-small">Actif</span>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center justify-between pb-2 border-b border-surface-container">
+<div>
+<p class="font-label-strong text-on-surface">Forfait 6 Mois Standard</p>
+<p class="text-caption-small text-on-surface-variant">01 Mai 2023 - 31 Oct 2023</p>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-secondary-fixed text-caption-small">Terminé</span>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between">
+<div>
+<p class="font-label-strong text-on-surface">Pack Découverte 1 Mois</p>
+<p class="text-caption-small text-on-surface-variant">Mars 2023</p>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-secondary-fixed text-caption-small">Terminé</span>
+</div>
+</div>
+</div>
+<!-- Sent Messages & Automated Notifications -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-heading-3 text-heading-3 text-on-surface">Derniers Messages</span>
+<button class="text-caption-small font-label-strong text-primary hover:underline flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">send</span>
+                Nouveau SMS
+              </button>
+</div>
+<div class="space-y-2.5">
+<!-- WhatsApp Reminder -->
+<div class="p-2.5 rounded-lg bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1 text-caption-small font-label-strong text-emerald-700">
+<span class="material-symbols-outlined text-[14px]">chat</span>
+                    WhatsApp • Hier 14:30
+                  </span>
+<span class="text-caption-small text-emerald-600 font-semibold" title="Délivré et lu">Délivré ✓✓</span>
+</div>
+<p class="text-caption-small text-on-surface leading-snug">"Rappel: Votre abonnement GymDZ expire dans 7 jours. Renouvelez dès maintenant pour conserver vos avantages VIP."</p>
+</div>
+<!-- SMS Payment Receipt -->
+<div class="p-2.5 rounded-lg bg-surface-container-low space-y-1">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1 text-caption-small font-label-strong text-on-surface">
+<span class="material-symbols-outlined text-[14px]">sms</span>
+                    SMS • 15 Oct 14:23
+                  </span>
+<span class="text-caption-small text-on-surface-variant font-medium">Envoyé ✓</span>
+</div>
+<p class="text-caption-small text-on-surface leading-snug">"Reçu de paiement 15 000 DA bien enregistré pour BaridiMob BM-994821. Merci pour votre fidélité !"</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Recent Real-time Badge Check-in Journal -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">sensor_door</span>
+<h3 class="font-heading-3 text-heading-3 text-on-surface">Derniers Passages Portique (Scanner)</h3>
+</div>
+<span class="text-caption-small text-on-surface-variant">Synchro en direct</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1">
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-[20px]">check_circle</span>
+<div class="space-y-0.5">
+<span class="font-label-strong text-caption text-on-surface block leading-none">Aujourd'hui, 17:42</span>
+<span class="font-caption-small text-caption-small text-on-surface-variant block">Tourniquet Principal #1</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center gap-2.5">
+<span class="material-symbols-outlined text-emerald-600 text-[20px]">check_circle</span>
+<div class="space-y-0.5">
+<span class="font-label-strong text-caption text-on-surface block leading-none">Hier, 18:15</span>
+<span class="font-caption-small text-caption-small text-on-surface-variant block">Tourniquet Principal #1</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[20px]">edit_note</span>
+<div class="space-y-0.5">
+<span class="font-label-strong text-caption text-on-surface block leading-none">05 Sep, 11:20</span>
+<span class="font-caption-small text-caption-small text-on-surface-variant block">Modif. profil (Redha)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

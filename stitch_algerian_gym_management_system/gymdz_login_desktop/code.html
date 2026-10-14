@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><title>GymDZ Authentication</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-lowest": "#ffffff", "tertiary-container": "#09a4e8", "tertiary-fixed": "#c9e6ff", "surface-container": "#e5eeff", "on-tertiary-fixed-variant": "#004c6e", "error-container": "#ffdad6", "secondary-fixed": "#dae2fd", "secondary-container": "#dae2fd", "error": "#ba1a1a", "surface-container-low": "#eff4ff", "surface-dim": "#cbdbf5", "surface-container-high": "#dce9ff", "on-tertiary-container": "#003650", "on-secondary": "#ffffff", "on-primary": "#ffffff", "background": "#f8f9ff", "tertiary": "#006591", "outline-variant": "#e0c0b1", "on-secondary-container": "#5c647a", "on-background": "#0b1c30", "on-error": "#ffffff", "outline": "#8c7164", "on-primary-container": "#582200", "primary-container": "#f97316", "primary-fixed": "#ffdbca", "surface-bright": "#f8f9ff", "surface-variant": "#d3e4fe", "secondary-fixed-dim": "#bec6e0", "primary": "#9d4300", "on-tertiary": "#ffffff", "on-secondary-fixed": "#131b2e", "on-error-container": "#93000a", "secondary": "#565e74", "on-surface": "#0b1c30", "on-secondary-fixed-variant": "#3f465c", "surface-container-highest": "#d3e4fe", "surface-tint": "#9d4300", "on-tertiary-fixed": "#001e2f", "inverse-primary": "#ffb690", "inverse-on-surface": "#eaf1ff", "primary-fixed-dim": "#ffb690", "inverse-surface": "#213145", "on-primary-fixed": "#341100", "tertiary-fixed-dim": "#89ceff", "surface": "#f8f9ff", "on-primary-fixed-variant": "#783200", "on-surface-variant": "#584237" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-desktop": "2rem", "gutter": "1rem", "space-sm": "0.5rem", "space-xl": "2rem", "margin": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "space-md": "1rem", "gutter-desktop": "1.5rem" }, "fontFamily": { "label-strong": [ "\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\"" ], "heading-3": [ "\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\"" ], "heading-1": [ "\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\"" ], "caption-small": [ "\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\"" ], "display-mobile": [ "\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\"" ], "display": [ "\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\"" ], "body-medium": [ "\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\"" ], "body-regular": [ "\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\"" ], "caption": [ "\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\"" ], "heading-2": [ "\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\"" ] }, "fontSize": { "label-strong": [ "14px", { "lineHeight": "18px", "fontWeight": "600" } ], "heading-3": [ "17px", { "lineHeight": "22px", "fontWeight": "600" } ], "heading-1": [ "24px", { "lineHeight": "28px", "fontWeight": "700" } ], "caption-small": [ "11px", { "lineHeight": "14px", "fontWeight": "500" } ], "display-mobile": [ "26px", { "lineHeight": "32px", "fontWeight": "700" } ], "display": [ "32px", { "lineHeight": "36px", "fontWeight": "700" } ], "body-medium": [ "15px", { "lineHeight": "20px", "fontWeight": "500" } ], "body-regular": [ "15px", { "lineHeight": "20px", "fontWeight": "400" } ], "caption": [ "13px", { "lineHeight": "16px", "fontWeight": "500" } ], "heading-2": [ "20px", { "lineHeight": "24px", "fontWeight": "600" } ] } } } };</script></head><body class="bg-surface font-body-regular text-on-surface min-h-screen flex flex-col justify-between selection:bg-primary-container selection:text-on-primary-container"><header class="w-full py-space-md px-margin lg:px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-xl bg-primary-container flex items-center justify-center shadow-[0_2px_8px_rgba(249,115,22,0.3)]"><span class="material-symbols-outlined text-on-primary text-[22px]">fitness_center</span></div><div class="flex flex-col"><span class="font-heading-2 text-heading-2 text-on-surface leading-none tracking-tight">GymDZ</span><span class="font-caption-small text-caption-small text-on-surface-variant">إدارة القاعات الرياضية</span></div></div><div class="flex items-center gap-space-xs bg-surface-container-low p-space-xs rounded-full shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><button class="px-space-md py-space-xs rounded-full font-label-strong text-label-strong transition-all duration-200 bg-surface-container-lowest text-on-surface shadow-[0_1px_3px_rgba(15,23,42,0.05)]" onclick="document.documentElement.dir='rtl';document.documentElement.lang='ar';" type="button">العربية</button><button class="px-space-md py-space-xs rounded-full font-label-strong text-label-strong transition-all duration-200 text-on-surface-variant hover:text-on-surface" onclick="document.documentElement.dir='ltr';document.documentElement.lang='fr';" type="button">Français</button></div></header><main class="flex-1 flex flex-col items-center justify-center px-margin py-space-md lg:py-space-xl"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto my-auto py-space-md">
+<div class="w-full bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 min-h-[640px]">
+<!-- Left Side: Authentication Form -->
+<section class="lg:col-span-5 p-space-lg lg:p-space-xl flex flex-col justify-between bg-surface-container-lowest">
+<!-- Header & Language Switcher -->
+<div>
+<div class="flex items-center justify-between pb-space-lg">
+<!-- Brand Logo -->
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-on-primary text-[24px]">fitness_center</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center">
+<span class="font-heading-1 text-heading-1 text-on-surface tracking-tight leading-none">Gym</span>
+<span class="font-heading-1 text-heading-1 text-primary-container tracking-tight leading-none">DZ</span>
+</div>
+<span class="font-caption-small text-caption-small text-on-surface-variant font-medium">Espace Gestionnaire</span>
+</div>
+</div>
+<!-- Language Switcher Pill -->
+<div class="inline-flex items-center bg-surface-container-low p-space-xs rounded-full">
+<button class="px-space-md py-space-xs rounded-full font-label-strong text-caption text-on-surface-variant hover:text-on-surface transition-all duration-200" id="btn-ar" onclick="setAppLanguage('ar')" type="button">
+                العربية
+              </button>
+<button class="px-space-md py-space-xs rounded-full font-label-strong text-caption bg-surface-container-lowest text-on-surface shadow-sm transition-all duration-200" id="btn-fr" onclick="setAppLanguage('fr')" type="button">
+                Français
+              </button>
+</div>
+</div>
+<!-- Title Block -->
+<div class="pt-space-md pb-space-lg">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs bg-primary-fixed text-on-primary-fixed rounded-full mb-space-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+<span class="font-caption-small text-caption-small font-semibold" id="txt-badge">Portail Sécurisé DZ-Cloud</span>
+</div>
+<h1 class="font-display text-display text-on-surface" id="txt-title">Content de vous revoir</h1>
+<p class="font-body-regular text-body-regular text-on-surface-variant mt-space-xs" id="txt-subtitle">
+              Gérez vos adhérents, abonnements et caisse en toute simplicité.
+            </p>
+</div>
+<!-- Form Area -->
+<form class="space-y-space-md" id="login-form" onsubmit="handleLoginSubmit(event)">
+<!-- Identifier Field -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-strong text-label-strong text-on-surface flex items-center justify-between" for="username" id="lbl-identifier">
+<span>Numéro de téléphone ou email</span>
+<span class="font-caption-small text-caption-small text-on-surface-variant">05 / 06 / 07 / Email</span>
+</label>
+<div class="relative flex items-center">
+<span class="absolute start-4 text-on-surface-variant flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</span>
+<input autocomplete="username" class="w-full h-12 ps-12 pe-space-md bg-surface-container-low focus:bg-surface-container-lowest text-on-surface rounded-lg font-body-regular text-body-regular outline-none focus:ring-2 focus:ring-primary-container transition-all placeholder:text-on-surface-variant/60 shadow-sm" id="username" name="username" placeholder="0550 12 34 56 ou contact@gymdz.com" required="" type="text"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-strong text-label-strong text-on-surface" for="password" id="lbl-password">
+                Mot de passe
+              </label>
+<div class="relative flex items-center">
+<span class="absolute start-4 text-on-surface-variant flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</span>
+<input autocomplete="current-password" class="w-full h-12 ps-12 pe-12 bg-surface-container-low focus:bg-surface-container-lowest text-on-surface rounded-lg font-body-regular text-body-regular outline-none focus:ring-2 focus:ring-primary-container transition-all placeholder:text-on-surface-variant/60 shadow-sm" id="password" name="password" placeholder="••••••••••••" required="" type="password"/>
+<button aria-label="Afficher ou masquer le mot de passe" class="absolute end-3 text-on-surface-variant hover:text-on-surface p-space-xs transition-colors rounded-full focus:outline-none focus:ring-2 focus:ring-primary-container" id="password-toggle-btn" onclick="togglePasswordVisibility()" type="button">
+<span class="material-symbols-outlined text-[20px]" id="password-toggle-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Remember & Offline Status Preview -->
+<div class="flex items-center justify-between pt-space-xs">
+<label class="inline-flex items-center gap-space-xs cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-primary-container focus:ring-primary-container cursor-pointer accent-primary-container" type="checkbox"/>
+<span class="font-caption text-caption text-on-surface-variant" id="lbl-remember">Mémoriser cet appareil</span>
+</label>
+<span class="inline-flex items-center gap-1 font-caption-small text-caption-small text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+<span id="txt-offline-ready">Synchro locale active</span>
+</span>
+</div>
+<!-- Submit Button (Athletic Orange) -->
+<button class="w-full h-12 bg-primary-container hover:bg-primary text-on-primary font-label-strong text-label-strong rounded-xl shadow-md hover:shadow-lg flex items-center justify-center gap-space-sm active:scale-[0.99] transition-all duration-200 mt-space-md" id="btn-submit" type="submit">
+<span id="txt-btn-submit">Se connecter</span>
+<span class="material-symbols-outlined text-[20px] rtl:-scale-x-100 transition-transform">arrow_forward</span>
+</button>
+</form>
+<!-- Support Notice (No public signup) -->
+<div class="mt-space-lg p-space-sm bg-surface-container-low rounded-xl text-center">
+<p class="font-caption text-caption text-on-surface-variant" id="txt-help">
+              Mot de passe oublié ? Contactez l'administrateur de votre salle de sport.
+            </p>
+</div>
+</div>
+<!-- Footer Meta -->
+<div class="pt-space-lg flex items-center justify-between text-on-surface-variant font-caption-small text-caption-small">
+<span>GymDZ v2.4 (Build DZ-PWA)</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">sports_martial_arts</span>
+            Algérie Fitness Tech
+          </span>
+</div>
+</section>
+<!-- Right Side: Energetic Algerian Athletic Brand Showcase -->
+<section class="lg:col-span-7 bg-gradient-to-br from-primary via-primary-container to-primary p-space-lg lg:p-space-xl flex flex-col justify-between text-on-primary relative overflow-hidden">
+<!-- Athletic Energy Vector Glows & Grid Pattern -->
+<div class="absolute -top-24 -end-24 w-96 h-96 bg-primary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -start-24 w-96 h-96 bg-primary-container/30 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Subtle Vector Dumbbell Motif in Background -->
+<div class="absolute inset-0 opacity-10 pointer-events-none flex items-center justify-center">
+<svg fill="none" height="480" viewbox="0 0 200 200" width="480" xmlns="http://www.w3.org/2000/svg">
+<circle cx="100" cy="100" r="80" stroke="white" stroke-dasharray="8 8" stroke-width="2"></circle>
+<circle cx="100" cy="100" r="60" stroke="white" stroke-width="1.5"></circle>
+<path d="M40 100H160M70 70V130M130 70V130M55 80V120M145 80V120" stroke="white" stroke-linecap="round" stroke-width="3"></path>
+</svg>
+</div>
+<!-- Showcase Header -->
+<div class="relative z-10">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container-lowest/20 backdrop-blur-md rounded-full shadow-sm mb-space-md">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+<span class="font-caption-small text-caption-small font-semibold tracking-wide uppercase" id="side-tagline">N°1 en Algérie • Mode Hors-Ligne Inclus</span>
+</div>
+<h2 class="font-display text-display font-bold leading-tight max-w-xl" id="side-hero-heading">
+            Le logiciel de gestion pensé pour les salles de sport algériennes.
+          </h2>
+<p class="font-body-regular text-body-regular text-on-primary/90 mt-space-sm max-w-lg" id="side-hero-sub">
+            Suivi des abonnements, contrôle d'accès biométrique et gestion de caisse en Dinars Algériens (DA).
+          </p>
+</div>
+<!-- Realistic Gym Member Live UI Mockup Card -->
+<div class="relative z-10 my-space-lg w-full max-w-xl mx-auto bg-surface-container-lowest/95 backdrop-blur-md text-on-surface rounded-xl shadow-2xl p-space-md transition-transform duration-300 hover:scale-[1.01]">
+<!-- Mockup Header -->
+<div class="flex items-center justify-between pb-space-sm bg-surface-container-low -mx-space-md -mt-space-md px-space-md pt-space-md rounded-t-xl">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="font-heading-3 text-heading-3 font-semibold text-on-surface" id="mock-gym-name">Salle El Mordjane (Alger Centre)</span>
+</div>
+<div class="flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-lowest rounded-full shadow-sm">
+<span class="w-2 h-2 rounded-full bg-[#16A34A]"></span>
+<span class="font-caption-small text-caption-small font-bold text-on-surface">248 Présents</span>
+</div>
+</div>
+<!-- Member List Table / Stacked Items -->
+<div class="divide-y divide-surface-container mt-space-sm space-y-space-xs">
+<!-- Row 1: Karim Benali (Active 1 Year) -->
+<div class="pt-space-xs flex items-center justify-between gap-space-sm hover:bg-surface-container-low/60 p-space-xs rounded-lg transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-label-strong text-caption">
+                  KB
+                </div>
+<div class="truncate">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-strong text-label-strong text-on-surface truncate">Karim Benali</span>
+<span class="px-space-xs py-0.5 rounded-full text-[10px] font-semibold bg-[#DCFCE7] text-[#15803D] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#16A34A]"></span> Actif
+                    </span>
+</div>
+<span class="font-caption-small text-caption-small text-on-surface-variant block">Musculation + Cardio (1 An)</span>
+</div>
+</div>
+<div class="text-end shrink-0">
+<span class="font-label-strong text-label-strong text-on-surface block">35 000 DA</span>
+<span class="font-caption-small text-caption-small text-on-surface-variant">Badge #4092</span>
+</div>
+</div>
+<!-- Row 2: Yacine Meziane (Debt Warning) -->
+<div class="pt-space-xs flex items-center justify-between gap-space-sm hover:bg-surface-container-low/60 p-space-xs rounded-lg transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-label-strong text-caption">
+                  YM
+                </div>
+<div class="truncate">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-strong text-label-strong text-on-surface truncate">Yacine Meziane</span>
+<span class="px-space-xs py-0.5 rounded-full text-[10px] font-semibold bg-[#FEF3C7] text-[#B45309] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#D97706]"></span> Dette (5 000 DA)
+                    </span>
+</div>
+<span class="font-caption-small text-caption-small text-on-surface-variant block">Crossfit 3 Mois</span>
+</div>
+</div>
+<div class="text-end shrink-0">
+<span class="font-label-strong text-label-strong text-[#B45309] block">18 000 DA</span>
+<span class="font-caption-small text-caption-small text-on-surface-variant">Reste 12 jrs</span>
+</div>
+</div>
+<!-- Row 3: Amine Zerrouki (Expired) -->
+<div class="pt-space-xs flex items-center justify-between gap-space-sm hover:bg-surface-container-low/60 p-space-xs rounded-lg transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-error-container flex items-center justify-center text-on-error-container font-label-strong text-caption">
+                  AZ
+                </div>
+<div class="truncate">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-strong text-label-strong text-on-surface truncate">Amine Zerrouki</span>
+<span class="px-space-xs py-0.5 rounded-full text-[10px] font-semibold bg-[#FEE2E2] text-[#B91C1C] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#DC2626]"></span> Expiré
+                    </span>
+</div>
+<span class="font-caption-small text-caption-small text-on-surface-variant block">Kickboxing Soir</span>
+</div>
+</div>
+<div class="text-end shrink-0">
+<button class="px-space-sm py-1 bg-surface-container-high hover:bg-primary-container hover:text-on-primary transition-all rounded-md font-caption-small text-caption-small text-on-surface font-semibold flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span> Renouveler
+                </button>
+</div>
+</div>
+<!-- Row 4: Sofiane Taleb (Frozen / Suspendu) -->
+<div class="pt-space-xs flex items-center justify-between gap-space-sm hover:bg-surface-container-low/60 p-space-xs rounded-lg transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed-variant font-label-strong text-caption">
+                  ST
+                </div>
+<div class="truncate">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-strong text-label-strong text-on-surface truncate">Sofiane Taleb</span>
+<span class="px-space-xs py-0.5 rounded-full text-[10px] font-semibold bg-[#E0F2FE] text-[#0369A1] flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-[#0EA5E9]"></span> Suspendu
+                    </span>
+</div>
+<span class="font-caption-small text-caption-small text-on-surface-variant block">Musculation Libre</span>
+</div>
+</div>
+<div class="text-end shrink-0">
+<span class="font-caption-small text-caption-small text-on-surface-variant block">Reprise le 15 Nov</span>
+<span class="font-caption-small text-caption-small text-tertiary font-semibold">Gel 15 jours</span>
+</div>
+</div>
+</div>
+<!-- Bottom quick metric ribbon -->
+<div class="mt-space-sm pt-space-xs flex items-center justify-between font-caption-small text-caption-small text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-[#16A34A]">point_of_sale</span>
+<span>Caisse du jour: <strong>84 500 DA</strong></span>
+</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-tertiary">qr_code_scanner</span>
+<span>Tourniquet: <strong>En ligne</strong></span>
+</span>
+</div>
+</div>
+<!-- Bottom Feature Highlights -->
+<div class="relative z-10 pt-space-md grid grid-cols-2 sm:grid-cols-3 gap-space-sm">
+<div class="flex items-center gap-space-xs p-space-xs bg-surface-container-lowest/10 rounded-lg backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">cloud_sync</span>
+<div class="flex flex-col">
+<span class="font-label-strong text-caption leading-tight">PWA Hors-Ligne</span>
+<span class="font-caption-small text-[10px] text-on-primary/80">Continuité garantie</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs p-space-xs bg-surface-container-lowest/10 rounded-lg backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">fingerprint</span>
+<div class="flex flex-col">
+<span class="font-label-strong text-caption leading-tight">RFID &amp; Biométrie</span>
+<span class="font-caption-small text-[10px] text-on-primary/80">Contrôle instantané</span>
+</div>
+</div>
+<div class="hidden sm:flex items-center gap-space-xs p-space-xs bg-surface-container-lowest/10 rounded-lg backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">payments</span>
+<div class="flex flex-col">
+<span class="font-label-strong text-caption leading-tight">Caisse en Dinars</span>
+<span class="font-caption-small text-[10px] text-on-primary/80">Reçus et billetterie</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<script>
+  // Bilingual Content Dictionary
+  const i18n = {
+    fr: {
+      dir: 'ltr',
+      badge: 'Portail Sécurisé DZ-Cloud',
+      title: 'Content de vous revoir',
+      subtitle: 'Gérez vos adhérents, abonnements et caisse en toute simplicité.',
+      lblIdentifier: 'Numéro de téléphone ou email',
+      lblPassword: 'Mot de passe',
+      remember: 'Mémoriser cet appareil',
+      offlineReady: 'Synchro locale active',
+      btnSubmit: 'Se connecter',
+      help: "Mot de passe oublié ? Contactez l'administrateur de votre salle de sport.",
+      sideTagline: 'N°1 en Algérie • Mode Hors-Ligne Inclus',
+      sideHeroHeading: 'Le logiciel de gestion pensé pour les salles de sport algériennes.',
+      sideHeroSub: "Suivi des abonnements, contrôle d'accès biométrique et gestion de caisse en Dinars Algériens (DA).",
+      gymName: 'Salle El Mordjane (Alger Centre)'
+    },
+    ar: {
+      dir: 'rtl',
+      badge: 'بوابة إلكترونية آمنة DZ-Cloud',
+      title: 'مرحباً بك مجدداً',
+      subtitle: 'إدارة شاملة للاشتراكات، الحضور، وصندوق القاعة بكل سهولة ودقة.',
+      lblIdentifier: 'رقم الهاتف أو البريد الإلكتروني',
+      lblPassword: 'كلمة المرور',
+      remember: 'تذكر هذا الجهاز',
+      offlineReady: 'المزامنة المحلية مفعلة',
+      btnSubmit: 'تسجيل الدخول',
+      help: 'نسيت كلمة المرور؟ يرجى التواصل مع المدير المسؤول عن القاعة الرياضية.',
+      sideTagline: 'الرقم 1 في الجزائر • يدعم العمل بدون إنترنت',
+      sideHeroHeading: 'النظام السحابي الاحترافي المخصص للقاعات الرياضية في الجزائر.',
+      sideHeroSub: 'متابعة المشتركين، أجهزة البصمة وبطاقات RFID، وإدارة الصندوق المالي بالدينار الجزائري (دج).',
+      gymName: 'قاعة المرجان للرياضة (الجزائر العاصمة)'
+    }
+  };
+
+  let currentLang = 'fr';
+
+  function setAppLanguage(lang) {
+    currentLang = lang;
+    const data = i18n[lang];
+    
+    // Update Document HTML Direction
+    document.documentElement.dir = data.dir;
+    document.documentElement.lang = lang;
+
+    // Toggle button styles
+    const btnFr = document.getElementById('btn-fr');
+    const btnAr = document.getElementById('btn-ar');
+    
+    if (lang === 'fr') {
+      btnFr.className = "px-space-md py-space-xs rounded-full font-label-strong text-caption bg-surface-container-lowest text-on-surface shadow-sm transition-all duration-200";
+      btnAr.className = "px-space-md py-space-xs rounded-full font-label-strong text-caption text-on-surface-variant hover:text-on-surface transition-all duration-200";
+    } else {
+      btnAr.className = "px-space-md py-space-xs rounded-full font-label-strong text-caption bg-surface-container-lowest text-on-surface shadow-sm transition-all duration-200";
+      btnFr.className = "px-space-md py-space-xs rounded-full font-label-strong text-caption text-on-surface-variant hover:text-on-surface transition-all duration-200";
+    }
+
+    // Dynamic Texts
+    document.getElementById('txt-badge').innerText = data.badge;
+    document.getElementById('txt-title').innerText = data.title;
+    document.getElementById('txt-subtitle').innerText = data.subtitle;
+    document.getElementById('lbl-identifier').firstElementChild.innerText = data.lblIdentifier;
+    document.getElementById('lbl-password').innerText = data.lblPassword;
+    document.getElementById('lbl-remember').innerText = data.remember;
+    document.getElementById('txt-offline-ready').innerText = data.offlineReady;
+    document.getElementById('txt-btn-submit').innerText = data.btnSubmit;
+    document.getElementById('txt-help').innerText = data.help;
+    document.getElementById('side-tagline').innerText = data.sideTagline;
+    document.getElementById('side-hero-heading').innerText = data.sideHeroHeading;
+    document.getElementById('side-hero-sub').innerText = data.sideHeroSub;
+    document.getElementById('mock-gym-name').innerText = data.gymName;
+  }
+
+  // Interactive password toggle
+  function togglePasswordVisibility() {
+    const passwordInput = document.getElementById('password');
+    const icon = document.getElementById('password-toggle-icon');
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      icon.innerText = 'visibility_off';
+    } else {
+      passwordInput.type = 'password';
+      icon.innerText = 'visibility';
+    }
+  }
+
+  // Micro-interaction on submission
+  function handleLoginSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('btn-submit');
+    const originalText = document.getElementById('txt-btn-submit').innerText;
+    
+    btn.disabled = true;
+    btn.classList.add('opacity-80', 'cursor-wait');
+    document.getElementById('txt-btn-submit').innerText = currentLang === 'ar' ? 'جاري التحقق...' : 'Vérification...';
+
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.classList.remove('opacity-80', 'cursor-wait');
+      document.getElementById('txt-btn-submit').innerText = originalText;
+      alert(currentLang === 'ar' ? 'تم تسجيل الدخول بنجاح إلى GymDZ!' : 'Connexion réussie à GymDZ !');
+    }, 900);
+  }
+
+  // Default initial configuration set to French LTR
+  document.addEventListener('DOMContentLoaded', () => {
+    setAppLanguage('fr');
+  });
+</script></main><footer class="w-full py-space-md px-margin lg:px-margin-desktop"><div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-space-xs font-caption text-caption text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary-container inline-block"></span><span>نظام سحابي متوافق مع الشبكات المحلية في الجزائر (PWA Offline-Ready)</span></div><div class="flex items-center gap-space-md"><span>© 2025 GymDZ DZ-Cloud. جميع الحقوق محفوظة.</span></div></div></footer></body></html>

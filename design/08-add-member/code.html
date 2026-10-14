@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>GymDZ</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-surface": "#213145", "surface-container-high": "#dce9ff", "on-surface": "#0b1c30", "error-container": "#ffdad6", "primary-fixed": "#ffdbca", "on-tertiary-fixed": "#001e2f", "on-primary": "#ffffff", "surface-variant": "#d3e4fe", "on-error": "#ffffff", "on-tertiary-container": "#003650", "surface-container-highest": "#d3e4fe", "secondary": "#565e74", "primary-fixed-dim": "#ffb690", "secondary-container": "#dae2fd", "on-background": "#0b1c30", "background": "#f8f9ff", "surface-container-lowest": "#ffffff", "outline-variant": "#e0c0b1", "surface-tint": "#9d4300", "on-tertiary": "#ffffff", "tertiary": "#006591", "on-primary-fixed": "#341100", "on-surface-variant": "#584237", "primary-container": "#f97316", "tertiary-fixed": "#c9e6ff", "on-secondary-fixed-variant": "#3f465c", "on-primary-fixed-variant": "#783200", "surface-bright": "#f8f9ff", "secondary-fixed": "#dae2fd", "outline": "#8c7164", "surface-dim": "#cbdbf5", "on-secondary-container": "#5c647a", "inverse-on-surface": "#eaf1ff", "on-secondary-fixed": "#131b2e", "surface-container-low": "#eff4ff", "error": "#ba1a1a", "on-secondary": "#ffffff", "on-primary-container": "#582200", "tertiary-fixed-dim": "#89ceff", "secondary-fixed-dim": "#bec6e0", "on-error-container": "#93000a", "tertiary-container": "#09a4e8", "surface": "#f8f9ff", "inverse-primary": "#ffb690", "on-tertiary-fixed-variant": "#004c6e", "surface-container": "#e5eeff", "primary": "#9d4300" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-desktop": "1.5rem", "space-xs": "0.25rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "gutter": "1rem", "space-xl": "2rem", "margin": "1rem", "margin-desktop": "2rem", "space-md": "1rem" }, "fontFamily": { "label-strong": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "body-medium": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "heading-3": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "caption-small": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "display-mobile": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "display": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "heading-2": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "body-regular": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "heading-1": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\""], "caption": ["\"Cairo, Plus Jakarta Sans, system-ui, sans-serif\"" ] }, "fontSize": { "label-strong": ["14px", { "lineHeight": "18px", "fontWeight": "600" }], "body-medium": ["15px", { "lineHeight": "20px", "fontWeight": "500" }], "heading-3": ["17px", { "lineHeight": "22px", "fontWeight": "600" }], "caption-small": ["11px", { "lineHeight": "14px", "fontWeight": "500" }], "display-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }], "display": ["32px", { "lineHeight": "36px", "fontWeight": "700" }], "heading-2": ["20px", { "lineHeight": "24px", "fontWeight": "600" }], "body-regular": ["15px", { "lineHeight": "20px", "fontWeight": "400" }], "heading-1": ["24px", { "lineHeight": "28px", "fontWeight": "700" }], "caption": ["13px", { "lineHeight": "16px", "fontWeight": "500" }] } } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; } body { overscroll-behavior: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-regular text-body-regular text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary font-heading-3 text-heading-3 shadow-[0_4px_14px_rgba(249,115,22,0.3)]">DZ</div><div class="flex flex-col"><h1 class="font-heading-2 text-heading-2 text-on-surface tracking-tight leading-none">Dashboard</h1><span class="font-caption-small text-caption-small text-on-surface-variant flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>Alger Centre</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="Rechercher" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">search</span></button><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full relative">
+<!-- Dimmed Gym Floor Dashboard Context (Realistic backdrop underneath sheet) -->
+<div class="w-full px-gutter flex flex-col gap-space-md opacity-40 pointer-events-none select-none filter blur-[1px]">
+<!-- Top Summary Row -->
+<div class="flex items-center justify-between pt-space-xs">
+<div>
+<p class="font-label-strong text-label-strong text-on-surface">Comptoir Principal</p>
+<p class="font-caption text-caption text-secondary">Aujourd'hui, 24 Octobre</p>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-caption text-caption">38 Présents</span>
+</div>
+<!-- Quick Stats Bento -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+<span class="font-caption text-caption text-secondary">Entrées du jour</span>
+<span class="font-display-mobile text-display-mobile text-on-surface">142</span>
+<span class="font-caption-small text-caption-small text-primary font-semibold">+18% vs hier</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+<span class="font-caption text-caption text-secondary">Cotisations dues</span>
+<span class="font-display-mobile text-display-mobile text-error font-bold">14.500 <span class="font-caption text-caption">DA</span></span>
+<span class="font-caption-small text-caption-small text-on-surface-variant">3 relances en cours</span>
+</div>
+</div>
+<!-- Recent Check-ins Mock List -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex justify-between items-center pb-space-xs">
+<span class="font-label-strong text-label-strong text-on-surface">Derniers passages</span>
+<span class="font-caption text-caption text-primary">Tout afficher</span>
+</div>
+<div class="flex items-center justify-between py-2">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center font-label-strong text-label-strong text-on-surface">YB</div>
+<div>
+<p class="font-label-strong text-label-strong text-on-surface">Yacine Belhadj</p>
+<p class="font-caption-small text-caption-small text-secondary">Pass annuel • Badge #1042</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface font-caption-small text-caption-small">16:42</span>
+</div>
+</div>
+</div>
+<!-- Sheet Scrim Overlay -->
+<div class="fixed inset-0 z-40 bg-inverse-surface/40 backdrop-blur-[2px] transition-opacity duration-300" id="modal-scrim"></div>
+<!-- Interactive Bottom Sheet (Mobile) & Centered Modal (Tablet/Desktop) -->
+<div class="fixed inset-x-0 bottom-0 md:inset-0 z-50 flex items-end md:items-center justify-center p-0 md:p-gutter pointer-events-auto">
+<div aria-labelledby="sheet-title" aria-modal="true" class="w-full md:max-w-lg bg-surface-container-lowest rounded-t-[28px] md:rounded-2xl shadow-2xl flex flex-col overflow-hidden max-h-[813px] md:max-h-none transform transition-transform duration-300 ease-out" id="bottom-sheet" role="dialog">
+<!-- Sheet Drag Handle (Mobile only touch affordance) -->
+<div class="flex justify-center items-center pt-3 pb-1 md:hidden cursor-grab active:cursor-grabbing">
+<div class="w-10 h-1.5 rounded-full bg-secondary-container"></div>
+</div>
+<!-- Sheet Header with Badge & Dismiss Trigger -->
+<div class="px-gutter pt-3 pb-space-sm flex items-start justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-caption-small text-caption-small uppercase tracking-wider text-primary font-semibold">Comptoir Express</span>
+</div>
+<h2 class="font-heading-1 text-heading-1 text-on-surface tracking-tight mt-0.5" id="sheet-title">Nouveau Membre</h2>
+<p class="font-caption text-caption text-secondary mt-0.5">Ajout rapide au comptoir d'accueil • تسجيل سريع</p>
+</div>
+<button aria-label="Fermer la boîte de dialogue" class="w-12 h-12 flex items-center justify-center rounded-full text-secondary hover:bg-surface-container active:scale-95 transition-all -mr-2" id="close-sheet-btn" type="button">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<!-- Front-Desk Minimalist Form (2 Required Fields Only) -->
+<form class="px-gutter py-space-sm flex flex-col gap-space-md overflow-y-auto" id="add-member-form" onsubmit="event.preventDefault();">
+<!-- Field 1: Full Name -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-strong text-label-strong text-on-surface flex items-center justify-between" for="member-fullname">
+<span class="flex items-center gap-1">
+              Nom complet <span class="text-primary font-bold">*</span>
+</span>
+<span class="font-caption-small text-caption-small text-secondary" dir="rtl">الاسم واللقب</span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-secondary pointer-events-none text-[20px]">person</span>
+<input autocomplete="name" class="w-full h-12 pl-11 pr-4 rounded-xl bg-surface-container-low text-on-surface font-body-medium text-body-medium placeholder:text-secondary focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary-container transition-all" id="member-fullname" name="fullname" placeholder="Ex: Kamel Hadjadj" required="" type="text" value="Kamel Hadjadj"/>
+</div>
+</div>
+<!-- Field 2: Phone Number (with Active Duplicate Error State) -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-strong text-label-strong text-on-surface flex items-center justify-between" for="member-phone">
+<span class="flex items-center gap-1">
+              Numéro de téléphone <span class="text-primary font-bold">*</span>
+</span>
+<span class="font-caption-small text-caption-small text-secondary" dir="rtl">رقم الهاتف</span>
+</label>
+<!-- Input Container with High-Visibility Conflict Feedback -->
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-error pointer-events-none text-[20px]">call</span>
+<input aria-describedby="phone-error-desc" aria-invalid="true" class="w-full h-12 pl-11 pr-11 rounded-xl bg-error-container/30 text-on-surface font-body-medium text-body-medium ring-2 ring-error focus:ring-2 focus:ring-error focus:outline-none transition-all" id="member-phone" inputmode="tel" name="phone" placeholder="0555 12 34 56 ou +213 555 12 34 56" required="" type="tel" value="0555 12 34 56"/>
+<!-- Visual Warning Indicator -->
+<span class="material-symbols-outlined absolute right-3 text-error text-[22px] animate-pulse">warning</span>
+</div>
+<!-- Format Hint -->
+<div class="flex items-center justify-between px-1">
+<span class="font-caption-small text-caption-small text-secondary">Format DZ : Mobilis, Djezzy, Ooredoo</span>
+<span class="font-caption-small text-caption-small text-secondary font-mono">05 / 06 / 07</span>
+</div>
+<!-- Duplicate Conflict Card (Instant Resolution Anchor) -->
+<div class="mt-1 p-space-sm rounded-xl bg-error-container text-on-error-container flex flex-col gap-space-xs shadow-sm" id="phone-error-desc">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-error shrink-0 mt-0.5">error</span>
+<div class="flex flex-col">
+<p class="font-label-strong text-label-strong text-on-error-container leading-tight">
+                  Ce numéro de téléphone existe déjà dans votre salle.
+                </p>
+<p class="font-caption-small text-caption-small text-on-error-container/80 mt-0.5" dir="rtl">
+                  هذا الرقم مسجل مسبقاً لدى قاعتكم
+                </p>
+</div>
+</div>
+<!-- Direct Member Resolution Link -->
+<a class="mt-1 inline-flex items-center justify-between w-full p-2.5 rounded-lg bg-surface-container-lowest text-on-surface shadow-xs hover:bg-surface-container transition-all group" href="#" id="view-existing-member">
+<div class="flex items-center gap-space-xs min-w-0">
+<div class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-fixed text-[16px]">badge</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-strong text-label-strong text-on-surface truncate">Karim Benali</span>
+<span class="font-caption-small text-caption-small text-secondary truncate">Adhérent actif • ID #DZ-8942</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-primary shrink-0 font-label-strong text-label-strong ml-2">
+<span>Consulter</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+</div>
+</div>
+<!-- Front Desk Operator Helper Cue -->
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center gap- space-sm text-secondary">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0">bolt</span>
+<p class="font-caption text-caption text-on-surface leading-snug">
+            Enregistrement en 1 clic : la photo et les documents biométriques pourront être complétés plus tard.
+          </p>
+</div>
+</form>
+<!-- Sheet Footer: Prominent Front Desk Action Buttons (Touch Target >= 48px) -->
+<div class="p-gutter pt-space-xs pb-safe bg-surface-container-lowest flex flex-col gap-space-xs mt-auto">
+<!-- Primary Vibrant Action: Save & Assign Subscription Plan -->
+<button class="w-full h-12 px-space-md rounded-xl bg-primary-container text-on-primary font-label-strong text-label-strong flex items-center justify-center gap-space-xs shadow-md active:scale-[0.99] hover:bg-primary transition-all group" id="btn-save-and-assign" type="button">
+<span class="material-symbols-outlined text-[20px]">card_membership</span>
+<span>Enregistrer et attribuer un forfait</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+<!-- Secondary Simple Action: Save Only -->
+<button class="w-full h-12 px-space-md rounded-xl bg-surface-container text-on-surface font-label-strong text-label-strong flex items-center justify-center gap-space-xs active:scale-[0.99] hover:bg-surface-container-high transition-all" id="btn-save-only" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">done</span>
+<span>Enregistrer sans abonnement</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    const scrim = document.getElementById('modal-scrim');
+    const sheet = document.getElementById('bottom-sheet');
+    const closeBtn = document.getElementById('close-sheet-btn');
+    const existingMemberLink = document.getElementById('view-existing-member');
+    const saveAssignBtn = document.getElementById('btn-save-and-assign');
+    const saveOnlyBtn = document.getElementById('btn-save-only');
+    const phoneInput = document.getElementById('member-phone');
+
+    function dismissSheet() {
+      if (!sheet || !scrim) return;
+      sheet.classList.add('translate-y-full', 'opacity-0');
+      scrim.classList.add('opacity-0');
+      setTimeout(() => {
+        sheet.parentElement.style.display = 'none';
+        scrim.style.display = 'none';
+      }, 260);
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', dismissSheet);
+    if (scrim) scrim.addEventListener('click', dismissSheet);
+
+    if (existingMemberLink) {
+      existingMemberLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const notification = document.createElement('div');
+        notification.className = 'fixed top-20 left-1/2 -translate-x-1/2 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-2.5 rounded-xl shadow-lg flex items-center gap-2 font-label-strong text-label-strong animate-bounce';
+        notification.innerHTML = '<span class="material-symbols-outlined text-primary-container text-[20px]">person</span> Redirection vers la fiche #DZ-8942...';
+        document.body.appendChild(notification);
+        setTimeout(() => notification.remove(), 2000);
+      });
+    }
+
+    if (saveAssignBtn) {
+      saveAssignBtn.addEventListener('click', () => {
+        saveAssignBtn.classList.add('scale-95');
+        setTimeout(() => saveAssignBtn.classList.remove('scale-95'), 150);
+      });
+    }
+
+    if (saveOnlyBtn) {
+      saveOnlyBtn.addEventListener('click', () => {
+        saveOnlyBtn.classList.add('scale-95');
+        setTimeout(() => saveOnlyBtn.classList.remove('scale-95'), 150);
+      });
+    }
+
+    if (phoneInput) {
+      phoneInput.addEventListener('input', (e) => {
+        const errorDesc = document.getElementById('phone-error-desc');
+        if (e.target.value.trim() === '') {
+          phoneInput.classList.remove('ring-error', 'bg-error-container/30');
+          if (errorDesc) errorDesc.style.display = 'none';
+        } else {
+          phoneInput.classList.add('ring-error', 'bg-error-container/30');
+          if (errorDesc) errorDesc.style.display = 'flex';
+        }
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_10px_rgba(15,23,42,0.04)]" data-active-classes="text-primary-container font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center w-16 h-12 transition-colors text-primary-container font-semibold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[22px]">dashboard</span><span class="font-caption-small text-caption-small mt-0.5">Accueil</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant transition-colors" data-path="members-list" href="#"><span class="material-symbols-outlined text-[22px]">group</span><span class="font-caption-small text-caption-small mt-0.5">Membres</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant transition-colors" data-path="payments" href="#"><span class="material-symbols-outlined text-[22px]">payments</span><span class="font-caption-small text-caption-small mt-0.5">Caisse</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant transition-colors" data-path="alerts-expirations" href="#"><span class="material-symbols-outlined text-[22px]">warning</span><span class="font-caption-small text-caption-small mt-0.5">Alertes</span></a><a class="flex flex-col items-center justify-center w-16 h-12 text-on-surface-variant transition-colors" data-path="more-menu" href="#"><span class="material-symbols-outlined text-[22px]">more_horiz</span><span class="font-caption-small text-caption-small mt-0.5">Plus</span></a></div></nav></body></html>

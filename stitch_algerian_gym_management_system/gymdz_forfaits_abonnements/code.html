@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {"colors": {"on-background": "#0b1c30", "on-secondary-container": "#5c647a", "secondary-fixed": "#dae2fd", "primary-fixed": "#ffdbca", "on-tertiary": "#ffffff", "tertiary": "#006591", "on-error": "#ffffff", "surface-container-high": "#dce9ff", "on-primary": "#ffffff", "tertiary-fixed-dim": "#89ceff", "inverse-primary": "#ffb690", "tertiary-fixed": "#c9e6ff", "on-tertiary-fixed-variant": "#004c6e", "on-primary-fixed-variant": "#783200", "on-surface-variant": "#584237", "on-surface": "#0b1c30", "surface-container-low": "#eff4ff", "on-secondary": "#ffffff", "error-container": "#ffdad6", "secondary": "#565e74", "outline": "#8c7164", "on-secondary-fixed-variant": "#3f465c", "on-secondary-fixed": "#131b2e", "surface-bright": "#f8f9ff", "error": "#ba1a1a", "on-tertiary-fixed": "#001e2f", "primary-fixed-dim": "#ffb690", "surface-tint": "#9d4300", "surface-container-lowest": "#ffffff", "secondary-container": "#dae2fd", "on-error-container": "#93000a", "on-primary-container": "#582200", "surface": "#f8f9ff", "surface-container-highest": "#d3e4fe", "outline-variant": "#e0c0b1", "surface-dim": "#cbdbf5", "inverse-surface": "#213145", "surface-container": "#e5eeff", "on-primary-fixed": "#341100", "secondary-fixed-dim": "#bec6e0", "primary": "#9d4300", "background": "#f8f9ff", "primary-container": "#f97316", "on-tertiary-container": "#003650", "inverse-on-surface": "#eaf1ff", "surface-variant": "#d3e4fe", "tertiary-container": "#09a4e8"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"space-lg": "1.5rem", "space-xs": "0.25rem", "margin-desktop": "2.0rem", "space-sm": "0.5rem", "margin": "1.0rem", "space-md": "1.0rem", "gutter": "1.0rem", "space-xl": "2.0rem", "gutter-desktop": "1.5rem"}, "fontFamily": {"body-medium": ["Cairo, Plus Jakarta Sans, system-ui, sans-serif"], "display": ["Cairo, Plus Jakarta Sans, system-ui, sans-serif"], "caption-small": ["Cairo, Plus Jakarta Sans, system-ui, sans-serif"], "body-regular": ["Cairo, Plus Jakarta Sans, system-ui, sans-serif"], "label-strong": ["Cairo, Plus Jakarta Sans, system-ui, sans-serif"], "display-mobile": ["Cairo, Plus Jakarta Sans, system-ui, sans-serif"], "heading-1": ["Cairo, Plus Jakarta Sans, system-ui, sans-serif"], "heading-3": ["Cairo, Plus Jakarta Sans, system-ui, sans-serif"], "caption": ["Cairo, Plus Jakarta Sans, system-ui, sans-serif"], "heading-2": ["Cairo, Plus Jakarta Sans, system-ui, sans-serif"]}, "fontSize": {"body-medium": ["15px", {"lineHeight": "20px", "fontWeight": "500"}], "display": ["32px", {"lineHeight": "36px", "fontWeight": "700"}], "caption-small": ["11px", {"lineHeight": "14px", "fontWeight": "500"}], "body-regular": ["15px", {"lineHeight": "20px", "fontWeight": "400"}], "label-strong": ["14px", {"lineHeight": "18px", "fontWeight": "600"}], "display-mobile": ["26px", {"lineHeight": "32px", "fontWeight": "700"}], "heading-1": ["24px", {"lineHeight": "28px", "fontWeight": "700"}], "heading-3": ["17px", {"lineHeight": "22px", "fontWeight": "600"}], "caption": ["13px", {"lineHeight": "16px", "fontWeight": "500"}], "heading-2": ["20px", {"lineHeight": "24px", "fontWeight": "600"}]}}}</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Cairo,+Plus+Jakarta+Sans,+system-ui,+sans-serif:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-regular text-on-surface"><aside class="fixed inset-inline-start-0 top-0 h-full w-60 bg-surface-container-lowest z-50 flex flex-col pt-space-md pb-space-lg shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="px-space-md mb-space-lg flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary font-heading-1">G</div><div><h1 class="font-heading-2 text-on-surface">GymDZ</h1><span class="text-caption-small text-on-surface-variant">Algeria Owner Hub</span></div></div><nav class="flex-1 px-space-sm space-y-space-xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary font-label-strong rounded-lg"><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="overview" href="#">Overview</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="members" href="#">Members</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="payments-caisse" href="#">Payments / Caisse</a><a aria-current="page" class="flex items-center px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-label-strong rounded-lg" data-path="subscriptions" href="#">Subscriptions</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="alerts" href="#">Alerts</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings" href="#">Settings</a></nav></aside><div class="pl-60"><header class="fixed top-0 left-60 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-xl"><div class="flex items-center gap-space-md flex-1 max-w-md"><div class="relative w-full"><span class="material-symbols-outlined absolute inset-y-0 left-3 flex items-center text-on-surface-variant">search</span><input class="w-full h-10 pl-10 pr-4 bg-surface-container-low border border-outline-variant rounded-lg text-on-surface placeholder:text-on-surface-variant text-body-regular focus:outline-none focus:border-primary" placeholder="Search member by barcode, phone, name..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface text-caption font-label-strong"><span class="w-2.5 h-2.5 rounded-full bg-green-600 animate-pulse"></span><span>Online (Synced)</span></div><button class="px-3 py-1.5 rounded-lg border border-outline-variant text-caption font-label-strong hover:bg-surface-container transition-colors">Français / العربية</button><button aria-label="Notifications" class="w-10 h-10 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors relative"><span class="material-symbols-outlined">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary"></span></button><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-label-strong"><span class="material-symbols-outlined text-[18px]">person</span></div><span class="text-caption font-label-strong text-on-surface hidden md:inline">Admin</span></div></div></header><main class="relative pt-16 min-h-screen bg-surface p-space-xl"><div class="flex flex-col w-full">
+<!-- Top Navigation Hierarchy / Breadcrumbs & Context Title -->
+<div class="flex flex-col gap-y-4 mb-8">
+<div class="flex items-center gap-2 text-caption font-label-strong text-secondary">
+<span class="hover:text-primary cursor-pointer transition-colors">Accueil</span>
+<span class="material-symbols-outlined text-[16px] text-outline">chevron_right</span>
+<span class="text-on-surface">Forfaits &amp; Tarifs</span>
+<span class="text-on-surface-variant font-caption text-caption-small px-2 py-0.5 rounded-full bg-surface-container ml-1">باقات الاشتراكات</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-3">
+<h1 class="text-heading-1 font-heading-1 text-on-surface tracking-tight">Forfaits &amp; Abonnements</h1>
+<span class="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-strong text-caption">Saison 2024-2025</span>
+</div>
+<p class="text-body-regular font-body-regular text-secondary mt-1">
+          Gérez les offres d'accès, tarifs et formules de votre salle de sport à Alger • <span class="font-heading-3 text-caption text-secondary">إدارة الأسعار والاشتراكات الرياضية</span>
+</p>
+</div>
+<!-- Quick Action CTAs -->
+<div class="flex items-center gap-3">
+<button class="h-12 px-4 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-strong text-label-strong flex items-center gap-2 transition-all shadow-sm">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+<span>Grille Tarifaire (PDF)</span>
+</button>
+<button class="h-12 px-6 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-strong text-label-strong flex items-center gap-2 shadow-md hover:shadow-lg transition-all group" id="openDrawerBtn">
+<span class="material-symbols-outlined text-[20px] group-hover:rotate-90 transition-transform">add</span>
+<span>Nouveau forfait</span>
+<span class="text-caption-small bg-on-primary/20 px-2 py-0.5 rounded-full ml-1">إضافة باقة</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Key Metrics Counter Ribbon -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-caption-small font-label-strong text-secondary uppercase tracking-wider">Au Catalogue</span>
+<span class="text-display font-display text-on-surface mt-1">8</span>
+<span class="text-caption font-caption text-secondary">Formules actives &amp; archives</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">find_replace</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-caption-small font-label-strong text-secondary uppercase tracking-wider">En Vente Active</span>
+<div class="flex items-baseline gap-1 mt-1">
+<span class="text-display font-display text-on-surface">6</span>
+<span class="text-caption font-label-strong text-green-700">Disponibles</span>
+</div>
+<span class="text-caption font-caption text-secondary">Visibles au comptoir caisse</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-caption-small font-label-strong text-secondary uppercase tracking-wider">Membres Abonnés</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="text-display font-display text-primary">312</span>
+<span class="text-caption-small font-label-strong text-green-700">+14% ce mois</span>
+</div>
+<span class="text-caption font-caption text-secondary">Adhérents sous contrat</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">groups</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-caption-small font-label-strong text-secondary uppercase tracking-wider">Inactifs / Archivés</span>
+<span class="text-display font-display text-secondary mt-1">2</span>
+<span class="text-caption font-caption text-secondary">Anciennes promotions</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">archive</span>
+</div>
+</div>
+</div>
+<!-- Search, Filter Bar and Segments -->
+<div class="p-3 bg-surface-container-lowest rounded-2xl shadow-sm mb-6 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-2 w-full md:w-auto">
+<button class="px-4 py-2 rounded-xl bg-primary-container text-on-primary font-label-strong text-caption shadow-sm transition-all">
+        Tous (8)
+      </button>
+<button class="px-4 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary font-label-strong text-caption transition-all">
+        Mensuels &amp; Périodiques
+      </button>
+<button class="px-4 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary font-label-strong text-caption transition-all">
+        Packs Séances
+      </button>
+<button class="px-4 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary font-label-strong text-caption transition-all flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span>Actifs seulement</span>
+</button>
+</div>
+<div class="flex items-center gap-3 w-full md:w-80">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute inset-y-0 left-3 flex items-center text-secondary text-[20px]">search</span>
+<input class="w-full h-10 pl-10 pr-4 bg-surface-container-low rounded-xl text-caption font-body-regular text-on-surface placeholder:text-secondary focus:outline-none focus:bg-surface-container" placeholder="Filtrer un forfait..." type="text"/>
+</div>
+<button class="p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">swap_vert</span>
+</button>
+</div>
+</div>
+<!-- Responsive Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
+<!-- Card 1: Musculation Standard (Mensuel) -->
+<div class="group flex flex-col justify-between p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-tertiary"></div>
+<div>
+<div class="flex items-start justify-between gap-3 mb-3">
+<div class="flex flex-col">
+<span class="text-heading-2 font-heading-2 text-on-surface group-hover:text-primary transition-colors">Musculation Standard</span>
+<span class="text-caption font-body-medium text-secondary">اشتراك شهري كمال أجسام</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-strong text-caption-small">
+            Mensuel
+          </span>
+</div>
+<!-- Specifications & Badges -->
+<div class="space-y-2 py-4 my-2 border-t border-b border-surface-container">
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+              Durée de validité
+            </span>
+<span class="font-label-strong text-on-surface">30 Jours</span>
+</div>
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+              Plage horaire
+            </span>
+<span class="font-label-strong text-on-surface">06h00 — 23h00 (7j/7)</span>
+</div>
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+              Adhérents inscrits
+            </span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-strong text-caption-small">84 actifs</span>
+</div>
+</div>
+<!-- Pricing Section -->
+<div class="flex items-baseline justify-between pt-2 pb-4">
+<div>
+<div class="flex items-baseline gap-1">
+<span class="text-display font-display text-on-surface tracking-tight">3 500</span>
+<span class="text-heading-3 font-heading-3 text-primary">DA</span>
+</div>
+<span class="text-caption-small font-caption text-secondary">Tarif régulier sans engagement</span>
+</div>
+<span class="text-caption-small font-label-strong text-secondary bg-surface-container px-2.5 py-1 rounded-lg">116 DA / jour</span>
+</div>
+</div>
+<!-- Card Action Footer -->
+<div class="flex items-center justify-between pt-4 border-t border-surface-container">
+<label class="inline-flex items-center gap-2 cursor-pointer">
+<div class="relative">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container rounded-full peer peer-checked:bg-green-600 transition-colors"></div>
+<div class="absolute left-0.5 top-0.5 bg-surface-container-lowest w-4 h-4 rounded-full transition-transform peer-checked:translate-x-4"></div>
+</div>
+<span class="text-caption font-label-strong text-green-700">Actif en caisse</span>
+</label>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Modifier">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Dupliquer">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="Plus d'actions">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: CrossFit + Muscu VIP (Trimestriel) -->
+<div class="group flex flex-col justify-between p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-indigo-600"></div>
+<div>
+<div class="flex items-start justify-between gap-3 mb-3">
+<div class="flex flex-col">
+<span class="text-heading-2 font-heading-2 text-on-surface group-hover:text-primary transition-colors">CrossFit + Muscu VIP</span>
+<span class="text-caption font-body-medium text-secondary">كروس فيت + كمال أجسام خاص</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 font-label-strong text-caption-small">
+            Trimestriel
+          </span>
+</div>
+<div class="space-y-2 py-4 my-2 border-t border-b border-surface-container">
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+              Durée de validité
+            </span>
+<span class="font-label-strong text-on-surface">90 Jours (3 mois)</span>
+</div>
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">fitness_center</span>
+              Zones autorisées
+            </span>
+<span class="font-label-strong text-on-surface">Box CrossFit + Espace Muscu</span>
+</div>
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+              Adhérents inscrits
+            </span>
+<span class="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 font-label-strong text-caption-small">112 actifs</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between pt-2 pb-4">
+<div>
+<div class="flex items-baseline gap-1">
+<span class="text-display font-display text-on-surface tracking-tight">13 000</span>
+<span class="text-heading-3 font-heading-3 text-primary">DA</span>
+</div>
+<span class="text-caption-small font-caption text-secondary">Soit 4 333 DA / mois</span>
+</div>
+<span class="text-caption-small font-label-strong text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-lg">Option Sauna Incluse</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container">
+<label class="inline-flex items-center gap-2 cursor-pointer">
+<div class="relative">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container rounded-full peer peer-checked:bg-green-600 transition-colors"></div>
+<div class="absolute left-0.5 top-0.5 bg-surface-container-lowest w-4 h-4 rounded-full transition-transform peer-checked:translate-x-4"></div>
+</div>
+<span class="text-caption font-label-strong text-green-700">Actif en caisse</span>
+</label>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[18px]">content_copy</span></button>
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</div>
+</div>
+<!-- Card 3: Forfait Annuel Intégral VIP (Annuel) -->
+<div class="group flex flex-col justify-between p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all relative overflow-hidden border border-amber-200">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-amber-500"></div>
+<div class="absolute top-3 right-3">
+<span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 font-label-strong text-caption-small flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">star</span>
+          Meilleure Valeur
+        </span>
+</div>
+<div>
+<div class="flex items-start justify-between gap-3 mb-3">
+<div class="flex flex-col">
+<span class="text-heading-2 font-heading-2 text-on-surface group-hover:text-primary transition-colors">Forfait Annuel Intégral</span>
+<span class="text-caption font-body-medium text-secondary">باقة سنوية شاملة لكافة الأنشطة</span>
+</div>
+</div>
+<div class="space-y-2 py-4 my-2 border-t border-b border-surface-container">
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+              Durée de validité
+            </span>
+<span class="font-label-strong text-on-surface">365 Jours (1 An)</span>
+</div>
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">ac_unit</span>
+              Gel d'abonnement
+            </span>
+<span class="font-label-strong text-green-700">30 jours offerts</span>
+</div>
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+              Adhérents inscrits
+            </span>
+<span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 font-label-strong text-caption-small">68 actifs</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between pt-2 pb-4">
+<div>
+<div class="flex items-baseline gap-1">
+<span class="text-display font-display text-on-surface tracking-tight">35 000</span>
+<span class="text-heading-3 font-heading-3 text-primary">DA</span>
+</div>
+<span class="text-caption-small font-caption text-secondary">Soit seulement 2 916 DA / mois</span>
+</div>
+<span class="text-caption-small font-label-strong text-amber-900 bg-amber-50 px-2.5 py-1 rounded-lg">Casier Personnel</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container">
+<label class="inline-flex items-center gap-2 cursor-pointer">
+<div class="relative">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container rounded-full peer peer-checked:bg-green-600 transition-colors"></div>
+<div class="absolute left-0.5 top-0.5 bg-surface-container-lowest w-4 h-4 rounded-full transition-transform peer-checked:translate-x-4"></div>
+</div>
+<span class="text-caption font-label-strong text-green-700">Actif en caisse</span>
+</label>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[18px]">content_copy</span></button>
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</div>
+</div>
+<!-- Card 4: Carnet 10 Séances Boxe (Pack Séances) -->
+<div class="group flex flex-col justify-between p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-teal-600"></div>
+<div>
+<div class="flex items-start justify-between gap-3 mb-3">
+<div class="flex flex-col">
+<span class="text-heading-2 font-heading-2 text-on-surface group-hover:text-primary transition-colors">Carnet 10 Séances Boxe</span>
+<span class="text-caption font-body-medium text-secondary">كراس 10 حصص ملاكمة ورياضات قتالية</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-teal-100 text-teal-800 font-label-strong text-caption-small">
+            Pack Séances
+          </span>
+</div>
+<div class="space-y-2 py-4 my-2 border-t border-b border-surface-container">
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">sports_mma</span>
+              Crédits séances
+            </span>
+<span class="font-label-strong text-on-surface">10 Séances décomptables</span>
+</div>
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+              Validité d'utilisation
+            </span>
+<span class="font-label-strong text-on-surface">90 Jours à l'achat</span>
+</div>
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+              Adhérents porteurs
+            </span>
+<span class="px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 font-label-strong text-caption-small">27 actifs</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between pt-2 pb-4">
+<div>
+<div class="flex items-baseline gap-1">
+<span class="text-display font-display text-on-surface tracking-tight">4 000</span>
+<span class="text-heading-3 font-heading-3 text-primary">DA</span>
+</div>
+<span class="text-caption-small font-caption text-secondary">Soit 400 DA / séance au tourniquet</span>
+</div>
+<span class="text-caption-small font-label-strong text-teal-800 bg-teal-50 px-2.5 py-1 rounded-lg">QR Code Scan</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container">
+<label class="inline-flex items-center gap-2 cursor-pointer">
+<div class="relative">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container rounded-full peer peer-checked:bg-green-600 transition-colors"></div>
+<div class="absolute left-0.5 top-0.5 bg-surface-container-lowest w-4 h-4 rounded-full transition-transform peer-checked:translate-x-4"></div>
+</div>
+<span class="text-caption font-label-strong text-green-700">Actif en caisse</span>
+</label>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[18px]">content_copy</span></button>
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</div>
+</div>
+<!-- Card 5: Pass Découverte / Journée (Par séance) -->
+<div class="group flex flex-col justify-between p-6 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-emerald-600"></div>
+<div>
+<div class="flex items-start justify-between gap-3 mb-3">
+<div class="flex flex-col">
+<span class="text-heading-2 font-heading-2 text-on-surface group-hover:text-primary transition-colors">Pass Découverte Journée</span>
+<span class="text-caption font-body-medium text-secondary">تذكرة دخول ليوم واحد - زائر</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 font-label-strong text-caption-small">
+            Par séance
+          </span>
+</div>
+<div class="space-y-2 py-4 my-2 border-t border-b border-surface-container">
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">pin</span>
+              Consommation
+            </span>
+<span class="font-label-strong text-on-surface">1 Entrée unique immédiate</span>
+</div>
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">lock_clock</span>
+              Accès vestiaires
+            </span>
+<span class="font-label-strong text-on-surface">Inclus (Cadenas requis)</span>
+</div>
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">point_of_sale</span>
+              Ventes de la semaine
+            </span>
+<span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-label-strong text-caption-small">19 tickets émis</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between pt-2 pb-4">
+<div>
+<div class="flex items-baseline gap-1">
+<span class="text-display font-display text-on-surface tracking-tight">800</span>
+<span class="text-heading-3 font-heading-3 text-primary">DA</span>
+</div>
+<span class="text-caption-small font-caption text-secondary">Paiement espèce / CIB sans dossier</span>
+</div>
+<span class="text-caption-small font-label-strong text-secondary bg-surface-container px-2.5 py-1 rounded-lg">Ticket Caisse</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container">
+<label class="inline-flex items-center gap-2 cursor-pointer">
+<div class="relative">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container rounded-full peer peer-checked:bg-green-600 transition-colors"></div>
+<div class="absolute left-0.5 top-0.5 bg-surface-container-lowest w-4 h-4 rounded-full transition-transform peer-checked:translate-x-4"></div>
+</div>
+<span class="text-caption font-label-strong text-green-700">Actif en caisse</span>
+</label>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[18px]">content_copy</span></button>
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</div>
+</div>
+<!-- Card 6: Pack Étudiant / Heures Creuses (Inactif / Archivé Demo) -->
+<div class="group flex flex-col justify-between p-6 rounded-2xl bg-surface-container-low shadow-sm opacity-80 hover:opacity-100 transition-all relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-secondary"></div>
+<div>
+<div class="flex items-start justify-between gap-3 mb-3">
+<div class="flex flex-col">
+<span class="text-heading-2 font-heading-2 text-secondary">Abonnement Étudiant Creuses</span>
+<span class="text-caption font-body-medium text-secondary">تخفيض الطلاب - أوقات الصباح</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container text-secondary font-label-strong text-caption-small">
+            Inactif
+          </span>
+</div>
+<div class="space-y-2 py-4 my-2 border-t border-b border-surface-container">
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">alarm</span>
+              Plage restreinte
+            </span>
+<span class="font-label-strong text-secondary">10h00 — 15h30 Uniquement</span>
+</div>
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">school</span>
+              Justificatif
+            </span>
+<span class="font-label-strong text-secondary">Carte d'étudiant requise</span>
+</div>
+<div class="flex items-center justify-between text-caption font-body-regular">
+<span class="text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">info</span>
+              Raison d'archivage
+            </span>
+<span class="font-caption text-caption-small text-error">Remplacé par saison estivale</span>
+</div>
+</div>
+<div class="flex items-baseline justify-between pt-2 pb-4">
+<div>
+<div class="flex items-baseline gap-1">
+<span class="text-display font-display text-secondary tracking-tight">2 400</span>
+<span class="text-heading-3 font-heading-3 text-secondary">DA</span>
+</div>
+<span class="text-caption-small font-caption text-secondary">Tarif mensuel archivé</span>
+</div>
+<span class="text-caption-small font-label-strong text-secondary bg-surface-container-high px-2.5 py-1 rounded-lg">Non souscriptible</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4 border-t border-surface-container">
+<label class="inline-flex items-center gap-2 cursor-pointer">
+<div class="relative">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-9 h-5 bg-surface-container-high rounded-full peer peer-checked:bg-green-600 transition-colors"></div>
+<div class="absolute left-0.5 top-0.5 bg-surface-container-lowest w-4 h-4 rounded-full transition-transform peer-checked:translate-x-4"></div>
+</div>
+<span class="text-caption font-label-strong text-secondary">Archivé</span>
+</label>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[18px]">restore</span></button>
+<button class="p-2 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[18px]">more_vert</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Sliding Drawer Backdrop & Form Sheet for "+ New Plan" -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 flex justify-end transition-opacity duration-300" id="drawerOverlay">
+<div class="w-full max-w-xl h-full bg-surface-container-lowest shadow-2xl flex flex-col justify-between overflow-y-auto transform transition-transform duration-300 ease-out" id="drawerPanel">
+<!-- Drawer Header -->
+<div class="p-6 bg-surface-container-lowest sticky top-0 z-10 border-b border-surface-container flex items-center justify-between">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-primary mt-0.5">
+<span class="material-symbols-outlined text-[24px]">card_membership</span>
+</div>
+<div>
+<h2 class="text-heading-2 font-heading-2 text-on-surface">Nouveau forfait d'abonnement</h2>
+<p class="text-caption font-body-regular text-secondary">إضافة باقة جديدة • Configurez une nouvelle offre tarifaire</p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary hover:text-on-surface flex items-center justify-center transition-colors" id="closeDrawerBtn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Drawer Form Body -->
+<div class="p-6 space-y-6 flex-1">
+<!-- Field 1 & 2: Names French & Arabic -->
+<div class="space-y-4">
+<div>
+<label class="block text-caption font-label-strong text-on-surface mb-1.5">
+              Nom du forfait <span class="text-primary">*</span>
+</label>
+<input class="w-full h-12 px-4 rounded-xl bg-surface-container-low text-on-surface text-body-regular font-body-regular placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest border-0" placeholder="Ex: Abonnement Semestriel Muscu + Sauna" type="text" value="Semestriel Muscu + Cardio Total"/>
+</div>
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="block text-caption font-label-strong text-on-surface">
+                Nom en Arabe (optionnel)
+              </label>
+<span class="text-caption-small font-caption text-secondary">العرض على شاشات الاستقبال</span>
+</div>
+<input class="w-full h-12 px-4 rounded-xl bg-surface-container-low text-on-surface text-body-regular font-body-regular placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest border-0" dir="rtl" placeholder="مثال: اشتراك سداسي لياقة وبناء أجسام" type="text" value="اشتراك سداسي لياقة وبناء أجسام"/>
+</div>
+</div>
+<!-- Field 3: Type de forfait (Segmented Pills Selector) -->
+<div>
+<label class="block text-caption font-label-strong text-on-surface mb-2">
+            Périodicité &amp; Type de facturation <span class="text-primary">*</span>
+</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2.5 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary font-label-strong text-caption text-center transition-colors" type="button">
+              Mensuel
+            </button>
+<button class="py-2.5 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary font-label-strong text-caption text-center transition-colors" type="button">
+              Trimestriel
+            </button>
+<button class="py-2.5 px-3 rounded-xl bg-primary-container text-on-primary font-label-strong text-caption text-center shadow-sm" type="button">
+              Semestriel
+            </button>
+<button class="py-2.5 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary font-label-strong text-caption text-center transition-colors" type="button">
+              Annuel (1 An)
+            </button>
+<button class="py-2.5 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary font-label-strong text-caption text-center transition-colors" type="button">
+              Pack Séances
+            </button>
+<button class="py-2.5 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-secondary font-label-strong text-caption text-center transition-colors" type="button">
+              Par séance (Pass)
+            </button>
+</div>
+</div>
+<!-- Field 4: Dynamic Duration / Sessions Configuration -->
+<div class="p-4 rounded-2xl bg-surface-container-low space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-caption font-label-strong text-on-surface">Modalité d'expiration</span>
+<div class="flex items-center gap-1 bg-surface-container p-1 rounded-xl">
+<button class="px-3 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-label-strong text-caption-small shadow-xs" type="button">
+                Durée calendaire
+              </button>
+<button class="px-3 py-1 rounded-lg text-secondary font-label-strong text-caption-small" type="button">
+                Nombre de séances
+              </button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block text-caption-small font-label-strong text-secondary mb-1">Durée de validité</label>
+<div class="relative">
+<input class="w-full h-11 px-3 rounded-xl bg-surface-container-lowest text-on-surface font-label-strong text-body-regular border-0 focus:ring-2 focus:ring-primary/20" type="number" value="180"/>
+<span class="absolute right-3 top-3 text-caption font-caption text-secondary">Jours</span>
+</div>
+</div>
+<div>
+<label class="block text-caption-small font-label-strong text-secondary mb-1">Jours de gel autorisés</label>
+<div class="relative">
+<input class="w-full h-11 px-3 rounded-xl bg-surface-container-lowest text-on-surface font-label-strong text-body-regular border-0 focus:ring-2 focus:ring-primary/20" type="number" value="15"/>
+<span class="absolute right-3 top-3 text-caption font-caption text-secondary">Jours</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Field 5: Pricing Section with DZD Currency & Info Banner -->
+<div>
+<label class="block text-caption font-label-strong text-on-surface mb-1.5">
+            Prix de souscription en Dinars Algériens (DZD) <span class="text-primary">*</span>
+</label>
+<div class="relative flex items-center">
+<input class="w-full h-14 pl-4 pr-16 rounded-xl bg-surface-container-low text-on-surface font-heading-1 text-heading-1 tracking-tight border-0 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest" type="text" value="18 500"/>
+<div class="absolute right-3 px-3 py-1 rounded-lg bg-surface-container font-heading-2 text-primary">
+              DA
+            </div>
+</div>
+<!-- Explicit Financial Guarantee Callout Note -->
+<div class="mt-3 p-3.5 rounded-xl bg-surface-container flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">info</span>
+<div class="text-caption font-body-regular text-secondary">
+<strong class="font-label-strong text-on-surface">Règle de sécurité tarifaire :</strong> La modification de ce tarif n'impacte en aucun cas les abonnements déjà payés ou actuellement en cours de validité au tourniquet.
+            </div>
+</div>
+</div>
+<!-- Field 6: Access Options & Perks -->
+<div>
+<label class="block text-caption font-label-strong text-on-surface mb-2">
+            Zones &amp; Prestations incluses
+          </label>
+<div class="grid grid-cols-2 gap-2.5">
+<label class="flex items-center gap-2.5 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-caption font-label-strong text-on-surface">Accès Tourniquet / Muscu</span>
+</label>
+<label class="flex items-center gap-2.5 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-caption font-label-strong text-on-surface">Espace Cardio Dédié</span>
+</label>
+<label class="flex items-center gap-2.5 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 rounded text-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-caption font-label-strong text-on-surface">Casier Vestiaire Offert</span>
+</label>
+<label class="flex items-center gap-2.5 p-3 rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 focus:ring-offset-0" type="checkbox"/>
+<span class="text-caption font-label-strong text-secondary">Sauna &amp; Récupération</span>
+</label>
+</div>
+</div>
+<!-- Field 7: Active Toggle at Creation -->
+<div class="p-4 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div>
+<span class="block text-caption font-label-strong text-on-surface">Rendre ce forfait actif immédiatement</span>
+<span class="block text-caption-small font-caption text-secondary">Disponible dès l'enregistrement pour les nouvelles souscriptions</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:border-surface-container after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
+</label>
+</div>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="p-6 bg-surface-container-lowest sticky bottom-0 border-t border-surface-container flex items-center justify-end gap-3 z-10">
+<button class="h-12 px-5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-strong text-caption transition-colors" id="cancelDrawerBtn" type="button">
+          Annuler
+        </button>
+<button class="h-12 px-6 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-strong text-caption shadow-md hover:shadow-lg transition-all flex items-center gap-2" id="saveDrawerBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Enregistrer le forfait</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    const overlay = document.getElementById('drawerOverlay');
+    const panel = document.getElementById('drawerPanel');
+    const openBtn = document.getElementById('openDrawerBtn');
+    const closeBtn = document.getElementById('closeDrawerBtn');
+    const cancelBtn = document.getElementById('cancelDrawerBtn');
+    const saveBtn = document.getElementById('saveDrawerBtn');
+
+    function openDrawer() {
+      overlay.classList.remove('pointer-events-none', 'opacity-0');
+      overlay.classList.add('opacity-100');
+      panel.classList.remove('translate-x-full');
+      panel.classList.add('translate-x-0');
+    }
+
+    function closeDrawer() {
+      overlay.classList.remove('opacity-100');
+      overlay.classList.add('opacity-0', 'pointer-events-none');
+      panel.classList.remove('translate-x-0');
+      panel.classList.add('translate-x-full');
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (cancelBtn) cancelBtn.addEventListener('click', closeDrawer);
+    if (saveBtn) {
+      saveBtn.addEventListener('click', function() {
+        closeDrawer();
+      });
+    }
+
+    if (overlay) {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) {
+          closeDrawer();
+        }
+      });
+    }
+  })();
+</script></main></div></body></html>
