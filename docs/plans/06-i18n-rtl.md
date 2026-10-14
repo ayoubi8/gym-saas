@@ -1,33 +1,35 @@
 # Phase 6 — i18n + RTL pass (PRD §5.7)
 
 ## Goal
-Full Arabic + French from day one, correct mirroring, no hard-coded strings
-anywhere. Scope-neutral pass over all shipped screens (no feature changes).
+Full Arabic + French, correct mirroring, zero hard-coded strings. Scope-neutral pass
+over shipped screens — no feature or contract changes.
 
 ## Inputs
-@AGENTS.md @docs/PRD.md @docs/DESIGN-SYSTEM.md @docs/SCREENS.md
-@apps/web/src/i18n/ (existing dictionaries)
+@AGENTS.md @docs/PRD.md @docs/DESIGN-SYSTEM.md (§7) @docs/SCREENS.md
+@apps/web/src/i18n/ @docs/DATA-CONTRACT.md (error-code → i18n column)
 
-## DB
-- None (reminder templates content pass happens in Phase 9).
+## Data contract
+No changes (reads/writes untouched). Verifies every mapped error code has BOTH
+`ar` and `fr` strings (mapper key-coverage).
 
-## Build
-1. Extract every remaining hard-coded UI string into `ar.json` / `fr.json`;
-   fail the build on detectable hard-coded strings (lint rule if feasible).
-2. `ar` → `dir="rtl"`, `fr` → `dir="ltr"` on `<html>`; audit all components for
-   physical properties — replace with logical (`ms-/me-/ps-/pe-/start-/end-`);
-   direction icons flip (`rtl:rotate-180`).
-3. `Intl.DateTimeFormat` + `Intl.NumberFormat` (`ar-DZ`/`fr-DZ`, `DZD`, 0 decimals)
-   via shared formatters; `<bdi>`/isolate for mixed Arabic + phone content.
-4. Always-visible language switcher; choice persisted (`localStorage` + profile);
-   per-member language field ready (used in Phase 9).
+## Backend tasks
+None.
+
+## Frontend wiring
+1. Extract all remaining hard-coded strings to `ar.json`/`fr.json`; lint rule failing
+   the build on detectable literals (heuristic, documented limits).
+2. `dir` switch on `<html>`; physical→logical CSS audit; direction-icon flips.
+3. Shared `Intl` formatters (`ar-DZ`/`fr-DZ`, DZD 0-decimals); `<bdi>`/isolate for
+   names + phones; persisted switcher (`localStorage` + `profiles.language`).
 
 ## Tests
-- Snapshot/key-coverage: every rendered screen has zero missing keys in both
-  locales; RTL screenshot review checklist per screen (mirror menus/tables/forms).
+- Key-coverage test: render every route in both locales, zero missing keys (incl. all
+  DATA-CONTRACT error codes).
+- RTL mirror checklist per screen (menus/tables/forms/chevrons); `ar-DZ`/`fr-DZ`
+  money/date snapshots.
 
 ## Done when
-AGENTS.md §11 ticks (§6 items specifically); build/lint/test green.
+AGENTS.md §11 ticks (§6 items); build/lint/test green.
 
 ## Close-out
 `docs/PROGRESS.md` entry → commit → push `main` → stop; await order for Phase 7.

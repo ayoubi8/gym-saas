@@ -1,32 +1,29 @@
-# Phase 0 — Init, remote, first push
+# Phase 0 — Init close-out (mostly done)
 
 ## Goal
-Turn the scaffold into a tracked repo: initial commit, GitHub remote, first push,
-AGENTS.md working-style touch-up, verified local baseline.
+Close the scaffold: AGENTS.md working-style rule, verified baseline, PROGRESS entry.
 
 ## Inputs
 @AGENTS.md @README.md @.gitignore @apps/web/package.json
 
-## Build
-1. Add remote `origin https://github.com/ayoubi8/gym-saas.git` (repo must exist
-   on GitHub, empty; default branch `main`).
-2. AGENTS.md: append working-style rule to §9 or §11 — "one milestone at a time;
-   write migrations for schema changes; run build/lint/test before saying done;
-   don't touch unrelated files."
-3. Stage everything except user originals at repo root (`PRD   Gym...md`,
-   `stitch_algerian_gym_management_system/`, `*.zip` stay untracked — or move the
-   PRD original out of the repo if the owner confirms; default: leave untracked).
-4. Initial commit: `chore: scaffold gym-saas repo (docs, designs, app+supabase skeletons)`.
-5. Push `main` to origin.
-6. Baseline check in `apps/web`: `npm install`, then `npx tsc --noEmit`
-   (package.json `build` needs source files first — record outcome in PROGRESS).
+## Data contract
+None (no data access in this phase).
+
+## Backend tasks
+None. Record chosen Supabase region + plan in `docs/plans/README.md` locked
+decisions if already known (see REVIEW-NOTES R3); otherwise leave for Phase 1A.
+
+## Frontend wiring
+- `apps/web`: `npm install`, then `npx tsc --noEmit`; record outcome in PROGRESS.
+  (Full scaffold arrives in Phase 1B.)
 
 ## Tests
-- `git status` clean; `git ls-remote origin` reachable; pushed commit visible.
+- `git status` clean; `git ls-remote origin` reachable.
 
 ## Done when
-Remote `main` matches local; `docs/PROGRESS.md` Phase 0 entry written.
+AGENTS.md working-style rule present ("one milestone at a time; migrations for
+schema changes; build/lint/test before done; don't touch unrelated files");
+baseline recorded; PROGRESS Phase 0 entry written.
 
 ## Close-out
-Append `docs/PROGRESS.md` entry → commit (`chore: phase 0 close-out`) → push →
-stop and report; await order for Phase 1.
+`docs/PROGRESS.md` entry → commit → push `main` → stop; await order for Phase 1A.

@@ -5,8 +5,9 @@ every phase, before commit + push to `main`.
 
 | Phase | Plan | Status | Commit | Tests | Notes |
 |---|---|---|---|---|---|
-| 0 | `docs/plans/00-init.md` | planned | — | — | init, remote, first push |
-| 1 | `docs/plans/01-foundation.md` | planned | — | — | schema + RLS + auth + isolation proof |
+| 0 | `docs/plans/00-init.md` | planned | — | — | init close-out, baseline |
+| 1A | `docs/plans/01a-database.md` | planned | — | — | full schema, RLS, RPCs, seed, isolation proof |
+| 1B | `docs/plans/01b-app-shell.md` | planned | — | — | app shell, auth, data layer, login |
 | 2 | `docs/plans/02-admin.md` | planned | — | — | admin gyms + onboarding wizard |
 | 3 | `docs/plans/03-members-plans-subscriptions.md` | planned | — | — | members, plans, subscriptions, freeze/extend |
 | 4 | `docs/plans/04-payments.md` | planned | — | — | payments + receipts |

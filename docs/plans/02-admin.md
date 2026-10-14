@@ -1,32 +1,38 @@
 # Phase 2 — Admin: gyms + onboarding (PRD §5.6, §7 flows 1–2)
 
 ## Goal
-Platform owner can run the business: manage gyms and onboard owners. Owner gets a
-first-setup wizard.
+Platform owner runs the business: create/suspend/reactivate gyms, reset owner
+passwords — all through service-role Edge Functions. New owners get a setup wizard.
 
 ## Inputs
 @AGENTS.md @docs/PRD.md @docs/DESIGN-SYSTEM.md @docs/SCREENS.md
-@design/02-admin-gyms/ @design/01-login/ @docs/plans/01-foundation.md
+@docs/DATA-CONTRACT.md (02, 03 rows) @docs/FRONTEND-BACKEND.md (§7)
+@design/02-admin-gyms/ @docs/plans/01b-app-shell.md
 
-> `design/03-first-setup/` has NO Stitch export — build the wizard from PRD §7
-> flows 1–2 + DESIGN-SYSTEM.md, and note the gap in PROGRESS.
+> `design/03-first-setup/` has NO Stitch export — build from PRD §7 + DESIGN-SYSTEM.md.
 
-## DB
-- Migration only if gaps found (e.g. gym credentials hand-off fields). RLS: admin
-  full access to `gyms`/`profiles`; owners denied.
+## Data contract
+- 02 row (Edge Fns + payloads, invalidations `['admin','gyms']`); 03 row (settings read/update, `['settings']`, `['plans']`).
 
-## Build
-1. `/admin/gyms`: gym cards/table (status chips active/suspended), create-gym modal
-   (per `design/02-admin-gyms/code-create.html`), suspend/reactivate, owner password
-   reset. Admin-only route guard.
-2. `/onboarding` wizard (owner, first login): language pick → create plans shortcut
-   → import shortcut, progress bar, skippable.
-3. Duplicate-phone error path shows clear AR/FR message (foundation util reuse).
+## Backend tasks
+- Edge Functions (service role, JWT + `is_admin()` re-check inside):
+  `admin_create_gym_with_owner` (creates auth user with `email_confirm=true` using
+  synthetic email for phone identities, profile row, gym_settings row with default
+  templates, returns credentials ONCE), `admin_reset_owner_password`,
+  `admin_set_gym_status` (suspend keeps all data; login fails via `gym_is_active()`).
+- No new tables expected; migration only for gaps.
+
+## Frontend wiring
+- `features/admin/`: `/admin/gyms` (cards/table, status chips, create modal per
+  `code-create.html`, suspend/reactivate, reset-password) behind admin guard.
+- `/onboarding` wizard: language → quick-plan create → import shortcut, progress bar,
+  skippable; sets `gym_settings.onboarding_completed`.
 
 ## Tests
-- Route guards: owner hitting `/admin/*` is refused; suspended owner's login fails
-  with data retained.
-- Admin create → suspend → reactivate cycle; audit row written.
+- SQL: admin functions reject non-admin JWT; suspend → owner policies fail closed;
+  reactivate restores; reset changes password, sends no mail.
+- e2e: full lifecycle create → login as owner → suspend (login fails, data kept) →
+  reactivate → reset password → login; audit rows asserted.
 
 ## Done when
 AGENTS.md §11 ticks; build/lint/test green; SCREENS.md updated if routes change.

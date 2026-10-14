@@ -2,29 +2,38 @@
 
 ## Goal
 Cash-first money tracking with installments, owing flags, receipts, and a
-tamper-evident payment log.
+tamper-evident log. THE payments rule (enforced here, everywhere): INSERT-only for
+`authenticated`; edits/deletes ONLY via audited RPC with reason; offline may ONLY
+create (Phase 7 disables edit/delete offline).
 
 ## Inputs
 @AGENTS.md @docs/PRD.md @docs/DESIGN-SYSTEM.md @docs/SCREENS.md
-@design/10-payments-list/ @design/11-receipt/ @docs/plans/03-members-plans-subscriptions.md
+@docs/DATA-CONTRACT.md (10, 11 rows) @design/10-payments-list/ @design/11-receipt/
 
-## DB
-- No new tables expected; enforce append-only: payments UPDATE/DELETE allowed only
-  via audited path (trigger or policy writing `audit_log` with old/new + actor).
+## Data contract
+Rows 10/11: `record_payment` (idempotent client uuid → `DUPLICATE_REPLAY_OK`),
+`edit/delete_payment` (reason required, online-only), `receipt_no` from
+`receipt_counters`; reads via `payments` indexes + `subscription_balance`.
 
-## Build
-1. `/payments`: rows (member, amount DZD, method, date), date filter, day/month totals.
-2. Record-payment dialog (per `design/11-receipt/code.html`): amount (whole DZD),
-   date, method (cash default, bank/ccp optional), note; optimistic UI + rollback.
-3. Receipt view (`code-receipt.html`): member, amount, date, remaining balance;
-   printable + shareable (print CSS + Web Share API fallback).
-4. Installments: total price / total paid / remaining on subscription + profile;
-   owing members flagged (red badge tokens).
-5. Edits/deletes of payments: never silent — audit row, UI surfaces history.
+## Backend tasks
+- Implement: `record_payment` (validates amount > 0, stamps `receipt_no`
+  in-transaction), `edit_payment`/`delete_payment` (reason mandatory → `audit_log`
+  old/new; RLS already denies direct UPDATE/DELETE from 1A — verify, don't re-add).
+- `receipt_no` definition: per-gym sequence via `receipt_counters`, assigned
+  server-side at insert AND at sync replay (offline-created rows get numbers then).
+
+## Frontend wiring
+- `features/payments/`: `/payments` (date filter, day/month totals, row actions with
+  reason dialog), record dialog (integer DZD input, cash default, optimistic +
+  rollback), receipt view (print CSS + Web Share fallback; shows remaining/credit),
+  owing badges from `member_balance`.
+- Edit/delete buttons hidden/disabled when offline (`payments.offlineEditBlocked`).
 
 ## Tests
-- Totals math (paid + remaining = price); owing flag triggers; method defaults.
-- Audit row asserted on payment edit + delete; RLS re-run.
+- SQL: direct UPDATE/DELETE as authenticated fails; RPC without reason fails; audit
+  old/new asserted; replay same id = 1 row; `receipt_no` strictly increasing per gym.
+- vitest: totals math, owing flag, mapper codes.
+- e2e: record → receipt → edit (reason) → audit visible; RLS re-run.
 
 ## Done when
 AGENTS.md §11 ticks; build/lint/test green.

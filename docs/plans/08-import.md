@@ -1,34 +1,40 @@
-# Phase 8 — Excel import (PRD §5.10)
+# Phase 8 — Excel import, server-side (PRD §5.10)
 
 ## Goal
-Painless migration from paper/Excel: guided import that never destroys existing
-data and handles Arabic content.
+Guided import that never destroys data: upload → map → server-side validate →
+preview → commit (chunked to 5,000 rows) → report. Staging in `import_rows`.
 
 ## Inputs
 @AGENTS.md @docs/PRD.md @docs/DESIGN-SYSTEM.md @docs/SCREENS.md
-(xlsx/SheetJS per stack; template columns FR-I2)
+@docs/DATA-CONTRACT.md (14 row) (xlsx/SheetJS for client parse)
 
-> `design/14-import-excel/` has NO Stitch export — build `/import` from FR-I1…I9
-> + DESIGN-SYSTEM.md.
+> `design/14-import-excel/` has NO Stitch export — build from FR-I1…I9.
 
-## DB
-- Import writes through the same validated path as manual entry (normalization,
-  per-gym duplicate check, audit rows). Re-runnable by construction.
+## Data contract
+Row 14: Storage upload → `create_import_batch` → `save_import_mapping` →
+`import_validate` → `import_commit(batch, skip|update)`; error codes; invalidates
+`['members'], ['dashboard'], ['import', batch]`.
 
-## Build
-1. `/import`: upload `.xlsx`/`.csv` (Storage-backed) → downloadable template
-   (`full_name, phone, plan, start_date, end_date, amount_paid, amount_remaining`).
-2. Column-mapping step for foreign headers → validation preview (valid / error /
-   duplicate counts + row-level reasons: missing name/phone, bad phone, duplicate).
-3. Duplicate policy selector (skip | update) → import run → report
-   (imported/skipped/failed + failed-rows file download).
-4. Arabic text + Arabic-Indic digits normalization; imported members get correct
-   status from `end_date` (Active/Expired); plan/dates optional per FR-I2.
+## Backend tasks
+- `import_validate(batch_id)`: chunked (500 rows/txn) parsing of staged file: per-row
+  normalization via THE SAME functions as `create_member` (one code path), statuses
+  into `import_rows` (`valid|error|duplicate` + reason), batch counters updated,
+  status → `previewed`.
+- `import_commit(batch_id, policy)`: chunked + idempotent (re-run safe, status
+  `committed` guard → `BATCH_ALREADY_COMMITTED`); `valid` → member + subscription
+  (+ payment if amount_paid > 0); `update` policy modifies matched members.
+- Storage policies: private `imports` bucket, `imports/{gym_id}/…` owner-scoped;
+  failed-rows file written back to `failed_rows_path` for download.
+
+## Frontend wiring
+- `features/import/`: `/import` wizard (upload → template download → mapping →
+  preview counts + row reasons → policy selector → report + failed-rows download).
+  Client parses with SheetJS only to assist mapping; VALIDATION TRUTH IS SERVER.
 
 ## Tests
-- Fixture workbook (AR names, Arabic-Indic digits, mixed valid/error/duplicate
-  rows): preview counts exact; skip vs update policies; re-run changes nothing;
-  failed-rows download matches failures.
+- SQL: 5,000-row fixture commits within timeout (chunked); re-run no-op; skip vs
+  update verified; AR names + Arabic-Indic digits normalize.
+- vitest/e2e: preview counts exact; failed-rows download matches failures.
 
 ## Done when
 AGENTS.md §11 ticks; build/lint/test green.

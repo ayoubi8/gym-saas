@@ -1,28 +1,32 @@
 # Phase 5 — Dashboard (PRD §5.5)
 
 ## Goal
-One screen, readable in seconds on a phone: members, revenue, expiries, debts —
-each tappable into its filtered list.
+One screen, readable in seconds: members, revenue, expiries, debts — each tappable.
+Dashboard reads `dashboard_summary()` ONLY (single call, consistent numbers).
 
 ## Inputs
 @AGENTS.md @docs/PRD.md @docs/DESIGN-SYSTEM.md @docs/SCREENS.md
-@design/05-dashboard/
+@docs/DATA-CONTRACT.md (05 row) @design/05-dashboard/
 
-## DB
-- Read-only aggregations; revenue = SUM(`payments` in period), never subscription
-  prices. Prefer one RPC/view for the 4 widgets (consistent numbers).
+## Data contract
+Row 05: `dashboard_summary()` + 5-row previews (`reminders_due()`, owing query).
+No writes. Widget invalidation map owned by Phases 3/4 invalidations.
 
-## Build
-1. `/` dashboard: 4 tappable widgets (Active members; Revenue today+month DZD;
-   Expiring this week; Unpaid total + count) → each deep-links its filtered list.
-2. Expiring + owing preview lists with one-tap actions (remind / open profile).
-3. Numbers refresh after every mutation (TanStack Query invalidation incl. sync).
-4. Offline: last-synced data + visible `last_synced_at` (wires fully in Phase 7;
-   label ships now).
+## Backend tasks
+- Implement `dashboard_summary()` body (1A skeleton): revenue = SUM `payments.paid_on`
+  in gym tz (today/month), never prices; expiring-week window; unpaid rollup.
+- No new tables/RPCs.
+
+## Frontend wiring
+- `features/dashboard/`: `/` 4 tappable widgets → deep-links (members filtered,
+  payments date-filtered, reminders, owing list); expiring + owing previews with
+  one-tap actions; `last_synced_at` label (static "just now" online; real wiring Ph7).
 
 ## Tests
-- Revenue counts payments in window (subscription prices excluded); widget counts
-  match list queries; deep-links land on correctly filtered lists.
+- SQL: revenue excludes subscription prices; window boundaries in gym tz; counts
+  match underlying list queries on seed fixtures.
+- vitest/e2e: widget numbers update after record-payment/renew mutations; deep-links
+  land on correctly filtered lists.
 
 ## Done when
 AGENTS.md §11 ticks; build/lint/test green.
