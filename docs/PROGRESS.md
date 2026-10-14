@@ -5,7 +5,7 @@ every phase, before commit + push to `main`.
 
 | Phase | Plan | Status | Commit | Tests | Notes |
 |---|---|---|---|---|---|
-| 0 | `docs/plans/00-init.md` | done | TBD | npm install ✅ (465 pkgs); tsc baseline: no tsconfig yet (Phase 1B) | init close-out |
+| 0 | `docs/plans/00-init.md` | done | e3f5dc1 | npm install ✅ (465 pkgs); tsc baseline: no tsconfig yet (Phase 1B) | init close-out |
 | 1A | `docs/plans/01a-database.md` | planned | — | — | full schema, RLS, RPCs, seed, isolation proof |
 | 1B | `docs/plans/01b-app-shell.md` | planned | — | — | app shell, auth, data layer, login |
 | 2 | `docs/plans/02-admin.md` | planned | — | — | admin gyms + onboarding wizard |
