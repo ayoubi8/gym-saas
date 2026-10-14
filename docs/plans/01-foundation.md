@@ -5,11 +5,15 @@ Working app shell, full DB schema with tenant isolation at the data layer,
 Admin/Owner auth, seed data, and a test proving gym A cannot read gym B.
 
 ## Inputs
-@AGENTS.md @docs/PRD.md @docs/DESIGN-SYSTEM.md @docs/SCREENS.md
+@AGENTS.md @docs/PRD.md @docs/DATA-MODEL.md @docs/DESIGN-SYSTEM.md @docs/SCREENS.md
 @design/01-login/ @supabase/migrations/0001_init.sql
 @apps/web/package.json @apps/web/.env.example @supabase/README.md
 
-## DB (new migration `0002_core_schema.sql`)
+> `docs/DATA-MODEL.md` is authoritative for the schema. Where it refines the plan
+> below (enums, `duration_months`/`validity_days`, `session_logs`, `receipt_no`,
+> `sync_log`, gym-timezone "today", RPC list), DATA-MODEL.md wins.
+
+## DB (new migration `0002_core_schema.sql` per DATA-MODEL.md)
 - All PRD §6 entities: `members` (soft-delete `deleted_at`), `plans`, `subscriptions`
   (price copied from plan), `pauses`, `extensions`, `payments` (integer DZD),
   `reminders`/message log, `audit_log`.
