@@ -133,3 +133,12 @@ Online card payments (CIB/Edahabia), class booking, coach scheduling, check-in h
 - [ ] Audit log written for payments edits/deletes, plan changes, freeze/resume/extend.
 - [ ] `npm run build`, `npm run lint`, `npm run test` pass.
 - [ ] SCREENS.md + design folder updated if UI changed.
+
+## 12. Working-style rule (mandatory per phase)
+
+**One milestone at a time; migrations for schema changes (new files only, never edit
+landed ones); build/lint/test before done; don't touch unrelated files.**
+
+This mirrors `docs/plans/README.md §Per-phase ritual`. Every phase begins with reading
+its phase file + listed inputs and ends with a green `npm run build && npm run lint &&
+npm run test` (from `apps/web`) before closing out.
