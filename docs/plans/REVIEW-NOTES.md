@@ -9,17 +9,26 @@ Each item: finding → proposed fix → owner decision needed (or "adopt unless 
   = 90d vs 3 calendar months differ).
 - Proposed: keep DATA-MODEL (calendar months are owner-intuitive: "Jan 15 → Apr 15";
   day counts drift across month lengths). Align AGENTS.md §5.4 in Phase 1A.
-- Decision: owner confirms months (recommended) or days.
+- Decision: DECIDED 2026-10-14 — calendar months. AGENTS.md §5.4 aligned.
 
-## R2. Synthetic-email domain must be owned
+## R2. Synthetic-email domain must be owned (explanation for owner)
 
-- Finding: phone login maps to `<digits>@phone.gymdz.app`. If that domain ever
-  receives real mail or is claimed by someone else, Supabase emails (if ever enabled)
-  could leak password-reset tokens.
-- Proposed: owner registers/reserves `gymdz.app` (or substitutes an owned domain) and
-  records it in plans README locked decisions before Phase 1B. Never enable Auth
-  emails to that domain.
-- Decision: owner provides domain.
+- In plain terms: Supabase login needs an "email + password". Gym owners log in with
+  their PHONE number, so the system invents a fake email behind the scenes, e.g. phone
+  `0555 12 34 56` → `213555123456@phone.gymdz.app`. The owner never sees or types it;
+  they just type their phone + password.
+- Why the domain matters: the fake address must belong to NOBODY real. If we used e.g.
+  `@gmail.com`, some stranger could own that address and one day receive a
+  password-reset email meant for a gym owner. So the part after `@` must be a domain
+  YOU own (the same one you'll point at Vercel for the frontend, e.g. `gymdz.app` —
+  then `phone.gymdz.app` is safely yours).
+- What this blocks: nothing until Phase 1B. By then, tell me the domain you'll use
+  (it can be the Vercel custom domain), and it gets recorded in the README locked
+  decisions. Never enable Supabase "confirm email / reset by email" on that subdomain.
+- Vercel note (frontend hosting, decided 2026-10-14): `apps/web` deploys to Vercel
+  (Vite static build; `npm run build` output `dist/`). Only `VITE_SUPABASE_URL` +
+  `VITE_SUPABASE_ANON_KEY` as Vercel env vars — never the service-role key.
+- Decision: OPEN — owner provides domain (ideally the Vercel custom domain).
 
 ## R3. Region + data residency undecided (PRD §11.5)
 
