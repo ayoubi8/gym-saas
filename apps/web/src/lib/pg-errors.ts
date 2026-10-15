@@ -10,6 +10,11 @@ export type AppErrorCode =
   | 'INVALID_CREDENTIALS'
   | 'INVALID_IDENTIFIER'
   | 'NETWORK_OFFLINE'
+  | 'PHONE_TAKEN'
+  | 'EMAIL_TAKEN'
+  | 'WEAK_PASSWORD'
+  | 'NOT_FOUND'
+  | 'INVALID_INPUT'
   | 'UNKNOWN';
 
 export const ERROR_KEY_BY_CODE: Record<AppErrorCode, string> = {
@@ -21,8 +26,30 @@ export const ERROR_KEY_BY_CODE: Record<AppErrorCode, string> = {
   INVALID_CREDENTIALS: 'auth.invalidLogin',
   INVALID_IDENTIFIER: 'auth.invalidIdentifier',
   NETWORK_OFFLINE: 'errors.offlineQueued',
+  PHONE_TAKEN: 'errors.duplicatePhone',
+  EMAIL_TAKEN: 'errors.duplicateEmail',
+  WEAK_PASSWORD: 'errors.weakPassword',
+  NOT_FOUND: 'errors.notFound',
+  INVALID_INPUT: 'errors.invalidInput',
   UNKNOWN: 'errors.unknown',
 };
+
+// Edge Function bodies return `{ error: <CODE> }` (supabase/functions/_shared/http.ts).
+const EDGE_CODE_MAP: Record<string, AppErrorCode> = {
+  FORBIDDEN: 'RLS_DENIED',
+  INVALID_INPUT: 'INVALID_INPUT',
+  PHONE_TAKEN: 'PHONE_TAKEN',
+  EMAIL_TAKEN: 'EMAIL_TAKEN',
+  WEAK_PASSWORD: 'WEAK_PASSWORD',
+  NOT_FOUND: 'NOT_FOUND',
+  SUSPENDED_GYM: 'SUSPENDED_GYM',
+};
+
+/** Map an Edge Function error code string to an AppErrorCode (UNKNOWN fallback). */
+export function mapEdgeErrorCode(code: string | undefined | null): AppErrorCode {
+  if (!code) return 'UNKNOWN';
+  return EDGE_CODE_MAP[code.toUpperCase()] ?? 'UNKNOWN';
+}
 
 /** Typed application error carrying an i18n key. */
 export class AppError extends Error {
