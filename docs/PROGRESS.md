@@ -6,7 +6,7 @@ every phase, before commit + push to `main`.
 | Phase | Plan | Status | Commit | Tests | Notes |
 |---|---|---|---|---|---|
 | 0 | `docs/plans/00-init.md` | done | e3f5dc1 | npm install ✅ (465 pkgs); tsc baseline: no tsconfig yet (Phase 1B) | init close-out |
-| 1A | `docs/plans/01a-database.md` | done | 8c9af96 | build ✅ lint ✅ test ✅ (vitest parity pass); 20 SQL isolation tests | full schema, RLS, RPCs, seed, isolation proof |
+| 1A | `docs/plans/01a-database.md` | done | 71e3410 | build ✅ lint ✅ test ✅ (vitest parity pass); 20 SQL isolation tests | full schema, RLS, RPCs, seed, isolation proof |
 | 1B | `docs/plans/01b-app-shell.md` | planned | — | — | app shell, auth, data layer, login |
 
 ## Phase 1A — Database: full schema, RLS, RPCs, seed, isolation proof (2026-10-15)
