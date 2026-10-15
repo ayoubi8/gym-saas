@@ -1,0 +1,63 @@
+{
+  "common": {
+    "appName": "GymDZ",
+    "tagline": "Espace Gestionnaire",
+    "language": "Langue",
+    "arabic": "العربية",
+    "french": "Français",
+    "loading": "Chargement…",
+    "logout": "Se déconnecter",
+    "version": "Version 0.1"
+  },
+  "auth": {
+    "badge": "Portail sécurisé",
+    "title": "Content de vous revoir",
+    "subtitle": "Gérez vos adhérents, abonnements et paiements en toute simplicité.",
+    "identifierLabel": "Numéro de téléphone ou email",
+    "identifierHint": "05 / 06 / 07 ou email",
+    "identifierPlaceholder": "0550 12 34 56 ou contact@gymdz.dz",
+    "passwordLabel": "Mot de passe",
+    "passwordPlaceholder": "••••••••",
+    "showPassword": "Afficher le mot de passe",
+    "hidePassword": "Masquer le mot de passe",
+    "submit": "Se connecter",
+    "submitting": "Vérification…",
+    "help": "Mot de passe oublié ? Contactez l'administrateur.",
+    "invalidLogin": "Identifiants incorrects.",
+    "invalidIdentifier": "Saisissez un numéro algérien valide ou un email.",
+    "gymSuspended": "Le compte de cette salle est suspendu. Contactez le support.",
+    "required": "Ce champ est obligatoire."
+  },
+  "errors": {
+    "unknown": "Une erreur inattendue est survenue. Réessayez.",
+    "rlsDenied": "Vous n'êtes pas autorisé à effectuer cette action.",
+    "gymSuspended": "Le compte de cette salle est suspendu.",
+    "offlineQueued": "Hors ligne. L'action sera exécutée à la reconnexion.",
+    "network": "Impossible de joindre le serveur.",
+    "memberNotFound": "Adhérent introuvable."
+  },
+  "members": {
+    "duplicatePhone": "Ce numéro de téléphone existe déjà dans cette salle.",
+    "invalidPhone": "Numéro de téléphone invalide."
+  },
+  "status": {
+    "active": "Actif",
+    "expired": "Expiré",
+    "frozen": "Gelé"
+  },
+  "shell": {
+    "welcome": "Bienvenue",
+    "signedInAs": "Connecté en tant que",
+    "roleAdmin": "Administrateur plateforme",
+    "roleOwner": "Gérant de salle",
+    "gym": "Salle",
+    "notice": "La coquille est prête — les écrans de la salle arrivent dans les prochaines phases."
+  },
+  "admin": {
+    "gymsTitle": "Salles"
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "backHome": "Retour à l'accueil"
+  }
+}

@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  @apply bg-surface-2 font-sans text-ink-900 antialiased;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Keep mixed Arabic + latin/phone content readable (DESIGN-SYSTEM.md §6). */
+bdi,
+.unicode-isolate {
+  unicode-bidi: isolate;
+}
