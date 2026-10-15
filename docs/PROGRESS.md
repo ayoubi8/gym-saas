@@ -6,8 +6,16 @@ every phase, before commit + push to `main`.
 | Phase | Plan | Status | Commit | Tests | Notes |
 |---|---|---|---|---|---|
 | 0 | `docs/plans/00-init.md` | done | e3f5dc1 | npm install ✅ (465 pkgs); tsc baseline: no tsconfig yet (Phase 1B) | init close-out |
-| 1A | `docs/plans/01a-database.md` | planned | — | — | full schema, RLS, RPCs, seed, isolation proof |
+| 1A | `docs/plans/01a-database.md` | done | 8c9af96 | build ✅ lint ✅ test ✅ (vitest parity pass); 20 SQL isolation tests | full schema, RLS, RPCs, seed, isolation proof |
 | 1B | `docs/plans/01b-app-shell.md` | planned | — | — | app shell, auth, data layer, login |
+
+## Phase 1A — Database: full schema, RLS, RPCs, seed, isolation proof (2026-10-15)
+- Landed: Migration `supabase/migrations/0002_core_schema.sql` (17 tables, enums, triggers, views, RLS policies, all RPCs, audit log, receipt counters); `supabase/seed/seed.sql` (2 gyms, 2 owners, members across statuses, plans, payments, pauses); `supabase/tests/rls_isolation.sql` (20 SQL assertion tests covering cross-gym isolation, immutable payments, audit logging, reminders idempotency, status views); `scripts/test-db.js` runner; TypeScript definitions generated in `apps/web/src/lib/database.types.ts`; Vitest parity test suite in `apps/web/src/tests/parity-fixtures.test.ts`.
+- Verification: `npm run build` ✅ exit 0 (tsc --noEmit + vite build); `npm run lint` ✅ exit 0 (eslint src); `npm run test` ✅ exit 0 (2 parity tests passing in vitest).
+- Design refs used: none (no UI in this phase).
+- Deviations from plan: none.
+- Next: Phase 1B — App shell, auth, data layer, login, i18n shells.
+
 | 2 | `docs/plans/02-admin.md` | planned | — | — | admin gyms + onboarding wizard |
 | 3 | `docs/plans/03-members-plans-subscriptions.md` | planned | — | — | members, plans, subscriptions, freeze/extend |
 | 4 | `docs/plans/04-payments.md` | planned | — | — | payments + receipts |
