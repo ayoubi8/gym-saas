@@ -30,7 +30,7 @@ every phase, before commit + push to `main`.
 - Deviations from plan: none.
 - Next: Phase 1B — App shell, auth, data layer, login, i18n shells.
 
-| 2 | `docs/plans/02-admin.md` | done | pending | build ✅ lint ✅ test ✅ (51 vitest tests; SQL/e2e authored, not run) | admin gyms + onboarding wizard |
+| 2 | `docs/plans/02-admin.md` | done | 3c2c50d | build ✅ lint ✅ test ✅ (51 vitest tests; SQL/e2e authored, not run) | admin gyms + onboarding wizard |
 | 3 | `docs/plans/03-members-plans-subscriptions.md` | planned | — | — | members, plans, subscriptions, freeze/extend |
 | 4 | `docs/plans/04-payments.md` | planned | — | — | payments + receipts |
 | 5 | `docs/plans/05-dashboard.md` | planned | — | — | dashboard widgets |
