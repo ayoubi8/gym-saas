@@ -38,7 +38,7 @@ every phase, before commit + push to `main`.
 - Next: Phase 1B — App shell, auth, data layer, login, i18n shells.
 
 | 2 | `docs/plans/02-admin.md` | done | 3c2c50d | build ✅ lint ✅ test ✅ (51 vitest tests; SQL/e2e authored, not run) | admin gyms + onboarding wizard |
-| 3 | `docs/plans/03-members-plans-subscriptions.md` | done | pending | build ✅ lint ✅ test ✅ (64 vitest tests; SQL authored, not run) | members, plans, subscriptions, freeze/extend + tenant hardening |
+| 3 | `docs/plans/03-members-plans-subscriptions.md` | done | ae4eca6 | build ✅ lint ✅ test ✅ (64 vitest tests; SQL authored, not run) | members, plans, subscriptions, freeze/extend + tenant hardening |
 | 4 | `docs/plans/04-payments.md` | planned | — | — | payments + receipts |
 | 5 | `docs/plans/05-dashboard.md` | planned | — | — | dashboard widgets |
 | 6 | `docs/plans/06-i18n-rtl.md` | planned | — | — | Arabic/French + RTL pass |
