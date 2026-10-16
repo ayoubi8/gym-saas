@@ -17,6 +17,9 @@ export type AppErrorCode =
   | 'REASON_REQUIRED'
   | 'INVALID_AMOUNT'
   | 'OFFLINE_EDIT_BLOCKED'
+  | 'BAD_FILE'
+  | 'UNKNOWN_COLUMNS'
+  | 'BATCH_ALREADY_COMMITTED'
   | 'SUSPENDED_GYM'
   | 'RLS_DENIED'
   | 'INVALID_CREDENTIALS'
@@ -45,6 +48,9 @@ export const ERROR_KEY_BY_CODE: Record<AppErrorCode, string> = {
   REASON_REQUIRED: 'payments.reasonRequired',
   INVALID_AMOUNT: 'payments.invalidAmount',
   OFFLINE_EDIT_BLOCKED: 'payments.offlineEditBlocked',
+  BAD_FILE: 'import.badFile',
+  UNKNOWN_COLUMNS: 'import.unknownColumns',
+  BATCH_ALREADY_COMMITTED: 'import.alreadyCommitted',
   SUSPENDED_GYM: 'errors.gymSuspended',
   RLS_DENIED: 'errors.rlsDenied',
   INVALID_CREDENTIALS: 'auth.invalidLogin',
@@ -116,6 +122,9 @@ function detectCode(error: unknown): AppErrorCode {
   if (haystack.includes('REASON_REQUIRED')) return 'REASON_REQUIRED';
   if (haystack.includes('INVALID_AMOUNT')) return 'INVALID_AMOUNT';
   if (haystack.includes('OFFLINE_EDIT_BLOCKED')) return 'OFFLINE_EDIT_BLOCKED';
+  if (haystack.includes('BATCH_ALREADY_COMMITTED')) return 'BATCH_ALREADY_COMMITTED';
+  if (haystack.includes('UNKNOWN_COLUMNS')) return 'UNKNOWN_COLUMNS';
+  if (haystack.includes('BAD_FILE')) return 'BAD_FILE';
   if (haystack.includes('PLAN_NOT_FOUND')) return 'PLAN_NOT_FOUND';
   if (
     haystack.includes('DUPLICATE_PHONE') ||

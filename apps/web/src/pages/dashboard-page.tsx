@@ -135,7 +135,7 @@ export function DashboardPage() {
         <h2 className="text-sm font-bold uppercase tracking-wide text-ink-600">
           {t('dashboard.quickActions')}
         </h2>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
           <Link
             to="/members/new"
             className="flex h-16 flex-col items-center justify-center gap-1 rounded-xl border border-line bg-surface text-xs font-semibold text-ink-900 shadow-sm transition hover:border-brand-500"
@@ -156,6 +156,13 @@ export function DashboardPage() {
           >
             <span aria-hidden="true">↻</span>
             {t('dashboard.quickRenew')}
+          </Link>
+          <Link
+            to="/import"
+            className="flex h-16 flex-col items-center justify-center gap-1 rounded-xl border border-line bg-surface text-xs font-semibold text-ink-900 shadow-sm transition hover:border-brand-500"
+          >
+            <span aria-hidden="true">⇪</span>
+            {t('dashboard.quickImport')}
           </Link>
         </div>
       </section>

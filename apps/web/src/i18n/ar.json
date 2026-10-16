@@ -35,6 +35,7 @@
     "quickAdd": "تسجيل",
     "quickCollect": "قبض",
     "quickRenew": "تجديد",
+    "quickImport": "استيراد Excel",
     "expiringSection": "تنتهي خلال 7 أيام",
     "owingSection": "مستحقات غير مسدّدة",
     "viewAll": "عرض الكل",
@@ -334,6 +335,74 @@
     "addPlan": "إضافة الخطة",
     "plansEmpty": "لم تُضف أي خطة بعد.",
     "importCta": "الذهاب إلى الاستيراد"
+  },
+  "import": {
+    "title": "استيراد الأعضاء",
+    "subtitle": "استورد قائمة Excel بأمان: تحقق قبل الاستيراد.",
+    "downloadTemplate": "تنزيل القالب",
+    "chooseFile": "اختر ملف Excel أو CSV",
+    "chooseFileHint": "الصيغ المقبولة: ‎.xlsx‎، ‎.xls‎، ‎.csv‎",
+    "mappingHint": "اربط كل عمود من ملفك بالحقل المناسب.",
+    "fieldRequired": "مطلوب",
+    "fieldOptional": "اختياري",
+    "ignoreColumn": "— تجاهل —",
+    "missingRequired": "حقول مطلوبة ناقصة: {{count}}",
+    "validate": "التحقق من البيانات",
+    "commit": "استيراد",
+    "offlineBlocked": "يتطلب الاستيراد اتصالاً بالإنترنت.",
+    "policyTitle": "الأعضاء الموجودون مسبقًا",
+    "startOver": "استيراد جديد",
+    "noRows": "لا توجد صفوف.",
+    "rowLabel": "الصف {{no}}",
+    "moreRows": "… و{{count}} صفوف أخرى",
+    "failedTitle": "الصفوف الفاشلة",
+    "downloadFailed": "تنزيل الصفوف الفاشلة",
+    "badFile": "الملف غير مقروء أو فارغ. استخدم القالب المرفق.",
+    "unknownColumns": "أعمدة غير معروفة. تحقق من ربط الأعمدة.",
+    "alreadyCommitted": "تم اعتماد هذا الاستيراد مسبقًا.",
+    "steps": {
+      "upload": "الملف",
+      "mapping": "الأعمدة",
+      "preview": "التحقق",
+      "report": "التقرير"
+    },
+    "fields": {
+      "full_name": "الاسم الكامل",
+      "phone": "الهاتف",
+      "plan": "الصيغة",
+      "start_date": "تاريخ البداية",
+      "end_date": "تاريخ النهاية",
+      "amount_paid": "المبلغ المدفوع",
+      "amount_remaining": "المبلغ المتبقي"
+    },
+    "counts": {
+      "total_rows": "الإجمالي",
+      "valid_rows": "صالحة",
+      "duplicate_rows": "مكررة",
+      "error_rows": "أخطاء"
+    },
+    "report": {
+      "imported_count": "مستوردة",
+      "skipped_count": "متجاهلة",
+      "failed_count": "فاشلة"
+    },
+    "policy": {
+      "skip": "تجاهل المكرر",
+      "update": "تحديث العضو الموجود"
+    },
+    "statusValid": "صالح",
+    "statusError": "خطأ",
+    "statusDuplicate": "مكرر",
+    "statusImported": "مستورد",
+    "statusSkipped": "متجاهل",
+    "statusFailed": "فشل",
+    "reasonMissingName": "الاسم مفقود",
+    "reasonMissingPhone": "الهاتف مفقود",
+    "reasonInvalidPhone": "رقم هاتف غير صالح",
+    "reasonInvalidDate": "تاريخ غير صالح",
+    "reasonInvalidAmount": "مبلغ غير صالح",
+    "reasonUnknownPlan": "صيغة غير معروفة",
+    "reasonDuplicatePhone": "هذا الرقم موجود مسبقًا"
   },
   "notFound": {
     "title": "الصفحة غير موجودة",

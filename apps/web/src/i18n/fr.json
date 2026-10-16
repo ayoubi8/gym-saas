@@ -35,6 +35,7 @@
     "quickAdd": "Inscrire",
     "quickCollect": "Encaisser",
     "quickRenew": "Renouveler",
+    "quickImport": "Importer Excel",
     "expiringSection": "Expire dans les 7 jours",
     "owingSection": "Créances en cours",
     "viewAll": "Voir tout",
@@ -334,6 +335,74 @@
     "addPlan": "Ajouter la formule",
     "plansEmpty": "Aucune formule ajoutée pour l'instant.",
     "importCta": "Aller à l'import"
+  },
+  "import": {
+    "title": "Importer des adhérents",
+    "subtitle": "Importez votre liste Excel sans risque : validation avant import.",
+    "downloadTemplate": "Télécharger le modèle",
+    "chooseFile": "Choisir un fichier Excel ou CSV",
+    "chooseFileHint": "Formats acceptés : .xlsx, .xls, .csv",
+    "mappingHint": "Associez chaque colonne de votre fichier au champ correspondant.",
+    "fieldRequired": "Obligatoire",
+    "fieldOptional": "Optionnel",
+    "ignoreColumn": "— Ignorer —",
+    "missingRequired": "Champs obligatoires manquants : {{count}}",
+    "validate": "Vérifier les données",
+    "commit": "Importer",
+    "offlineBlocked": "L'import nécessite une connexion Internet.",
+    "policyTitle": "Adhérents déjà existants",
+    "startOver": "Nouvel import",
+    "noRows": "Aucune ligne.",
+    "rowLabel": "Ligne {{no}}",
+    "moreRows": "… et {{count}} autres lignes",
+    "failedTitle": "Lignes en échec",
+    "downloadFailed": "Télécharger les lignes en échec",
+    "badFile": "Fichier illisible ou vide. Utilisez le modèle fourni.",
+    "unknownColumns": "Colonnes non reconnues. Vérifiez l'association des colonnes.",
+    "alreadyCommitted": "Cet import a déjà été validé.",
+    "steps": {
+      "upload": "Fichier",
+      "mapping": "Colonnes",
+      "preview": "Vérification",
+      "report": "Rapport"
+    },
+    "fields": {
+      "full_name": "Nom complet",
+      "phone": "Téléphone",
+      "plan": "Formule",
+      "start_date": "Date de début",
+      "end_date": "Date de fin",
+      "amount_paid": "Montant payé",
+      "amount_remaining": "Montant restant"
+    },
+    "counts": {
+      "total_rows": "Total",
+      "valid_rows": "Valides",
+      "duplicate_rows": "Doublons",
+      "error_rows": "Erreurs"
+    },
+    "report": {
+      "imported_count": "Importés",
+      "skipped_count": "Ignorés",
+      "failed_count": "Échecs"
+    },
+    "policy": {
+      "skip": "Ignorer les doublons",
+      "update": "Mettre à jour l'adhérent existant"
+    },
+    "statusValid": "Valide",
+    "statusError": "Erreur",
+    "statusDuplicate": "Doublon",
+    "statusImported": "Importé",
+    "statusSkipped": "Ignoré",
+    "statusFailed": "Échec",
+    "reasonMissingName": "Nom manquant",
+    "reasonMissingPhone": "Téléphone manquant",
+    "reasonInvalidPhone": "Numéro de téléphone invalide",
+    "reasonInvalidDate": "Date invalide",
+    "reasonInvalidAmount": "Montant invalide",
+    "reasonUnknownPlan": "Formule inconnue",
+    "reasonDuplicatePhone": "Ce numéro existe déjà"
   },
   "notFound": {
     "title": "Page introuvable",

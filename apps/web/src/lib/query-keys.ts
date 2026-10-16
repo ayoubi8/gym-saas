@@ -28,4 +28,5 @@ export const qk = {
   reminders: ['reminders'] as const,
   settings: ['settings'] as const,
   importBatch: (id: string) => ['import', id] as const,
+  importBatches: ['import', 'batches'] as const,
 };
