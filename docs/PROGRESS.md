@@ -70,7 +70,7 @@ every phase, before commit + push to `main`.
 | 4 | `docs/plans/04-payments.md` | done | 071f2fc | build ✅ lint ✅ test ✅ (75 vitest tests; SQL authored, not run) | payments + receipts |
 | 5 | `docs/plans/05-dashboard.md` | done | 994257b | build ✅ lint ✅ test ✅ (80 vitest tests; SQL authored, not run) | dashboard widgets |
 | 6 | `docs/plans/06-i18n-rtl.md` | done | e3afa52 | build ✅ lint ✅ test ✅ (87 vitest tests; SQL/e2e authored, not run) | AR/FR + RTL pass |
-| 7 | `docs/plans/07-offline.md` | done | pending | build ✅ lint ✅ test ✅ (94 vitest tests; SQL/e2e authored, not run) | Dexie outbox + sync bar |
+| 7 | `docs/plans/07-offline.md` | done | fdd4045 | build ✅ lint ✅ test ✅ (94 vitest tests; SQL/e2e authored, not run) | Dexie outbox + sync bar |
 | 8 | `docs/plans/08-import.md` | planned | — | — | Excel import |
 | 9 | `docs/plans/09-reminders.md` | planned | — | — | reminders (log + manual share) |
 | 10 | `docs/plans/10-pilot.md` | planned | — | — | pilot hardening + launch |
