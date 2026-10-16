@@ -5,6 +5,13 @@ export type AppErrorCode =
   | 'DUPLICATE_PHONE'
   | 'INVALID_PHONE'
   | 'MEMBER_NOT_FOUND'
+  | 'PLAN_NOT_FOUND'
+  | 'ALREADY_RENEWED'
+  | 'PAUSE_ALREADY_OPEN'
+  | 'ALREADY_RESUMED'
+  | 'RESUME_BEFORE_START'
+  | 'INVALID_DAYS'
+  | 'NO_SESSIONS_REMAINING'
   | 'SUSPENDED_GYM'
   | 'RLS_DENIED'
   | 'INVALID_CREDENTIALS'
@@ -21,6 +28,13 @@ export const ERROR_KEY_BY_CODE: Record<AppErrorCode, string> = {
   DUPLICATE_PHONE: 'members.duplicatePhone',
   INVALID_PHONE: 'members.invalidPhone',
   MEMBER_NOT_FOUND: 'errors.memberNotFound',
+  PLAN_NOT_FOUND: 'plans.notFound',
+  ALREADY_RENEWED: 'subscriptions.alreadyRenewed',
+  PAUSE_ALREADY_OPEN: 'subscriptions.pauseAlreadyOpen',
+  ALREADY_RESUMED: 'subscriptions.alreadyResumed',
+  RESUME_BEFORE_START: 'subscriptions.resumeBeforeStart',
+  INVALID_DAYS: 'errors.invalidDays',
+  NO_SESSIONS_REMAINING: 'subscriptions.noSessions',
   SUSPENDED_GYM: 'errors.gymSuspended',
   RLS_DENIED: 'errors.rlsDenied',
   INVALID_CREDENTIALS: 'auth.invalidLogin',
@@ -81,6 +95,13 @@ function detectCode(error: unknown): AppErrorCode {
 
   if (haystack.includes('SUSPENDED_GYM')) return 'SUSPENDED_GYM';
   if (haystack.includes('INVALID_PHONE')) return 'INVALID_PHONE';
+  if (haystack.includes('ALREADY_RENEWED')) return 'ALREADY_RENEWED';
+  if (haystack.includes('PAUSE_ALREADY_OPEN')) return 'PAUSE_ALREADY_OPEN';
+  if (haystack.includes('ALREADY_RESUMED')) return 'ALREADY_RESUMED';
+  if (haystack.includes('RESUME_BEFORE_START')) return 'RESUME_BEFORE_START';
+  if (haystack.includes('INVALID_DAYS')) return 'INVALID_DAYS';
+  if (haystack.includes('NO_SESSIONS_REMAINING')) return 'NO_SESSIONS_REMAINING';
+  if (haystack.includes('PLAN_NOT_FOUND')) return 'PLAN_NOT_FOUND';
   if (
     haystack.includes('DUPLICATE_PHONE') ||
     (e.code === '23505' && (haystack.includes('PHONE') || haystack.includes('MEMBERS_GYM_PHONE')))

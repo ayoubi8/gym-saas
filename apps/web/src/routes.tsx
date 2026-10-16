@@ -5,6 +5,10 @@ import { LoginPage } from './pages/login-page';
 import { HomePage } from './pages/home-page';
 import { AdminGymsPage } from './pages/admin-gyms-page';
 import { OnboardingPage } from './pages/onboarding-page';
+import { MembersListPage } from './pages/members-list-page';
+import { MemberFormPage } from './pages/member-form-page';
+import { MemberProfilePage } from './pages/member-profile-page';
+import { PlansPage } from './pages/plans-page';
 import { NotFoundPage } from './pages/not-found-page';
 
 // Routes mirror docs/SCREENS.md. Phase 1B lands login + the guarded shell;
@@ -20,7 +24,14 @@ export const router = createBrowserRouter([
           { index: true, element: <HomePage /> },
           {
             element: <RequireRole roles={['owner']} />,
-            children: [{ path: 'onboarding', element: <OnboardingPage /> }],
+            children: [
+              { path: 'onboarding', element: <OnboardingPage /> },
+              { path: 'members', element: <MembersListPage /> },
+              { path: 'members/new', element: <MemberFormPage /> },
+              { path: 'members/:id', element: <MemberProfilePage /> },
+              { path: 'members/:id/edit', element: <MemberFormPage /> },
+              { path: 'plans', element: <PlansPage /> },
+            ],
           },
           {
             element: <RequireRole roles={['admin']} />,

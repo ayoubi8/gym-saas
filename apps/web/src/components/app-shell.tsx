@@ -1,13 +1,20 @@
-import { useNavigate, Outlet } from 'react-router-dom';
+import { useNavigate, Outlet, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from '../features/auth/components/language-switcher';
 import { useSession, useSignOut } from '../features/auth/queries';
+
+const OWNER_NAV = [
+  { to: '/', labelKey: 'nav.home', end: true },
+  { to: '/members', labelKey: 'nav.members', end: false },
+  { to: '/plans', labelKey: 'nav.plans', end: false },
+];
 
 export function AppShell() {
   const { t } = useTranslation();
   const { session } = useSession();
   const signOut = useSignOut();
   const navigate = useNavigate();
+  const isOwner = session?.profile.role === 'owner';
 
   function handleSignOut() {
     signOut.mutate(undefined, {
@@ -34,9 +41,30 @@ export function AppShell() {
         </div>
       </header>
 
-      <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-6">
+      <main className={`mx-auto w-full max-w-3xl flex-1 px-4 py-6 ${isOwner ? 'pb-24' : ''}`}>
         <Outlet context={session} />
       </main>
+
+      {isOwner ? (
+        <nav className="fixed inset-x-0 bottom-0 z-10 border-t border-line bg-surface">
+          <div className="mx-auto flex w-full max-w-3xl">
+            {OWNER_NAV.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={item.end}
+                className={({ isActive }) =>
+                  `flex h-16 flex-1 flex-col items-center justify-center gap-1 text-xs font-semibold transition ${
+                    isActive ? 'text-brand-700' : 'text-ink-600'
+                  }`
+                }
+              >
+                {t(item.labelKey)}
+              </NavLink>
+            ))}
+          </div>
+        </nav>
+      ) : null}
     </div>
   );
 }
