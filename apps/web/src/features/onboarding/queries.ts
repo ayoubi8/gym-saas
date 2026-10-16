@@ -3,7 +3,8 @@ import { qk } from '../../lib/query-keys';
 import { runMutation } from '../../lib/run-mutation';
 import type { Enums, GymSettings, Plan } from '../../lib/database.types';
 import type { AppLang } from '../../i18n';
-import { fetchGymPlans, fetchGymSettings, updateProfileLanguage } from './api';
+import { fetchGymPlans, fetchGymSettings } from './api';
+import { updateProfileLanguage } from '../auth/api';
 import { durationMonthsFor, type QuickPlanInput } from './schemas';
 
 export function useGymSettings(gymId: string | undefined) {

@@ -1,6 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { qk } from '../../lib/query-keys';
-import { getSessionContext, signIn, signOut, type SessionContext } from './api';
+import { changeLanguage, getStoredLang, isAppLang, type AppLang } from '../../i18n';
+import { getSessionContext, signIn, signOut, updateProfileLanguage, type SessionContext } from './api';
 import type { LoginInput } from './schemas';
 
 export interface UseSessionResult {
@@ -28,7 +29,21 @@ export function useSignIn() {
     mutationFn: (input: LoginInput) => signIn(input.identifier, input.password),
     onSuccess: (session) => {
       client.setQueryData(qk.session, session);
+      // First login on this device: honour the language saved on the profile
+      // (FR-L3). An explicit local choice always wins.
+      const profileLang = session.profile.language;
+      if (getStoredLang() === null && isAppLang(profileLang)) {
+        void changeLanguage(profileLang);
+      }
     },
+  });
+}
+
+/** Persist the user's language choice to their profile (FR-L3, per-user). */
+export function useUpdateProfileLanguage() {
+  return useMutation({
+    mutationFn: ({ userId, language }: { userId: string; language: AppLang }) =>
+      updateProfileLanguage(userId, language),
   });
 }
 

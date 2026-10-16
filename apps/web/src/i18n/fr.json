@@ -19,6 +19,7 @@
     "copied": "Copié",
     "edit": "Modifier",
     "delete": "Supprimer",
+    "save": "Enregistrer",
     "saving": "Enregistrement…"
   },
   "dashboard": {
@@ -70,6 +71,7 @@
     "offlineQueued": "Hors ligne. L'action sera exécutée à la reconnexion.",
     "network": "Impossible de joindre le serveur.",
     "memberNotFound": "Adhérent introuvable.",
+    "duplicatePhone": "Ce numéro de téléphone est déjà utilisé.",
     "duplicateEmail": "Cet email est déjà utilisé.",
     "weakPassword": "Le mot de passe doit contenir au moins 8 caractères.",
     "notFound": "Élément introuvable.",

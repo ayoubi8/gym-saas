@@ -1,11 +1,22 @@
 import { useTranslation } from 'react-i18next';
 import { changeLanguage, type AppLang } from '../../../i18n';
+import { useSession, useUpdateProfileLanguage } from '../queries';
 
 const LANG_ORDER: AppLang[] = ['ar', 'fr'];
 
 export function LanguageSwitcher({ className }: { className?: string }) {
   const { t, i18n } = useTranslation();
   const current = (i18n.resolvedLanguage ?? 'fr') as AppLang;
+  const { session } = useSession();
+  const persist = useUpdateProfileLanguage();
+
+  function select(lang: AppLang) {
+    void changeLanguage(lang);
+    // Persist per user (FR-L3) when signed in; localStorage always covers the rest.
+    if (session?.userId) {
+      persist.mutate({ userId: session.userId, language: lang });
+    }
+  }
 
   return (
     <div
@@ -22,7 +33,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
             type="button"
             lang={lang}
             onClick={() => {
-              void changeLanguage(lang);
+              select(lang);
             }}
             aria-pressed={active}
             className={`h-8 rounded-full px-3 text-sm font-semibold transition ${

@@ -1,7 +1,8 @@
 import type { AuthError } from '@supabase/supabase-js';
 import { supabase } from '../../lib/supabase';
-import { AppError } from '../../lib/pg-errors';
+import { AppError, toAppError } from '../../lib/pg-errors';
 import type { Gym, Profile } from '../../lib/database.types';
+import type { AppLang } from '../../i18n';
 import { mapIdentifierToEmail } from './identifier';
 
 export interface SessionContext {
@@ -89,4 +90,10 @@ export async function signIn(identifier: string, password: string): Promise<Sess
 
 export async function signOut(): Promise<void> {
   await supabase.auth.signOut();
+}
+
+/** Persist the signed-in user's preferred portal language (own profile row). */
+export async function updateProfileLanguage(userId: string, language: AppLang): Promise<void> {
+  const { error } = await supabase.from('profiles').update({ language }).eq('id', userId);
+  if (error) throw toAppError(error);
 }

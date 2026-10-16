@@ -15,14 +15,19 @@ export function dirForLang(lang: AppLang): 'rtl' | 'ltr' {
   return lang === 'ar' ? 'rtl' : 'ltr';
 }
 
-export function getInitialLang(): AppLang {
+/** The user's explicitly stored language, or null when they never chose one. */
+export function getStoredLang(): AppLang | null {
   try {
     const stored = localStorage.getItem(LANG_STORAGE_KEY);
     if (isAppLang(stored)) return stored;
   } catch {
     /* localStorage unavailable (SSR / privacy mode) */
   }
-  return 'fr';
+  return null;
+}
+
+export function getInitialLang(): AppLang {
+  return getStoredLang() ?? 'fr';
 }
 
 export function applyDirection(lang: AppLang): void {
