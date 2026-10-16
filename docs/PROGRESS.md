@@ -78,7 +78,7 @@ every phase, before commit + push to `main`.
 | 5 | `docs/plans/05-dashboard.md` | done | 994257b | build ✅ lint ✅ test ✅ (80 vitest tests; SQL authored, not run) | dashboard widgets |
 | 6 | `docs/plans/06-i18n-rtl.md` | done | e3afa52 | build ✅ lint ✅ test ✅ (87 vitest tests; SQL/e2e authored, not run) | AR/FR + RTL pass |
 | 7 | `docs/plans/07-offline.md` | done | fdd4045 | build ✅ lint ✅ test ✅ (94 vitest tests; SQL/e2e authored, not run) | Dexie outbox + sync bar |
-| 8 | `docs/plans/08-import.md` | done | pending | build ✅ lint ✅ test ✅ (105 vitest tests; SQL/e2e authored, not run) | Excel import (validate/preview/commit) |
+| 8 | `docs/plans/08-import.md` | done | 893661f | build ✅ lint ✅ test ✅ (105 vitest tests; SQL/e2e authored, not run) | Excel import (validate/preview/commit) |
 | 9 | `docs/plans/09-reminders.md` | planned | — | — | reminders (log + manual share) |
 | 10 | `docs/plans/10-pilot.md` | planned | — | — | pilot hardening + launch |
 
