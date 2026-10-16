@@ -54,7 +54,7 @@ every phase, before commit + push to `main`.
 | 2 | `docs/plans/02-admin.md` | done | 3c2c50d | build ✅ lint ✅ test ✅ (51 vitest tests; SQL/e2e authored, not run) | admin gyms + onboarding wizard |
 | 3 | `docs/plans/03-members-plans-subscriptions.md` | done | ae4eca6 | build ✅ lint ✅ test ✅ (64 vitest tests; SQL authored, not run) | members, plans, subscriptions, freeze/extend + tenant hardening |
 | 4 | `docs/plans/04-payments.md` | done | 071f2fc | build ✅ lint ✅ test ✅ (75 vitest tests; SQL authored, not run) | payments + receipts |
-| 5 | `docs/plans/05-dashboard.md` | done | pending | build ✅ lint ✅ test ✅ (80 vitest tests; SQL authored, not run) | dashboard widgets |
+| 5 | `docs/plans/05-dashboard.md` | done | 994257b | build ✅ lint ✅ test ✅ (80 vitest tests; SQL authored, not run) | dashboard widgets |
 | 6 | `docs/plans/06-i18n-rtl.md` | planned | — | — | Arabic/French + RTL pass |
 | 7 | `docs/plans/07-offline.md` | planned | — | — | PWA offline + sync |
 | 8 | `docs/plans/08-import.md` | planned | — | — | Excel import |
