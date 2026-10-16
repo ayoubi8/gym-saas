@@ -21,6 +21,29 @@
     "delete": "Supprimer",
     "saving": "Enregistrement…"
   },
+  "dashboard": {
+    "greeting": "Salam {{name}}",
+    "activeMembers": "Membres actifs",
+    "revenue": "Revenus (DA)",
+    "month": "Mois : {{amount}}",
+    "expiring": "Fin d'abonnement",
+    "next7Days": "Dans les 7 jours",
+    "unpaid": "Impayés / Dettes",
+    "unpaidCount": "{{count}} adhérent(s)",
+    "quickActions": "Actions rapides",
+    "quickAdd": "Inscrire",
+    "quickCollect": "Encaisser",
+    "quickRenew": "Renouveler",
+    "expiringSection": "Expire dans les 7 jours",
+    "owingSection": "Créances en cours",
+    "viewAll": "Voir tout",
+    "none": "Aucun",
+    "inDays": "Dans {{count}} jour(s)",
+    "expiresToday": "Expire aujourd'hui",
+    "owingAmount": "Impayé {{amount}}",
+    "lastSyncedNow": "Mis à jour : à l'instant",
+    "lastSyncedAt": "Dernière synchro : {{time}}"
+  },
   "auth": {
     "badge": "Portail sécurisé",
     "title": "Content de vous revoir",
@@ -224,6 +247,8 @@
     "class_pack": "Pack de séances"
   },
   "shell": {
+    "online": "En ligne",
+    "offline": "Hors ligne",
     "welcome": "Bienvenue",
     "signedInAs": "Connecté en tant que",
     "roleAdmin": "Administrateur plateforme",

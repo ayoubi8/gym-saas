@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { mapError } from '../lib/pg-errors';
 import { useMembers } from '../features/members/queries';
@@ -9,9 +9,15 @@ import { MemberFilters, type StatusFilter } from '../features/members/components
 export function MembersListPage() {
   const { t } = useTranslation();
   const members = useMembers();
-  const [status, setStatus] = useState<StatusFilter>('all');
+  const [params] = useSearchParams();
+  const initialStatus = params.get('status');
+  const [status, setStatus] = useState<StatusFilter>(
+    initialStatus === 'active' || initialStatus === 'expired' || initialStatus === 'frozen'
+      ? initialStatus
+      : 'all',
+  );
   const [search, setSearch] = useState('');
-  const [owingOnly, setOwingOnly] = useState(false);
+  const [owingOnly, setOwingOnly] = useState(params.get('owing') === '1');
 
   const filtered = useMemo(() => {
     const query = search.trim().toLowerCase();

@@ -23,6 +23,7 @@ export interface CreateMemberVars {
 }
 
 export function useCreateMember(gymId: string) {
+  const client = useQueryClient();
   return useMutation({
     mutationFn: (vars: CreateMemberVars) =>
       runMutation<Member>({
@@ -37,6 +38,7 @@ export function useCreateMember(gymId: string) {
           p_language: vars.input.language ?? null,
         },
       }),
+    onSuccess: () => client.invalidateQueries({ queryKey: qk.dashboard }),
   });
 }
 
@@ -55,6 +57,9 @@ export function useUpdateMember(memberId: string) {
           p_language: input.language ?? null,
         },
       }),
-    onSuccess: () => client.invalidateQueries({ queryKey: qk.member(memberId) }),
+    onSuccess: () => {
+      client.invalidateQueries({ queryKey: qk.member(memberId) });
+      client.invalidateQueries({ queryKey: qk.dashboard });
+    },
   });
 }

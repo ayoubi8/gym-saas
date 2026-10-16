@@ -23,6 +23,8 @@ export const qk = {
   paymentTotals: ['payments', 'totals'] as const,
   payment: (id: string) => ['payment', id] as const,
   dashboard: ['dashboard'] as const,
+  expiringPreview: ['dashboard', 'expiring'] as const,
+  owingPreview: ['dashboard', 'owing'] as const,
   reminders: ['reminders'] as const,
   settings: ['settings'] as const,
   importBatch: (id: string) => ['import', id] as const,

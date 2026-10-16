@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { AppShell } from './components/app-shell';
 import { RequireAuth, RequireRole } from './features/auth/guards';
 import { LoginPage } from './pages/login-page';
-import { HomePage } from './pages/home-page';
+import { DashboardPage } from './pages/dashboard-page';
 import { AdminGymsPage } from './pages/admin-gyms-page';
 import { OnboardingPage } from './pages/onboarding-page';
 import { MembersListPage } from './pages/members-list-page';
@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
       {
         element: <AppShell />,
         children: [
-          { index: true, element: <HomePage /> },
+          { index: true, element: <DashboardPage /> },
           {
             element: <RequireRole roles={['owner']} />,
             children: [

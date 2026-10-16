@@ -21,6 +21,29 @@
     "delete": "حذف",
     "saving": "جارٍ الحفظ…"
   },
+  "dashboard": {
+    "greeting": "مرحبًا {{name}}",
+    "activeMembers": "المنخرطون النشطون",
+    "revenue": "الإيرادات (دج)",
+    "month": "الشهر: {{amount}}",
+    "expiring": "تنتهي قريبًا",
+    "next7Days": "خلال 7 أيام",
+    "unpaid": "المستحقات",
+    "unpaidCount": "{{count}} منخرط",
+    "quickActions": "إجراءات سريعة",
+    "quickAdd": "تسجيل",
+    "quickCollect": "قبض",
+    "quickRenew": "تجديد",
+    "expiringSection": "تنتهي خلال 7 أيام",
+    "owingSection": "مستحقات غير مسدّدة",
+    "viewAll": "عرض الكل",
+    "none": "لا شيء",
+    "inDays": "خلال {{count}} يوم",
+    "expiresToday": "ينتهي اليوم",
+    "owingAmount": "مستحق {{amount}}",
+    "lastSyncedNow": "تم التحديث: الآن",
+    "lastSyncedAt": "آخر تحديث: {{time}}"
+  },
   "auth": {
     "badge": "بوابة آمنة",
     "title": "تسجيل الدخول",
@@ -224,6 +247,8 @@
     "class_pack": "حصة رياضية"
   },
   "shell": {
+    "online": "متصل",
+    "offline": "غير متصل",
     "welcome": "مرحبًا",
     "signedInAs": "مسجّل الدخول باسم",
     "roleAdmin": "مدير المنصة",

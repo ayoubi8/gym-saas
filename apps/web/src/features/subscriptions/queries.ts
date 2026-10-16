@@ -19,6 +19,7 @@ function useMemberInvalidation() {
   return (memberId: string) => {
     client.invalidateQueries({ queryKey: qk.members() });
     client.invalidateQueries({ queryKey: qk.member(memberId) });
+    client.invalidateQueries({ queryKey: qk.dashboard });
   };
 }
 
