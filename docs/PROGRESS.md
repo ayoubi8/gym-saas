@@ -62,7 +62,7 @@ every phase, before commit + push to `main`.
 | 3 | `docs/plans/03-members-plans-subscriptions.md` | done | ae4eca6 | build ✅ lint ✅ test ✅ (64 vitest tests; SQL authored, not run) | members, plans, subscriptions, freeze/extend + tenant hardening |
 | 4 | `docs/plans/04-payments.md` | done | 071f2fc | build ✅ lint ✅ test ✅ (75 vitest tests; SQL authored, not run) | payments + receipts |
 | 5 | `docs/plans/05-dashboard.md` | done | 994257b | build ✅ lint ✅ test ✅ (80 vitest tests; SQL authored, not run) | dashboard widgets |
-| 6 | `docs/plans/06-i18n-rtl.md` | done | pending | build ✅ lint ✅ test ✅ (87 vitest tests; e2e/authored) | AR/FR + RTL pass |
+| 6 | `docs/plans/06-i18n-rtl.md` | done | e3afa52 | build ✅ lint ✅ test ✅ (87 vitest tests; SQL/e2e authored, not run) | AR/FR + RTL pass |
 | 7 | `docs/plans/07-offline.md` | planned | — | — | PWA offline + sync |
 | 8 | `docs/plans/08-import.md` | planned | — | — | Excel import |
 | 9 | `docs/plans/09-reminders.md` | planned | — | — | reminders (log + manual share) |
