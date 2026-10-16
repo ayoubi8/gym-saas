@@ -86,7 +86,7 @@ every phase, before commit + push to `main`.
 | 6 | `docs/plans/06-i18n-rtl.md` | done | e3afa52 | build ✅ lint ✅ test ✅ (87 vitest tests; SQL/e2e authored, not run) | AR/FR + RTL pass |
 | 7 | `docs/plans/07-offline.md` | done | fdd4045 | build ✅ lint ✅ test ✅ (94 vitest tests; SQL/e2e authored, not run) | Dexie outbox + sync bar |
 | 8 | `docs/plans/08-import.md` | done | 893661f | build ✅ lint ✅ test ✅ (105 vitest tests; SQL/e2e authored, not run) | Excel import (validate/preview/commit) |
-| 9 | `docs/plans/09-reminders.md` | done | pending | build ✅ lint ✅ test ✅ (120 vitest tests; SQL/edge authored, not run) | reminders (log + manual share) |
+| 9 | `docs/plans/09-reminders.md` | done | ae7638b | build ✅ lint ✅ test ✅ (120 vitest tests; SQL/edge authored, not run) | reminders (log + manual share) |
 | 10 | `docs/plans/10-pilot.md` | planned | — | — | pilot hardening + launch |
 
 ## Phase 0 — Init close-out (2026-10-14)
