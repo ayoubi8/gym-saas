@@ -6,6 +6,7 @@ import { useSession, useSignOut } from '../features/auth/queries';
 const OWNER_NAV = [
   { to: '/', labelKey: 'nav.home', end: true },
   { to: '/members', labelKey: 'nav.members', end: false },
+  { to: '/payments', labelKey: 'nav.payments', end: false },
   { to: '/plans', labelKey: 'nav.plans', end: false },
 ];
 

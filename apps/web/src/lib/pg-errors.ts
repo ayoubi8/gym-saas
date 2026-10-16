@@ -12,6 +12,11 @@ export type AppErrorCode =
   | 'RESUME_BEFORE_START'
   | 'INVALID_DAYS'
   | 'NO_SESSIONS_REMAINING'
+  | 'PAYMENT_NOT_FOUND'
+  | 'SUBSCRIPTION_NOT_FOUND'
+  | 'REASON_REQUIRED'
+  | 'INVALID_AMOUNT'
+  | 'OFFLINE_EDIT_BLOCKED'
   | 'SUSPENDED_GYM'
   | 'RLS_DENIED'
   | 'INVALID_CREDENTIALS'
@@ -35,6 +40,11 @@ export const ERROR_KEY_BY_CODE: Record<AppErrorCode, string> = {
   RESUME_BEFORE_START: 'subscriptions.resumeBeforeStart',
   INVALID_DAYS: 'errors.invalidDays',
   NO_SESSIONS_REMAINING: 'subscriptions.noSessions',
+  PAYMENT_NOT_FOUND: 'payments.notFound',
+  SUBSCRIPTION_NOT_FOUND: 'subscriptions.notFound',
+  REASON_REQUIRED: 'payments.reasonRequired',
+  INVALID_AMOUNT: 'payments.invalidAmount',
+  OFFLINE_EDIT_BLOCKED: 'payments.offlineEditBlocked',
   SUSPENDED_GYM: 'errors.gymSuspended',
   RLS_DENIED: 'errors.rlsDenied',
   INVALID_CREDENTIALS: 'auth.invalidLogin',
@@ -101,6 +111,11 @@ function detectCode(error: unknown): AppErrorCode {
   if (haystack.includes('RESUME_BEFORE_START')) return 'RESUME_BEFORE_START';
   if (haystack.includes('INVALID_DAYS')) return 'INVALID_DAYS';
   if (haystack.includes('NO_SESSIONS_REMAINING')) return 'NO_SESSIONS_REMAINING';
+  if (haystack.includes('PAYMENT_NOT_FOUND')) return 'PAYMENT_NOT_FOUND';
+  if (haystack.includes('SUBSCRIPTION_NOT_FOUND')) return 'SUBSCRIPTION_NOT_FOUND';
+  if (haystack.includes('REASON_REQUIRED')) return 'REASON_REQUIRED';
+  if (haystack.includes('INVALID_AMOUNT')) return 'INVALID_AMOUNT';
+  if (haystack.includes('OFFLINE_EDIT_BLOCKED')) return 'OFFLINE_EDIT_BLOCKED';
   if (haystack.includes('PLAN_NOT_FOUND')) return 'PLAN_NOT_FOUND';
   if (
     haystack.includes('DUPLICATE_PHONE') ||

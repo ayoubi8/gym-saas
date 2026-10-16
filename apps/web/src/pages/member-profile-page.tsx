@@ -16,8 +16,9 @@ import {
   ResumeDialog,
 } from '../features/subscriptions/components/dialogs';
 import { useDeductSession } from '../features/subscriptions/queries';
+import { RecordPaymentDialog } from '../features/payments/components/dialogs';
 
-type DialogKind = 'assign' | 'renew' | 'freeze' | 'extend' | 'resume' | null;
+type DialogKind = 'assign' | 'renew' | 'freeze' | 'extend' | 'resume' | 'payment' | null;
 
 export function MemberProfilePage() {
   const { t } = useTranslation();
@@ -144,6 +145,13 @@ export function MemberProfilePage() {
               >
                 {t('subscriptions.renew')}
               </button>
+              <button
+                type="button"
+                onClick={() => setDialog('payment')}
+                className="h-10 rounded-lg border border-brand-500 px-3 text-sm font-semibold text-brand-700 transition hover:bg-brand-100"
+              >
+                {t('payments.record')}
+              </button>
               {status === 'active' ? (
                 <button
                   type="button"
@@ -218,9 +226,12 @@ export function MemberProfilePage() {
                     {payment.receipt_no ? ` · #${payment.receipt_no}` : ''}
                   </span>
                 </div>
-                <span className="font-semibold text-brand-700">
+                <Link
+                  to={`/payments/${payment.id}/receipt`}
+                  className="font-semibold text-brand-700 hover:underline"
+                >
                   {formatCurrency(payment.amount_dzd, lang)}
-                </span>
+                </Link>
               </div>
             ))}
           </div>
@@ -278,6 +289,15 @@ export function MemberProfilePage() {
           onClose={() => setDialog(null)}
           memberId={profile.id}
           pauseId={openPause.id}
+        />
+      ) : null}
+      {currentSubscription ? (
+        <RecordPaymentDialog
+          open={dialog === 'payment'}
+          onClose={() => setDialog(null)}
+          memberId={profile.id}
+          subscriptionId={currentSubscription.id}
+          remaining={remaining}
         />
       ) : null}
     </div>

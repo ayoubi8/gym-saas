@@ -20,6 +20,8 @@ export const qk = {
   members: (f?: MemberFilter) => ['members', f ?? 'all'] as const,
   member: (id: string) => ['member', id] as const,
   payments: (f?: PaymentFilter) => ['payments', f ?? 'all'] as const,
+  paymentTotals: ['payments', 'totals'] as const,
+  payment: (id: string) => ['payment', id] as const,
   dashboard: ['dashboard'] as const,
   reminders: ['reminders'] as const,
   settings: ['settings'] as const,

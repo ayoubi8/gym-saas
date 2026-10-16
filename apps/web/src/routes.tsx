@@ -9,6 +9,8 @@ import { MembersListPage } from './pages/members-list-page';
 import { MemberFormPage } from './pages/member-form-page';
 import { MemberProfilePage } from './pages/member-profile-page';
 import { PlansPage } from './pages/plans-page';
+import { PaymentsListPage } from './pages/payments-list-page';
+import { ReceiptPage } from './pages/receipt-page';
 import { NotFoundPage } from './pages/not-found-page';
 
 // Routes mirror docs/SCREENS.md. Phase 1B lands login + the guarded shell;
@@ -31,6 +33,8 @@ export const router = createBrowserRouter([
               { path: 'members/:id', element: <MemberProfilePage /> },
               { path: 'members/:id/edit', element: <MemberFormPage /> },
               { path: 'plans', element: <PlansPage /> },
+              { path: 'payments', element: <PaymentsListPage /> },
+              { path: 'payments/:id/receipt', element: <ReceiptPage /> },
             ],
           },
           {
