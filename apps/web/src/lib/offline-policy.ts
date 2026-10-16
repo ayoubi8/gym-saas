@@ -8,8 +8,16 @@ export interface PendingOp {
   failed: boolean;
 }
 
-/** Writes that must run ONLINE only (never queued): audited payment edits/deletes. */
-export const ONLINE_ONLY_RPCS = ['edit_payment', 'delete_payment'] as const;
+// Writes that must run ONLINE only (never queued): audited payment edits/deletes
+// (§7) plus Phase 9 reminders/settings, which are online-only by design
+// (docs/plans/09-reminders.md — the manual send opens a channel and is logged).
+export const ONLINE_ONLY_RPCS = [
+  'edit_payment',
+  'delete_payment',
+  'log_manual_reminder',
+  'update_gym_settings',
+  'upsert_reminder_template',
+] as const;
 
 export function isOnlineOnlyRpc(rpc: string): boolean {
   return (ONLINE_ONLY_RPCS as readonly string[]).includes(rpc);

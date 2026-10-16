@@ -7,9 +7,21 @@ import { mapError, AppError } from '../lib/pg-errors';
 
 describe('online-only RPC policy (Phase 7)', () => {
   it('never queues audited payment edit/delete', () => {
-    expect(ONLINE_ONLY_RPCS).toEqual(['edit_payment', 'delete_payment']);
+    expect(ONLINE_ONLY_RPCS).toEqual([
+      'edit_payment',
+      'delete_payment',
+      'log_manual_reminder',
+      'update_gym_settings',
+      'upsert_reminder_template',
+    ]);
     expect(isOnlineOnlyRpc('edit_payment')).toBe(true);
     expect(isOnlineOnlyRpc('delete_payment')).toBe(true);
+  });
+
+  it('never queues online-only Phase 9 reminder/settings writes', () => {
+    for (const rpc of ['log_manual_reminder', 'update_gym_settings', 'upsert_reminder_template']) {
+      expect(isOnlineOnlyRpc(rpc)).toBe(true);
+    }
   });
 
   it('allows offline-queueable writes', () => {

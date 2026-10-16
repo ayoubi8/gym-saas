@@ -20,6 +20,10 @@ export type AppErrorCode =
   | 'BAD_FILE'
   | 'UNKNOWN_COLUMNS'
   | 'BATCH_ALREADY_COMMITTED'
+  | 'REMINDERS_DISABLED'
+  | 'ALREADY_SENT'
+  | 'INVALID_TEMPLATE_VARS'
+  | 'DAYS_OUT_OF_RANGE'
   | 'SUSPENDED_GYM'
   | 'RLS_DENIED'
   | 'INVALID_CREDENTIALS'
@@ -51,6 +55,10 @@ export const ERROR_KEY_BY_CODE: Record<AppErrorCode, string> = {
   BAD_FILE: 'import.badFile',
   UNKNOWN_COLUMNS: 'import.unknownColumns',
   BATCH_ALREADY_COMMITTED: 'import.alreadyCommitted',
+  REMINDERS_DISABLED: 'reminders.disabled',
+  ALREADY_SENT: 'reminders.alreadySent',
+  INVALID_TEMPLATE_VARS: 'settings.invalidVars',
+  DAYS_OUT_OF_RANGE: 'settings.daysRange',
   SUSPENDED_GYM: 'errors.gymSuspended',
   RLS_DENIED: 'errors.rlsDenied',
   INVALID_CREDENTIALS: 'auth.invalidLogin',
@@ -110,6 +118,10 @@ function detectCode(error: unknown): AppErrorCode {
   const haystack = `${e.message ?? ''} ${e.details ?? ''} ${e.hint ?? ''}`.toUpperCase();
 
   if (haystack.includes('SUSPENDED_GYM')) return 'SUSPENDED_GYM';
+  if (haystack.includes('REMINDERS_DISABLED')) return 'REMINDERS_DISABLED';
+  if (haystack.includes('ALREADY_SENT')) return 'ALREADY_SENT';
+  if (haystack.includes('INVALID_TEMPLATE')) return 'INVALID_TEMPLATE_VARS';
+  if (haystack.includes('DAYS_OUT_OF_RANGE')) return 'DAYS_OUT_OF_RANGE';
   if (haystack.includes('INVALID_PHONE')) return 'INVALID_PHONE';
   if (haystack.includes('ALREADY_RENEWED')) return 'ALREADY_RENEWED';
   if (haystack.includes('PAUSE_ALREADY_OPEN')) return 'PAUSE_ALREADY_OPEN';

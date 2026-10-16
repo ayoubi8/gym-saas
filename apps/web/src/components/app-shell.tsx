@@ -1,4 +1,4 @@
-import { useNavigate, Outlet, NavLink } from 'react-router-dom';
+import { useNavigate, Outlet, NavLink, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from '../features/auth/components/language-switcher';
 import { useSession, useSignOut } from '../features/auth/queries';
@@ -9,6 +9,7 @@ const OWNER_NAV = [
   { to: '/members', labelKey: 'nav.members', end: false },
   { to: '/payments', labelKey: 'nav.payments', end: false },
   { to: '/plans', labelKey: 'nav.plans', end: false },
+  { to: '/reminders', labelKey: 'nav.reminders', end: false },
 ];
 
 export function AppShell() {
@@ -32,6 +33,14 @@ export function AppShell() {
           <span className="text-xs text-white/70">{t('common.tagline')}</span>
         </div>
         <div className="flex items-center gap-2">
+          {isOwner ? (
+            <Link
+              to="/settings"
+              className="inline-flex h-9 items-center rounded-lg border border-white/30 px-3 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              {t('nav.settings')}
+            </Link>
+          ) : null}
           <LanguageSwitcher />
           <button
             type="button"
