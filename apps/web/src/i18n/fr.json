@@ -215,6 +215,8 @@
     "remainingAfter": "Reste",
     "settled": "Soldé",
     "owing": "Impayé {{amount}}",
+    "duplicateBadge": "Doublon possible",
+    "duplicateReview": "Marquer comme vérifié",
     "notFound": "Paiement introuvable.",
     "history": "Historique des paiements",
     "empty": "Aucun paiement pour l'instant."
@@ -257,6 +259,16 @@
     "roleOwner": "Gérant de salle",
     "gym": "Salle",
     "notice": "La coquille est prête — les écrans de la salle arrivent dans les prochaines phases."
+  },
+  "sync": {
+    "online": "En ligne",
+    "offline": "Hors ligne",
+    "syncing": "Synchronisation…",
+    "error": "Erreur de synchronisation",
+    "pending": "{{count}} en attente",
+    "failed": "{{count}} en échec",
+    "retry": "Réessayer",
+    "lastSyncedAt": "Dernière synchro : {{time}}"
   },
   "admin": {
     "gymsTitle": "Salles",

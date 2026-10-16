@@ -2,6 +2,7 @@ import { useNavigate, Outlet, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from '../features/auth/components/language-switcher';
 import { useSession, useSignOut } from '../features/auth/queries';
+import { SyncBar } from './sync-bar';
 
 const OWNER_NAV = [
   { to: '/', labelKey: 'nav.home', end: true },
@@ -41,6 +42,8 @@ export function AppShell() {
           </button>
         </div>
       </header>
+
+      <SyncBar />
 
       <main className={`mx-auto w-full max-w-3xl flex-1 px-4 py-6 ${isOwner ? 'pb-24' : ''}`}>
         <Outlet context={session} />

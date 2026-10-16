@@ -215,6 +215,8 @@
     "remainingAfter": "المتبقي",
     "settled": "مسدَّد بالكامل",
     "owing": "مستحق {{amount}}",
+    "duplicateBadge": "تكرار محتمل",
+    "duplicateReview": "تعليم كمُراجَع",
     "notFound": "لم يتم العثور على الدفعة.",
     "history": "سجل المدفوعات",
     "empty": "لا توجد مدفوعات بعد."
@@ -257,6 +259,16 @@
     "roleOwner": "صاحب القاعة",
     "gym": "القاعة",
     "notice": "الهيكل جاهز — شاشات القاعة تُضاف في المراحل القادمة."
+  },
+  "sync": {
+    "online": "متصل",
+    "offline": "غير متصل",
+    "syncing": "جارٍ المزامنة…",
+    "error": "خطأ في المزامنة",
+    "pending": "{{count}} في الانتظار",
+    "failed": "{{count}} فاشل",
+    "retry": "إعادة المحاولة",
+    "lastSyncedAt": "آخر مزامنة: {{time}}"
   },
   "admin": {
     "gymsTitle": "القاعات",

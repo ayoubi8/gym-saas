@@ -134,7 +134,15 @@ function detectCode(error: unknown): AppErrorCode {
   if (haystack.includes('INVALID_LOGIN_CREDENTIALS') || haystack.includes('INVALID LOGIN CREDENTIALS')) {
     return 'INVALID_CREDENTIALS';
   }
-  if (haystack.includes('NETWORK') || e.code === 'NETWORK_OFFLINE') return 'NETWORK_OFFLINE';
+  if (
+    e.code === 'NETWORK_OFFLINE' ||
+    haystack.includes('NETWORK') ||
+    haystack.includes('FAILED TO FETCH') ||
+    haystack.includes('LOAD FAILED') ||
+    error instanceof TypeError
+  ) {
+    return 'NETWORK_OFFLINE';
+  }
   return 'UNKNOWN';
 }
 

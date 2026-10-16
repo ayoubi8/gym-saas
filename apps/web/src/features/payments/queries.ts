@@ -104,3 +104,18 @@ export function useDeletePayment() {
     onSuccess: (_data, vars) => invalidatePayments(client, vars.memberId, vars.id),
   });
 }
+
+/** Owner review: clear the "possible duplicate" flag on a payment (audited RPC). */
+export function useClearPaymentDuplicate() {
+  const client = useQueryClient();
+  return useMutation({
+    mutationFn: (vars: { id: string; memberId: string }) =>
+      runMutation<Payment>({
+        key: ['payments'],
+        rpc: 'clear_payment_duplicate',
+        id: crypto.randomUUID(),
+        args: { p_payment_id: vars.id },
+      }),
+    onSuccess: (_data, vars) => invalidatePayments(client, vars.memberId, vars.id),
+  });
+}

@@ -7,7 +7,7 @@ import { useFormatLang } from '../lib/use-format';
 import { todayIso } from '../lib/status';
 import { useOnlineStatus } from '../lib/online';
 import { useMembers } from '../features/members/queries';
-import { usePaymentTotals, usePayments } from '../features/payments/queries';
+import { usePaymentTotals, usePayments, useClearPaymentDuplicate } from '../features/payments/queries';
 import {
   DeletePaymentDialog,
   EditPaymentDialog,
@@ -42,6 +42,7 @@ export function PaymentsListPage() {
   const payments = usePayments(query);
   const totals = usePaymentTotals();
   const members = useMembers();
+  const clearDuplicate = useClearPaymentDuplicate();
 
   const owingByMember = useMemo(() => {
     const map = new Map<string, number>();
@@ -138,6 +139,11 @@ export function PaymentsListPage() {
                       {t('payments.owing', { amount: formatCurrency(owing, lang) })}
                     </span>
                   ) : null}
+                  {payment.flagged_duplicate ? (
+                    <span className="rounded-full bg-warn-100 px-2 py-0.5 text-xs font-semibold text-warn-600">
+                      {t('payments.duplicateBadge')}
+                    </span>
+                  ) : null}
                   <div className="flex items-center gap-1">
                     <Link
                       to={`/payments/${payment.id}/receipt`}
@@ -145,6 +151,17 @@ export function PaymentsListPage() {
                     >
                       {t('payments.receipt')}
                     </Link>
+                    {payment.flagged_duplicate ? (
+                      <button
+                        type="button"
+                        disabled={!online || clearDuplicate.isPending}
+                        title={online ? undefined : t('payments.offlineEditBlocked')}
+                        onClick={() => clearDuplicate.mutate({ id: payment.id, memberId: payment.member_id })}
+                        className="rounded-lg border border-line px-2 py-1 text-xs font-semibold text-warn-600 transition hover:bg-warn-100/60 disabled:cursor-not-allowed disabled:opacity-50"
+                      >
+                        {t('payments.duplicateReview')}
+                      </button>
+                    ) : null}
                     <button
                       type="button"
                       disabled={!online}
